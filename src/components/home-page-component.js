@@ -6,7 +6,7 @@ import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus
 ){
     let initialState = {
         componentName : 'exampleComponent', 
-        heading : 'Home Page'
+        heading : 'Work in Progress'
     };
 
     // Step 1 - Configuration

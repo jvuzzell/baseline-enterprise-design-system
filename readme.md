@@ -1,8 +1,8 @@
-# RCE Starter App w/ Build Process
-Welcome to the RCE App Starter project, a robust development template for building scalable and efficient web applications using HTML, CSS, and JavaScript with the power of Webpack and npm. 
+# WIP - Enterprise Design System (BEDS)
+Welcome to the Enterprise Design System project, a robust development template for building scalable and efficient web applications using HTML, CSS, and JavaScript with the power of Webpack and npm. 
 
 ## Demo
-![RCE Framework Demo](/docs/assets/20240413_rce-basic-site-demo.gif "RCE Framework Demo")
+![EDS Framework Demo](/docs/assets/20240418_eds-basic-site-demo.jpg "EDS Framework Demo")
 
 ## Features
 
@@ -10,12 +10,6 @@ Welcome to the RCE App Starter project, a robust development template for buildi
 - **Component-based architecture**: Modular JavaScript for scalable development.
 - **Automated builds**: Configured Webpack to handle assets, styles, and transpilation.
 - **Hot reloading**: Streamlines the development process by reloading only parts of the application that change.
-
-The RCE App Starter contains a SCSS style guide (framework) and a Javascript state management framework named RCE. 
-
-- Documentation regarding the SCSS style guide is pending. Please check back soon. 
-- To learn more about the RCE Javascript framework please visit: 
-https://github.com/jvuzzell/RCE-Framework
 
 
 ## Project Structure 
