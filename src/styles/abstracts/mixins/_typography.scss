@@ -1,0 +1,129 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+
+@use '../../abstracts/tokens' as *;
+@use '../../abstracts/base' as *;
+@use '../mixins/breakpoints' as *;
+
+$filter: 'h-1', 'h-2', 'h-3', 'h-4', 'h-5', 'h-6', 'p-1', 'p-2', 'p-3';
+
+@mixin getTypeUtilities($mediaQuery, $screenSize) {
+    // Print media query
+    @include mediaQuery(#{$mediaQuery}) {
+        // Loop over typography map
+        @each $type, $categories in map.get($typography, #{$active-theme}) {
+            @each $variant, $sizes in $categories {
+                // Filter typography map to limit classes generated
+                @if list.index($filter, #{$type}-#{$variant}) {
+                    @each $size, $value in $sizes {
+                        @if (#{$size} == #{$screenSize}) {
+                            // Handle heading tags
+                            $variant-name: '.#{$type}-#{$variant}';
+                            @if #{$type} == 'h' {
+                                $variant-name: '#{$type}#{$variant}, .#{$type}-#{$variant}';
+                            }
+
+                            // Output CSS Class
+                            #{$variant-name} {
+                                font: var(--#{$type}-#{$variant}--#{$size});
+                                letter-spacing: var(--#{$type}-#{$variant}--ltr-spc--#{$size});
+
+                                @if #{$type}- == 'p-' {
+                                    margin-bottom: var(--#{$type}-#{$variant}--spacing--#{$size});
+                                }
+
+                                @if #{$type}- == 'h-' {
+                                    margin-bottom: var(--#{$type}-#{$variant}--bd-txt-spc--#{$size});
+                                }
+                            } // end output
+                        }
+                    }
+                } // end filter
+            }
+        } // end loop
+    } // end media query
+}
+
+@mixin getTypeOnColorBg() {
+    @each $bgClass, $customProp in map.get($typeOnColorBg, #{$active-theme}, 'body-text') {
+        body[class*='#{$bgClass}'],
+        section[class*='#{$bgClass}'],
+        footer[class*='#{$bgClass}'] {
+            color: var(#{$customProp});
+        }
+
+        [class*='#{$bgClass}'] h3,
+        [class*='#{$bgClass}'] .h-3,
+        [class*='#{$bgClass}'] h4,
+        [class*='#{$bgClass}'] .h-4,
+        [class*='#{$bgClass}'] h5,
+        [class*='#{$bgClass}'] .h-5,
+        [class*='#{$bgClass}'] h6,
+        [class*='#{$bgClass}'] .h-6,
+        [class*='#{$bgClass}'] .p-1,
+        [class*='#{$bgClass}'] .p-2,
+        [class*='#{$bgClass}'] .p-3,
+        [class*='#{$bgClass}'] p,
+        [class*='#{$bgClass}'] ol,
+        [class*='#{$bgClass}'] ul,
+        [class*='#{$bgClass}'] dl,
+        [class*='#{$bgClass}'] dd,
+        [class*='#{$bgClass}'] dt,
+        [class*='#{$bgClass}'] pre,
+        [class*='#{$bgClass}'] menu,
+        [class*='#{$bgClass}'] dir,
+        [class*='#{$bgClass}'] address,
+        [class*='#{$bgClass}'] blockquote {
+            color: var(#{$customProp});
+        }
+
+        h3[class*='#{$bgClass}'],
+        .h-3[class*='#{$bgClass}'],
+        h4[class*='#{$bgClass}'],
+        .h-4[class*='#{$bgClass}'],
+        h5[class*='#{$bgClass}'],
+        .h-5[class*='#{$bgClass}'],
+        h6[class*='#{$bgClass}'],
+        .h-6[class*='#{$bgClass}'],
+        .p-1[class*='#{$bgClass}'],
+        .p-2[class*='#{$bgClass}'],
+        .p-3[class*='#{$bgClass}'],
+        p[class*='#{$bgClass}'],
+        ol[class*='#{$bgClass}'],
+        ul[class*='#{$bgClass}'],
+        dl[class*='#{$bgClass}'],
+        dt[class*='#{$bgClass}'],
+        dd[class*='#{$bgClass}'],
+        pre[class*='#{$bgClass}'],
+        menu[class*='#{$bgClass}'],
+        dir[class*='#{$bgClass}'],
+        address[class*='#{$bgClass}'],
+        blockquote[class*='#{$bgClass}'] {
+            color: var(#{$customProp});
+        }
+    }
+
+    @each $bgClass, $customProp in map.get($typeOnColorBg, #{$active-theme}, 'headings') {
+        [class*='#{$bgClass}'] h1,
+        [class*='#{$bgClass}'] .h-1,
+        [class*='#{$bgClass}'] h2,
+        [class*='#{$bgClass}'] .h-2 {
+            color: var(#{$customProp});
+        }
+
+        h1[class*='#{$bgClass}'],
+        .h-1[class*='#{$bgClass}'],
+        h2[class*='#{$bgClass}'],
+        .h-2[class*='#{$bgClass}'] {
+            color: var(#{$customProp});
+        }
+    }
+
+    @each $bgClass, $customProp in map.get($typeOnColorBg, #{$active-theme}, 'icons') {
+        i[class*='#{$bgClass}'],
+        [class*='#{$bgClass}'] div:before {
+            color: var(#{$customProp});
+        }
+    }
+}

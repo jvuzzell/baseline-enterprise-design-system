@@ -1,0 +1,56 @@
+@use '../../abstracts/tokens' as *;
+
+$spacing: (
+    'default-theme': (
+        'section': (
+            '': (
+                'top-pd': (
+                    'sm': #{$v-spacing--200},
+                    'md': #{$v-spacing--200},
+                    'lg': #{$v-spacing--300},
+                    'xl': #{$v-spacing--300},
+                ),
+                'btm-pd': (
+                    'sm': #{$v-spacing--200},
+                    'md': #{$v-spacing--200},
+                    'lg': #{$v-spacing--300},
+                    'xl': #{$v-spacing--300},
+                ),
+            ),
+            'bg': (
+                'top-pd': (
+                    'sm': #{$v-spacing--200},
+                    'md': #{$v-spacing--200},
+                    'lg': #{$v-spacing--300},
+                    'xl': #{$v-spacing--300},
+                ),
+                'btm-pd': (
+                    'sm': #{$v-spacing--200},
+                    'md': #{$v-spacing--200},
+                    'lg': #{$v-spacing--300},
+                    'xl': #{$v-spacing--300},
+                ),
+            )
+        ),
+        'gutter': (
+            'sm': #{$h-spacing--50},
+            'md': #{$h-spacing--50},
+            'lg': #{$h-spacing--50},
+            'xl': #{$h-spacing--50},
+        ),
+        'column': (
+            'top-mg': (
+                'sm': #{$v-spacing--100},
+                'md': #{$v-spacing--100},
+                'lg': #{$v-spacing--100},
+                'xl': #{$v-spacing--100},
+            ),
+            'btm-mg': (
+                'sm': #{$v-spacing--100},
+                'md': #{$v-spacing--100},
+                'lg': #{$v-spacing--100},
+                'xl': #{$v-spacing--100},
+            ),
+        ),
+    ),
+);

@@ -1,0 +1,222 @@
+@use '../abstracts/mixins' as *;
+
+/*--- Utilities - Flex Grid, Rows ---*/
+
+/**
+ * .row
+ * @css-prefix null
+ * @doc-type css-framework 
+ * @doc-category layout
+ *
+ * @title Flex Grid - Row
+ * @description Nested within a `.container` or a `.col` (column), rows are encapsulates columns for the purpose of negating the far left and far right padding or gutter of the first and last columns
+ *   
+ * @filter-selector .row
+ *
+ * @characteristic [display] Rows by default use `display:flex;`
+ * @characteristic [horizontal-spacing] Rows have negative margins on the left and right
+ * @characteristic [vertical-spacing] By design rows do not have margins on the top or bottom. This is enforced by !important.
+ * @characteristic [background-color] When background colors are applied to a row margin left and right are set to 0
+ *
+ * @tags grid, row, column, flexbox
+ *
+ * @uri-demo-page /demos/flex-grid/
+ * @uri-related-links [Container] #content-container, [Columns] #flex-grid---columns
+ */
+
+$row-multiplier: -1;
+$col-multiplier: 2;
+
+.row {
+    margin-left: calc(var(--gutter-sm) * #{$row-multiplier});
+    margin-right: calc(var(--gutter-sm) * #{$row-multiplier});
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.row[class*='bg'] {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.row[class*='bg'] .col {
+    padding-left: calc(var(--gutter-sm) * #{$col-multiplier});
+    padding-right: calc(var(--gutter-sm) * #{$col-multiplier});
+}
+
+.row.even-3--sm > [class*='col'] {
+    flex: 0 1 calc((100% / 3) * 1);
+}
+.row.even-4--sm > [class*='col'] {
+    flex: 0 1 calc((100% / 4) * 1);
+}
+
+@include mediaQuery('mobile-landscape-up') {
+    .row {
+        margin-left: calc(var(--gutter-md) * #{$row-multiplier});
+        margin-right: calc(var(--gutter-md) * #{$row-multiplier});
+    }
+
+    .row[class*='bg'] .col {
+        padding-left: calc(var(--gutter-md) * #{$col-multiplier});
+        padding-right: calc(var(--gutter-md) * #{$col-multiplier});
+    }
+
+    .row.even-5--md > [class*='col'] {
+        flex: 0 1 calc((100% / 5) * 1);
+    }
+    .row.even-8--md > [class*='col'] {
+        flex: 0 1 calc((100% / 8) * 1);
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    .row {
+        margin-left: calc(var(--gutter-lg) * #{$row-multiplier});
+        margin-right: calc(var(--gutter-lg) * #{$row-multiplier});
+    }
+
+    .row[class*='bg'] .col {
+        padding-left: calc(var(--gutter-lg) * #{$col-multiplier});
+        padding-right: calc(var(--gutter-lg) * #{$col-multiplier});
+    }
+
+    .row.even-12--lg > [class*='col'] {
+        flex: 0 1 calc((100% / 12) * 1);
+    }
+}
+
+@include mediaQuery('desktop-xl-up') {
+    .row {
+        margin-left: calc(var(--gutter-xl) * #{$row-multiplier});
+        margin-right: calc(var(--gutter-xl) * #{$row-multiplier});
+    }
+
+    .row[class*='bg'] .col {
+        padding-left: calc(var(--gutter-xl) * #{$col-multiplier});
+        padding-right: calc(var(--gutter-xl) * #{$col-multiplier});
+    }
+
+    .row.even-12--xl > [class*='col'] {
+        flex: 0 1 calc((100% / 12) * 1);
+    }
+}
+
+/*--- end ---*/
+
+/*--- Utilities - Flex Grid, Gutters ---*/
+
+@include getGridGutters('mobile-up', 'sm');
+@include getGridGutters('mobile-landscape-up', 'md');
+@include getGridGutters('desktop-up', 'lg');
+@include getGridGutters('desktop-xl-up', 'xl');
+
+/*--- Utilities - Flex Grid, Columns ---*/
+
+[class*='col'],
+[class*='col--'] {
+    flex: 0 1 100%;
+}
+
+.row > .row [class*='col']:first-child {
+    margin-top: 0;
+}
+.row > .row [class*='col']:last-child {
+    margin-bottom: 0;
+}
+
+/*--- Utilities - Flex Grid, Vertical Spacing ---*/
+
+/**
+ * .col
+ * @css-prefix null
+ * @doc-type css-framework
+ * @doc-category layout
+ *
+ * @title Flex Grid - Columns
+ * @description Nested within a `.row`, columns generally encapsulate all content and provide horizontal padding (gutters) which are permuted at various breakpoints: sm, md, lg, and xl
+ * 
+ * @characteristic [horizontal-spacing] Columns possess padding left and right that is exactly half of the intended gutter width
+ * @characteristic [vertical-spacing] Margins and 
+ *
+ * @tags grid, row, column, flexbox
+ *
+ * @uri-demo-page /demos/flex-grid/
+ * @uri-related-links [Row] #flex-grid---row
+ */
+
+@include getColumnMgBtm('mobile-up', 'sm');
+@include getColumnMgBtm('mobile-landscape-up', 'md');
+@include getColumnMgBtm('desktop-up', 'lg');
+@include getColumnMgBtm('desktop-xl-up', 'xl');
+
+@include getColumns('mobile-up', 'sm-odd', 3);
+@include getColumns('mobile-up', 'sm', 4);
+@include getColumns('mobile-landscape-up', 'md-odd', 9);
+@include getColumns('tablet-up', 'md', 8);
+@include getColumns('desktop-up', 'lg', 12);
+@include getColumns('desktop-xl-up', 'xl', 12);
+
+/*--- end ---*/
+
+/*--- Flexbox - Utilities ---*/
+
+.row.gutters--justify-between {
+    justify-content: space-between;
+}
+.row.gutters--justify-around {
+    justify-content: space-around;
+}
+.row.gutters--justify-evenly {
+    justify-content: space-evenly;
+}
+
+.row.row--h-align-left {
+    justify-content: flex-start;
+}
+.row.row--h-align-right {
+    justify-content: flex-end;
+}
+.row.row--h-align-center {
+    justify-content: center;
+}
+
+.row.direction-reverse {
+    flex-direction: row-reverse;
+}
+
+.row.col--v-align-center {
+    align-items: center;
+}
+.row.col--v-align-top {
+    align-items: flex-start;
+}
+.row.col--v-align-btm {
+    align-items: flex-end;
+}
+.row.col--same-height {
+    align-items: stretch;
+}
+
+.row.col--fill-space > [class*='col'],
+.row.col--fill-space > [class*='col--'] {
+    flex-grow: 1;
+}
+
+.row.col--no-wrap {
+    flex-wrap: nowrap;
+}
+
+.display-flex {
+    display: flex;
+}
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}

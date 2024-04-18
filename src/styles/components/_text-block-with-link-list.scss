@@ -1,0 +1,60 @@
+@use '../abstracts/mixins/' as *;
+
+/*--- Components - Text Block w/ Links ---*/
+
+.text-block-with-link-list {
+    --col-margin: 24px;
+
+    a {
+        line-height: var(--icon--size--md);
+    }
+
+    .icon-right i {
+        margin-left: var(--icon--margin--lg);
+    }
+}
+
+@include mediaQuery('mobile-only') {
+    .text-block-with-link-list {
+        .col--left {
+            margin-bottom: 0;
+            padding-bottom: var(--col-margin);
+            border-bottom: 1px solid var(--secondary-light-3);
+        }
+
+        .col--right {
+            margin-top: 0;
+            padding-top: var(--col-margin);
+        }
+    }
+}
+
+@include mediaQuery('tablet-up') {
+    .text-block-with-link-list {
+        .col--left {
+            border-right: 1px solid var(--secondary-light-3);
+            flex: 0 1 calc((100% / 12) * 9);
+            padding-right: calc((100% / 12) * 0.5);
+            margin-right: 0;
+        }
+
+        .col--right {
+            flex: 0 1 calc((100% / 12) * 3);
+            padding-left: calc((100% / 12) * 0.5);
+            margin-left: 0;
+            text-align: right;
+        }
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    .text-block-with-link-list {
+        .col--left {
+            padding-right: calc((100% / 12) * 1);
+        }
+
+        .col--right {
+            padding-left: calc((100% / 12) * 1);
+        }
+    }
+}

@@ -1,0 +1,91 @@
+@use '../../abstracts/tokens' as *;
+@use 'sass:map';
+// Map used to create utility classes & CSS variables
+
+$colors: (
+    'default-theme': (
+        'primary': (
+            'base': $blue--base-hsl,
+            'light-1': $blue--light-1-hsl,
+            'light-2': $blue--light-2-hsl,
+            'light-3': $blue--light-3-hsl,
+            'dark-1': $blue--dark-1-hsl,
+            'dark-2': $blue--dark-2-hsl,
+        ),
+        'secondary': (
+            'base': $gray--base-hsl,
+            'light-1': $gray--light-1-hsl,
+            'light-2': $gray--light-2-hsl,
+            'light-3': $gray--light-3-hsl,
+            'dark-1': $gray--dark-1-hsl,
+            'dark-2': $gray--dark-2-hsl,
+        ),
+        'tertiary': (
+            'base': $orange--base-hsl,
+            'light-1': $orange--light-1-hsl,
+            'light-2': $orange--light-2-hsl,
+            'light-3': $orange--light-3-hsl,
+            'dark-1': $orange--dark-1-hsl,
+            'dark-2': $orange--dark-2-hsl,
+        ),
+        'white': (
+            'base': $white-hsl,
+        ),
+        'black': (
+            'base': $black-hsl,
+        ),
+        'success': (
+            'element': $green--base-hsl,
+            'text': $green--dark-1-hsl,
+            'background': $green--light-1-hsl,
+        ),
+        'warning': (
+            'element': $yellow--base-hsl,
+            'text': $yellow--dark-1-hsl,
+            'background': $yellow--light-1-hsl,
+        ),
+        'error': (
+            'element': $red--base-hsl,
+            'text': $red--dark-1-hsl,
+            'background': $red--light-1-hsl,
+        ),
+        'info': (
+            'element': $blue--base-hsl,
+            'text': $blue--base-hsl,
+            'background': $blue--light-1-hsl,
+        ),
+    ),
+);
+
+// Map used to adjust/define how base elements interact with different colored backgrounds
+
+$lightBackgroundClasses: (
+    'bg--primary-light-1',
+    'bg--secondary-light-1',
+    'bg--secondary-light-2',
+    'bg--tertiary-light-1',
+    'bg--white-base'
+);
+
+$darkBackgroundClasses: (
+    'bg--primary-base',
+    'bg--primary-light-2',
+    'bg--primary-light-3',
+    'bg--primary-dark-1',
+    'bg--primary-dark-2',
+    'bg--secondary-base',
+    'bg--secondary-light-3',
+    'bg--secondary-dark-1',
+    'bg--secondary-dark-2',
+    'bg--tertiary-base',
+    'bg--tertiary-light-2',
+    'bg--tertiary-dark-1',
+    'bg--tertiary-dark-2'
+);
+
+$alertBackgroundClasses: (
+    'bg--error-background',
+    'bg--warning-background',
+    'bg--success-background',
+    'bg--info-background'
+);

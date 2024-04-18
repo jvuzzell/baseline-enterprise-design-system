@@ -1,0 +1,87 @@
+@use 'sass:map';
+@use '../abstracts' as *;
+
+/*--- Components - Toggle Switch ---*/
+
+.toggle-switch {
+    --toggle-on--hover--shadow: #{$toggle-on--hover--shadow};
+    --toggle-on--active--shadow: #{$toggle-on--active--shadow};
+    --toggle-off--hover--shadow: #{$toggle-off--hover--shadow};
+    --toggle-off--active--shadow: #{$toggle-off--active--shadow};
+
+    position: relative;
+    display: inline-block;
+    margin-bottom: $v-spacing--200;
+    cursor: pointer;
+
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .label-text {
+        display: inline-block;
+        margin-left: $h-spacing--300;
+        white-space: nowrap;
+    }
+
+    .slide-container {
+        display: inline-block;
+    }
+
+    /*--- Components- Toggle switch Track styling ---*/
+
+    .slider {
+        position: absolute;
+        height: $toggle-track--height;
+        width: $toggle-track--width;
+        top: 50%;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transform: translateY(-50%);
+        transition: $toggle--transition;
+        border-radius: $toggle-track--radius;
+    }
+
+    /*--- Components- Toggle switch DIsabled Track styling ---*/
+
+    input:disabled + .slider {
+        background-color: var(--secondary-light-2);
+    }
+
+    input:not(:disabled):focus {
+        outline: $outline--focus;
+    }
+
+    /*--- Components- Toggle switch Thumb styling ---*/
+
+    .slider:before {
+        position: absolute;
+        content: '';
+        height: $toggle-thumb--height;
+        width: $toggle-thumb--width;
+        left: $toggle-thumb--left;
+        bottom: $toggle-thumb--bottom;
+        transition: $toggle--transition;
+        border-radius: $toggle-thumb--radius;
+        box-shadow: $elevation-1;
+    }
+
+    /*--- Components- Toggle switch Checked thumb animation ---*/
+
+    input:checked + .slider:before {
+        transform: $toggle-check--transform;
+        box-shadow: $elevation-1;
+    }
+
+    input:not(:disabled):focus + .slider:before,
+    input:not(:disabled):checked:focus + .slider:before {
+        outline-offset: 0.9rem;
+    }
+}
+
+/*--- Components - Toggle-switch on Light backgrounds ---*/
+
+@include colorize('toggles', 'light-backgrounds', #{$active-theme});

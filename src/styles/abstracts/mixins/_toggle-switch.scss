@@ -1,0 +1,86 @@
+@use 'sass:map';
+
+@use '../../abstracts/base' as *;
+@use '../../abstracts/tokens' as *;
+
+@mixin getTogglesOnColorBg($palette, $bgSelector, $suffix) {
+    @each $toggle, $states in $palette {
+        @each $state, $properties in $states {
+            //-- Core Loop
+            @if $toggle == 'slider' {
+                @if $state == 'default' {
+                    #{$bgSelector}input + .slider {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}input:disabled:#{$state} + .slider {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            } @else if $toggle == 'toggle-on' {
+                @if $state == 'checked' {
+                    #{$bgSelector}.toggle-switch input:not(:disabled):#{$state} + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+                @if $state == 'disabled' {
+                    #{$bgSelector}.toggle-switch input:checked:#{$state} + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}.toggle-switch input:not(:disabled):checked:#{$state} + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            } @else if $toggle == 'toggle-off' {
+                @if $state == 'default' {
+                    #{$bgSelector}.toggle-switch input:not(:disabled) + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+                @if $state == 'disabled' {
+                    #{$bgSelector}.toggle-switch input:#{$state} + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}.toggle-switch input:not(:disabled):#{$state} + .slider:before {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            }
+            //-- End Core Loop
+        }
+    }
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Banner Alert Demo</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/main.css"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        />
+
+        <link rel="icon" href="../../assets/images/favicon.ico">
+        <script
+            src="../alerts/index.html.js"
+            defer
+        ></script>
+    </head>
+
+    <body>
+        <section class="full-width">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="fs--text-center">1. Full width Non Dismissable Alerts</h2>
+                    </div>
+                    <div class="col">
+                        <div class="full-width-banner-alerts">
+                            <div
+                                class="alert-container bg--warning-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="warning"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-9">
+                                            <h4 class="alert-head">This is an warning alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                        <div class="alert-cta col--lg-3">
+                                            <button
+                                                class="btn"
+                                                href="#"
+                                                >sample Text</button
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="full-width-banner-alerts">
+                            <div
+                                class="alert-container bg--error-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="error"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-9">
+                                            <h4 class="alert-head">This is an error alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                        <div class="alert-cta col--lg-3">
+                                            <button
+                                                class="btn"
+                                                href="#"
+                                                >sample Text</button
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="full-width-banner-alerts">
+                            <div
+                                class="alert-container bg--success-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="success"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-9">
+                                            <h4 class="alert-head">This is a success alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                        <div class="alert-cta col--lg-3">
+                                            <button
+                                                class="btn"
+                                                href="#"
+                                                >sample Text</button
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="full-width-banner-alerts">
+                            <div
+                                class="alert-container bg--info-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="message"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-9">
+                                            <h4 class="alert-head">This is an alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                        <div class="alert-cta col--lg-3">
+                                            <button
+                                                class="btn"
+                                                href="#"
+                                                >sample Text</button
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="full-width">
+            <div class="container bdr-clr--gray-disabled">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="fs--text-center">2. Full Width Dismissable Banner Alerts</h2>
+                    </div>
+
+                    <div class="col fs--text-center">
+                        <button
+                            class="btn--primary"
+                            onclick="window.triggerAlertsFullWidth();"
+                            >Trigger Alert</button
+                        >
+                    </div>
+
+                    <div class="col">
+                        <div class="full-width-dismissable-banner-alerts"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>3. Dismissable Banner Alerts</h2>
+                    </div>
+                    <div class="col">
+                        <button
+                            class="btn--primary"
+                            onclick="window.triggerAlerts();"
+                            >Trigger Alert</button
+                        >
+                    </div>
+
+                    <div class="col">
+                        <div class="banner-alerts"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>4. Dismissable Banner Alerts w/ CTA</h2>
+                    </div>
+                    <div class="col">
+                        <button
+                            class="btn--primary"
+                            onclick="triggerAlertsWithButton();"
+                            >Trigger Alerts w/ CTA</button
+                        >
+                    </div>
+                    <div class="col">
+                        <div class="cta-banner-alerts"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h2>5. Non-Dismissable Banner Alerts</h2>
+                    </div>
+                    <div class="col">
+                        <div class="banner-alerts">
+                            <div
+                                class="alert-container bg--warning-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="warning"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-12">
+                                            <h4 class="alert-head">This is an warning alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-alerts">
+                            <div
+                                class="alert-container bg--error-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="error"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-12">
+                                            <h4 class="alert-head">This is an error alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-alerts">
+                            <div
+                                class="alert-container bg--success-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="success"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-12">
+                                            <h4 class="alert-head">This is a success alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="banner-alerts">
+                            <div
+                                class="alert-container bg--info-background"
+                                data-ref="module_systemAlert_50119"
+                            >
+                                <div
+                                    data-alert-message
+                                    data-message-type="message"
+                                    data-status="active"
+                                >
+                                    <div class="row">
+                                        <div class="alert-msg col--lg-12">
+                                            <h4 class="alert-head">This is an alert headline</h4>
+                                            <span class="p-2"
+                                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="col">
+                    <h2>6. Non-Dismissable Banner Alerts w/ CTA</h2>
+                </div>
+                <div class="banner-alerts">
+                    <div
+                        class="alert-container bg--warning-background"
+                        data-ref="module_systemAlert_50119"
+                    >
+                        <div
+                            data-alert-message
+                            data-message-type="warning"
+                            data-status="active"
+                        >
+                            <div class="row">
+                                <div class="alert-msg col--lg-9">
+                                    <h4 class="alert-head">This is an warning alert headline</h4>
+                                    <span class="p-2"
+                                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+                                        sem. Aliquam erat volutpat. Donec placerat nisl
+                                    </span>
+                                </div>
+                                <div class="alert-cta col--lg-3">
+                                    <button
+                                        class="btn"
+                                        href="#"
+                                        >sample Text</button
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-alerts">
+                    <div
+                        class="alert-container bg--error-background"
+                        data-ref="module_systemAlert_50119"
+                    >
+                        <div
+                            data-alert-message
+                            data-message-type="error"
+                            data-status="active"
+                        >
+                            <div class="row">
+                                <div class="alert-msg col--lg-9">
+                                    <h4 class="alert-head">This is an error alert headline</h4>
+                                    <span class="p-2"
+                                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+                                        sem. Aliquam erat volutpat. Donec placerat nisl
+                                    </span>
+                                </div>
+                                <div class="alert-cta col--lg-3">
+                                    <button
+                                        class="btn"
+                                        href="#"
+                                        >sample Text</button
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-alerts">
+                    <div
+                        class="alert-container bg--success-background"
+                        data-ref="module_systemAlert_50119"
+                    >
+                        <div
+                            data-alert-message
+                            data-message-type="success"
+                            data-status="active"
+                        >
+                            <div class="row">
+                                <div class="alert-msg col--lg-9">
+                                    <h4 class="alert-head">This is a success alert headline</h4>
+                                    <span class="p-2"
+                                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+                                        sem. Aliquam erat volutpat. Donec placerat nisl
+                                    </span>
+                                </div>
+                                <div class="alert-cta col--lg-3">
+                                    <button
+                                        class="btn"
+                                        href="#"
+                                        >sample Text</button
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-alerts">
+                    <div
+                        class="alert-container bg--info-background"
+                        data-ref="module_systemAlert_50119"
+                    >
+                        <div
+                            data-alert-message
+                            data-message-type="message"
+                            data-status="active"
+                        >
+                            <div class="row">
+                                <div class="alert-msg col--lg-9">
+                                    <h4 class="alert-head">This is an alert headline</h4>
+                                    <span class="p-2"
+                                        >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at porttitor
+                                        sem. Aliquam erat volutpat. Donec placerat nisl
+                                    </span>
+                                </div>
+                                <div class="alert-cta col--lg-3">
+                                    <button
+                                        class="btn"
+                                        href="#"
+                                        >sample Text</button
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

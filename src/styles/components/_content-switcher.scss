@@ -1,0 +1,108 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+/*-- Component - Content Switcher --*/
+
+.content-switcher {
+    --switch-gutter: 4px; //padding for the pill
+
+    position: relative;
+
+    [data-content-switcher*='input'] {
+        position: absolute;
+        visibility: hidden;
+    }
+
+    [data-content-switcher*='content'] {
+        display: none;
+        margin-top: $v-spacing--300;
+    }
+
+    &--slider {
+        display: block;
+        width: calc(50% - var(--switch-gutter));
+        height: calc(100% - var(--switch-gutter) * 2);
+        border-radius: $border-radius-25;
+        transition: $transition--ease-25;
+        position: absolute;
+        left: var(--switch-gutter);
+        z-index: 0;
+    }
+
+    &--pill {
+        padding: var(--switch-gutter);
+        margin: 0 auto;
+        border-radius: $border-radius-25;
+        position: relative;
+        display: table;
+        cursor: pointer;
+    }
+
+    [data-content-switcher*='label'] {
+        display: table-cell;
+        vertical-align: middle;
+        z-index: 10;
+        width: 50%;
+        position: relative;
+        cursor: pointer;
+        border-radius: 3px;
+        padding: #{$v-spacing--50} #{$h-spacing--150};
+    }
+
+    [data-content-switcher='input-left']:focus ~ .content-switcher--pill [data-content-switcher='label-right'],
+    [data-content-switcher='input-right']:focus ~ .content-switcher--pill [data-content-switcher='label-left'] {
+        outline: #{$outline--focus};
+    }
+}
+
+// slider transition to selected label
+[data-content-switcher='input-right']:checked ~ .content-switcher--pill .content-switcher--slider {
+    transform: translateX(100%);
+    box-shadow: #{$content-switcher--track-shadow-left};
+}
+
+// slider transition to selected label
+[data-content-switcher='input-left']:checked ~ .content-switcher--pill .content-switcher--slider {
+    transform: translateX(0%);
+    box-shadow: #{$content-switcher--track-shadow-right};
+}
+
+// selected label related content display
+[data-content-switcher='input-right']:checked ~ [data-content-switcher='content-right'],
+[data-content-switcher='input-left']:checked ~ [data-content-switcher='content-left'] {
+    display: block;
+}
+
+//focus states of unchecked label
+[data-content-switcher='label-right']:not(:checked):focus
+    ~ .content-switcher--pill
+    [data-content-switcher='label-right'],
+[data-content-switcher='label-left']:not(:checked):focus
+    ~ .content-switcher--pill
+    [data-content-switcher='label-left'] {
+    outline: #{$outline--focus};
+    outline-offset: -4px;
+    border-radius: $border-radius-25;
+}
+
+/*-- Color Scheme - Content Switcher --*/
+
+.content-switcher {
+    [data-content-switcher='input-right']:checked ~ .content-switcher--pill [data-content-switcher='label-left'] span,
+    [data-content-switcher='input-left']:checked ~ .content-switcher--pill [data-content-switcher='label-right'] span {
+        color: var(--tertiary-light-2);
+    }
+}
+
+.content-switcher--pill {
+    background-color: var(--secondary-light-2);
+
+    .content-switcher--slider {
+        background-color: var(--white-base);
+    }
+
+    [data-content-switcher*='label'] span {
+        color: var(--secondary-dark-2);
+    }
+}

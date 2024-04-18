@@ -1,0 +1,19 @@
+@use '../abstracts' as *;
+
+/*--- Components - Icon Left w/ Text Right ---*/
+
+.icon-lft-text-rgt {
+    display: flex;
+}
+
+@include mediaQuery('mobile-only') {
+    .icon-lft-text-rgt {
+        display: block;
+        text-align: center;
+
+        .left i {
+            margin-right: 0;
+            margin-bottom: var(--col-top-mg--sm);
+        }
+    }
+}

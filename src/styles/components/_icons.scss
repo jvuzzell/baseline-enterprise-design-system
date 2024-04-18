@@ -1,0 +1,128 @@
+/*--- Components - Icons ---*/
+
+:root {
+    --fa-pull-margin: 3rem;
+    --fa-li-width: 32px;
+}
+
+i,
+i.icon-sm {
+    margin-right: var(--icon--margin--sm);
+}
+i.icon-md {
+    margin-right: var(--icon--margin--md);
+}
+i.icon-lg {
+    margin-right: var(--icon--margin--lg);
+}
+
+i.icon-sm {
+    font-size: var(--icon--size--sm);
+    line-height: var(--icon--size--sm);
+}
+
+i.icon-md {
+    font-size: var(--icon--size--md);
+    line-height: var(--icon--size--md);
+}
+
+i.icon-lg {
+    font-size: var(--icon--size--lg);
+    line-height: var(--icon--size--lg);
+}
+
+.icon-right {
+    direction: rtl;
+}
+
+/*--- Components - Icons w/ Backgrounds ---*/
+
+i[class*='icon'][class*='bg'] {
+    border-radius: 100%;
+    text-align: center;
+}
+
+i.icon-sm[class*='bg'] {
+    line-height: var(--icon--size-with-background--sm);
+    width: var(--icon--size-with-background--sm);
+}
+
+i.icon-md[class*='bg'] {
+    line-height: var(--icon--size-with-background--md);
+    width: var(--icon--size-with-background--md);
+}
+
+i.icon-lg[class*='bg'] {
+    line-height: var(--icon--size-with-background--lg);
+    width: var(--icon--size-with-background--lg);
+}
+
+/*--- Components - Icon Placement ---*/
+
+.icon-right i,
+i.fa-pull-right {
+    margin-right: 0;
+    margin-left: var(--icon--margin--sm);
+}
+
+/*--- Components - Links with Icons ---*/
+
+a i {
+    text-decoration: none;
+    margin-right: 0;
+    margin-left: var(--icon--margin--sm);
+}
+
+a.icon-right,
+a.icon-left {
+    display: inline-block;
+}
+
+a.icon-left i {
+    margin-right: var(--icon--margin--sm);
+    margin-left: 0;
+}
+
+/*--- Components - Font Awesome List Styles ---*/
+
+.fa-ul {
+    margin-top: 20px;
+}
+
+.fa-ul li {
+    margin-bottom: 30px;
+}
+
+.fa-ul li:last-child {
+    margin-bottom: 10px;
+}
+
+.fal,
+.fa-light {
+    font-weight: 300 !important;
+}
+
+.far,
+.fa-regular {
+    font-weight: 400 !important;
+}
+
+.fas,
+.fa-solid {
+    font-weight: 900 !important;
+}
+
+/*--- Color Scheme - Icons on Contrasting Backgrounds ---*/
+
+:root {
+    --icon--on-light-background: var(--secondary-base);
+    --icon--on-dark-background: var(--white-base);
+    --icon--on-primary-light-background: var(--primary-base);
+    --icon--on-secondary-light-background: var(--secondary-base);
+    --icon--on-tertiary-light-background: var(--tertiary-base);
+    --icon--on-gray-background: var(--white-base);
+    --icon--on-success-background: var(--success-text);
+    --icon--on-warning-background: var(--warning-text);
+    --icon--on-error-background: var(--error-text);
+    --icon--on-info-background: var(--info-text);
+}

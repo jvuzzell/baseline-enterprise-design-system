@@ -1,0 +1,32 @@
+{
+  "storybook": [
+    {
+      "title": "DE/Storybook Intro, (Docs)",
+      "uri": "/storybook/?path=/docs/de-storybook-intro--docs"
+    },
+    {
+      "title": "DE/Button, (InputButtonItem)",
+      "uri": "/storybook/?path=/docs/de-button--input-button-story"
+    },
+    {
+      "title": "DE/Button, (ButtonItem)",
+      "uri": "/storybook/?path=/docs/de-button--button-story"
+    },
+    {
+      "title": "DE/ContentSwitcher, (Docs)",
+      "uri": "/storybook/?path=/docs/de-contentswitcher--docs"
+    },
+    {
+      "title": "DE/ContentSwitcher, (Default Content Switcher)",
+      "uri": "/storybook/?path=/docs/de-contentswitcher--default-content-switcher"
+    },
+    {
+      "title": "DE/ToggleSwitch, (Docs)",
+      "uri": "/storybook/?path=/docs/de-toggleswitch--docs"
+    },
+    {
+      "title": "DE/ToggleSwitch, (Default Toggle Switch)",
+      "uri": "/storybook/?path=/docs/de-toggleswitch--default-toggle-switch"
+    }
+  ]
+}

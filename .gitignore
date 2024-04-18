@@ -1,0 +1,11 @@
+node_modules 
+.DS_store 
+public/
+dist/
+deploy/config.json
+deploy/deploy.sh
+deploy/targets
+.vscode/ 
+/.bashrc 
+.git
+.npmrc

@@ -1,0 +1,37 @@
+{
+  "/storybook/?path=/docs/de-storybook-intro--docs": [
+    {
+      "title": "DE/Storybook Intro, (Docs)"
+    }
+  ],
+  "/storybook/?path=/docs/de-button--input-button-story": [
+    {
+      "title": "DE/Button, (InputButtonItem)"
+    }
+  ],
+  "/storybook/?path=/docs/de-button--button-story": [
+    {
+      "title": "DE/Button, (ButtonItem)"
+    }
+  ],
+  "/storybook/?path=/docs/de-contentswitcher--docs": [
+    {
+      "title": "DE/ContentSwitcher, (Docs)"
+    }
+  ],
+  "/storybook/?path=/docs/de-contentswitcher--default-content-switcher": [
+    {
+      "title": "DE/ContentSwitcher, (Default Content Switcher)"
+    }
+  ],
+  "/storybook/?path=/docs/de-toggleswitch--docs": [
+    {
+      "title": "DE/ToggleSwitch, (Docs)"
+    }
+  ],
+  "/storybook/?path=/docs/de-toggleswitch--default-toggle-switch": [
+    {
+      "title": "DE/ToggleSwitch, (Default Toggle Switch)"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+@use 'sass:map';
+
+@use '../../abstracts/base' as *;
+@use '../../abstracts/tokens' as *;
+
+@mixin getColorCustomProperties() {
+    @each $palette, $colors in map.get($colors, #{$active-theme}) {
+        @each $color, $value in $colors {
+            --#{$palette}-#{$color}: hsl(#{$value});
+        }
+    }
+}
+
+@mixin getColorUtilities() {
+    @each $palette, $colors in map.get($colors, #{$active-theme}) {
+        @each $color, $value in $colors {
+            // Foreground
+            .clr--#{$palette}-#{$color} {
+                color: var(--#{$palette}-#{$color});
+            }
+
+            // Background
+            .bg--#{$palette}-#{$color} {
+                background-color: var(--#{$palette}-#{$color});
+            }
+
+            // Border
+            .bdr-#{$palette}-#{$color} {
+                border: 1px solid var(--#{$palette}-#{$color});
+            }
+
+            // Border Color Only
+            .bdr-clr--#{$palette}-#{$color} {
+                border-color: var(--#{$palette}-#{$color});
+            }
+        }
+    }
+}

@@ -1,0 +1,175 @@
+@use '../abstracts' as *;
+
+/*--- Utilities - Typography ---*/
+
+@include getTypeUtilities('mobile-up', 'sm');
+@include getTypeUtilities('tablet-up', 'md');
+@include getTypeUtilities('desktop-up', 'lg');
+@include getTypeUtilities('desktop-xl-up', 'xl');
+
+/*--- Utilities - Typography, Font Weights ---*/
+
+b,
+strong,
+.fw--bold {
+    font-weight: 700;
+}
+.fw--semibold {
+    font-weight: 500;
+}
+.fw--regular {
+    font-weight: 400;
+}
+.fw--light {
+    font-weight: 300;
+}
+
+/*--- Utilities - Typography, Font Styles ---*/
+
+ul.fs--inline li {
+    display: inline;
+}
+em,
+.fs--italic {
+    font-style: italic;
+}
+.fs--uppercase {
+    text-transform: uppercase;
+}
+.fs--lowercase {
+    text-transform: lowercase;
+}
+.fs--underline {
+    text-decoration: underline;
+}
+.fs--no-underline {
+    text-decoration: none;
+}
+.fs--text-center {
+    text-align: center;
+}
+.fs--text-right {
+    text-align: right;
+}
+.fs--text-left {
+    text-align: left;
+}
+.fs--no-wrap {
+    white-space: nowrap;
+}
+
+/*--- Utilities - Typography, Floats ---*/
+
+.float-right {
+    float: right;
+}
+.float-left {
+    float: left;
+}
+
+/*--- Utilities - Typography, Text Alignment (Right, Left, Center) ---*/
+
+@include mediaQuery('mobile-only') {
+    .fs--text-right--sm {
+        text-align: right;
+    }
+    .fs--text-left--sm {
+        text-align: left;
+    }
+    .fs--text-center--sm {
+        text-align: center;
+    }
+}
+
+@include mediaQuery('large-handheld-devices-only') {
+    .fs--text-right--md {
+        text-align: right;
+    }
+    .fs--text-left--md {
+        text-align: left;
+    }
+    .fs--text-center--md {
+        text-align: center;
+    }
+}
+@include mediaQuery('desktop-only') {
+    .fs--text-right--lg {
+        text-align: right;
+    }
+    .fs--text-left--lg {
+        text-align: left;
+    }
+    .fs--text-center--lg {
+        text-align: center;
+    }
+}
+
+@include mediaQuery('desktop-xl-only') {
+    .fs--text-right--xl {
+        text-align: right;
+    }
+    .fs--text-left--xl {
+        text-align: left;
+    }
+    .fs--text-center--xl {
+        text-align: center;
+    }
+}
+
+/*--- Utilities - Lists ---*/
+
+ul.fs--link-list {
+    margin-left: 0;
+
+    li {
+        display: flex;
+    }
+}
+
+ul.fs--link-list li:last-child {
+    margin-bottom: 0;
+}
+
+@include mediaQuery('mobile-up') {
+    ul.fs--link-list li {
+        margin-bottom: var(--list-item-spacing-m--sm);
+    }
+
+    ul.fs--bulleted-list li {
+        list-style-type: disc;
+        margin-bottom: var(--list-item-spacing-s--sm);
+    }
+}
+
+@include mediaQuery('tablet-up') {
+    ul.fs--link-list li {
+        margin-bottom: var(--list-item-spacing-m--md);
+    }
+
+    ul.fs--bulleted-list li {
+        list-style-type: disc;
+        margin-bottom: var(--list-item-spacing-s--md);
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    ul.fs--link-list li {
+        margin-bottom: var(--list-item-spacing-m--lg);
+    }
+
+    ul.fs--bulleted-list li {
+        list-style-type: disc;
+        margin-bottom: var(--list-item-spacing-s--lg);
+    }
+}
+
+@include mediaQuery('desktop-xl-up') {
+    ul.fs--link-list li {
+        margin-bottom: var(--list-item-spacing-m--xl);
+    }
+
+    ul.fs--bulleted-list li {
+        list-style-type: disc;
+        margin-bottom: var(--list-item-spacing-s--xl);
+    }
+}

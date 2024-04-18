@@ -1,0 +1,196 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+:root {
+    @include getColorCustomProperties();
+
+    /*--- Default Properties - Dropshadows ---*/
+
+    /**
+     * --dropshadow-[1-4]
+     * @doc-type design-tokens 
+     * @doc-category elevations 
+     * @filter-css-var --dropshadow-
+     *
+     * @title Dropshadows 
+     * 
+     * @characteristic [None] Main Content 
+     * @characteristic [Level 1] Cards
+     * @characteristic [Level 2] Menus, 1st level dropdowns
+     * @characteristic [Level 3] Menus, 2nd level dropdowns/nested dropdowns
+     * @characteristic [Level 4] Modals
+     */
+
+    @each $variant, $value in map.get($dropshadows, #{$active-theme}) {
+        --dropshadow-#{$variant}: #{$value};
+    }
+
+    /*--- end ---*/
+
+    /*--- Default Properties - Spacing, Section ---*/
+
+    /**
+     * --sect[-bg|top-curv|btm-curv]--[top|btm]-pd--[sm|md|lg|xl]
+     * @doc-type design-tokens 
+     * @doc-category elevations 
+     * @filter-css-var --sect
+     *
+     * @title Spacing, Sections  
+     * @description Padding is intrinsically applied to the top and bottom of sections. This spacing accounts for sections that have classes for curves and/or background colors as well.
+     * 
+     * @characteristic [Mobile Responsive] Padding applied to section tags are responsive. Target screen-sizes using [sm|md|lg|xl]. 
+     * @characteristic [Background Colors] Values for [--sect-bg--] are applied to HTML sections that match the selector `section[class*=bg]`
+     * @characteristic [Curves] Values for [--sect-[top-curv|btm-curv]--] are applied to HTML sections that match the selector `section[class*=top-curv]` or `section[class*=btm-curv]`
+     * 
+     */
+
+    @each $type, $categories in map.get($spacing, #{$active-theme}, 'section') {
+        // String manipulation of CSS property name
+        $modType: '';
+        @if $type != '' {
+            $modType: -#{$type};
+        }
+
+        @each $variant, $sizes in $categories {
+            @each $size, $value in $sizes {
+                --sect#{$modType}--#{$variant}--#{$size}: #{$value};
+            }
+        }
+    }
+
+    /*--- end ---*/
+
+    /*--- Default Properties - Spacing, Gutters ---*/
+
+    /**
+     * --gutter-[sm|md|lg|xl]
+     * @doc-type design-tokens 
+     * @doc-category layout
+     * @filter-css-var --gutter
+     *
+     * @title Spacing, Gutters
+     * @description Gutters are a layout mechanic that are most commonly applied to columns `col` within a grid system to keep the space left and right of an element consistent. 
+     * 
+     * @characteristic [Mobile Responsive] Gutters are applied to columns `col` as margin left and right. This spacing scales with the viewport and is applied with [sm|md|lg|xl]
+     */
+
+    @each $size, $value in map.get($spacing, #{$active-theme}, 'gutter') {
+        --gutter-#{$size}: #{$value};
+    }
+
+    /*--- end ---*/
+
+    /*--- Default Properties - Spacing, Columns ---*/
+
+    /**
+     * --col-[top|btm]-[mg]--[sm|md|lg|xl]
+     * @doc-type design-tokens 
+     * @doc-category layout 
+     * @filter-css-var --col
+     *
+     * @title Spacing, Columns
+     * @description Margins are instrinsically applied to the top and bottom of columns.
+     * 
+     * @characteristic [Mobile Responsive] Margin top and bottom are applied to columns `col` and this spacing scales with the viewport 
+     */
+
+    @each $type, $categories in map.get($spacing, #{$active-theme}, 'column') {
+        @each $size, $value in $categories {
+            --col-#{$type}--#{$size}: #{$value};
+        }
+    }
+
+    /*--- end ---*/
+
+    /*--- Default Properties - Typography ---*/
+
+    /**
+     * --h-[1|2|3|4|5|6][--ltr-spc|--bd-txt]--[sm|md|lg|xl] & --p-[1|2|3][--ltr-spc]--[sm|md|lg|xl] 
+     * @doc-type design-tokens 
+     * @doc-category Typography
+     * @filter-css-var --
+     * @title Typography, Headings and Body Text
+     * @description Margins are instrinsically applied to the top and bottom of columns.
+     * 
+     * @characteristic [Mobile Responsive] Margin top and bottom are applied to columns `col` and this spacing scales with the viewport 
+     */
+
+    @each $type, $categories in map.get($typography, #{$active-theme}) {
+        @each $variant, $sizes in $categories {
+            @each $size, $value in $sizes {
+                --#{$type}-#{$variant}--#{$size}: #{$value};
+            }
+        }
+    }
+
+    /*--- end ---*/
+
+    /*--- Default Properties - Content Width ---*/
+
+    --max-content-width--sm: #{$content--width-sm};
+    --max-content-width--md: #{$content--width-md};
+    --max-content-width--lg: #{$content--width-lg};
+    --max-content-width--xl: #{$content--width-xl};
+
+    /*--- Default Properties - Gutters ---*/
+
+    --container--gutter--sm: var(--gutter-sm);
+    --container--gutter--md: var(--gutter-md);
+    --container--gutter--lg: var(--gutter-lg);
+    --container--gutter--xl: var(--gutter-xl);
+
+    /*--- Default Properties - Text Indent ---*/
+
+    --text-indent--sm: #{$h-spacing--150};
+    --text-indent--md: #{$h-spacing--150};
+    --text-indent--lg: #{$h-spacing--150};
+    --text-indent--xl: #{$h-spacing--150};
+
+    /*--- Default Properties - Font Weights ---*/
+
+    --font-weight--regular: #{$font-weight--regular};
+    --font-weight--medium: #{$font-weight--medium};
+
+    /*--- Default Properties - Font Stack ---*/
+
+    --font-stack: #{$font-stack--sans-serif};
+
+    /*--- Default Properties - List Styles ---*/
+
+    --list-item-spacing-s--sm: #{$list-item-spacing-s--sm};
+    --list-item-spacing-s--md: #{$list-item-spacing-s--md};
+    --list-item-spacing-s--lg: #{$list-item-spacing-s--lg};
+    --list-item-spacing-s--xl: #{$list-item-spacing-s--xl};
+
+    --list-item-spacing-m--sm: #{$list-item-spacing-m--sm};
+    --list-item-spacing-m--md: #{$list-item-spacing-m--md};
+    --list-item-spacing-m--lg: #{$list-item-spacing-m--lg};
+    --list-item-spacing-m--xl: #{$list-item-spacing-m--xl};
+
+    --list-item-spacing-l--sm: #{$list-item-spacing-l--sm};
+    --list-item-spacing-l--md: #{$list-item-spacing-l--md};
+    --list-item-spacing-l--lg: #{$list-item-spacing-l--lg};
+    --list-item-spacing-l--xl: #{$list-item-spacing-l--xl};
+
+    /*--- Default Properties - Border Radius ---*/
+
+    --border-radius-25: #{$border-radius-25};
+    --border-radius-50: #{$border-radius-50};
+    --border-radius-75: #{$border-radius-75};
+    --border-radius-100: #{$border-radius-100};
+
+    /*--- Default Properties - Icons */
+
+    --icon--margin--sm: 0.8rem;
+    --icon--margin--md: 1rem;
+    --icon--margin--lg: 1.6rem;
+
+    --icon--size--sm: 1.6rem;
+    --icon--size--md: 2.4rem;
+    --icon--size--lg: 3.2rem;
+
+    --icon--size-with-background--sm: calc(var(--icon--size--sm) * 2);
+    --icon--size-with-background--md: calc(var(--icon--size--md) * 2);
+    --icon--size-with-background--lg: calc(var(--icon--size--lg) * 2);
+}

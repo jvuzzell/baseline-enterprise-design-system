@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html
+    lang="en"
+    class="de-theme"
+>
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1"
+        />
+        <title>Flex Grid</title>
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/main.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../assets/styles/grid-demo.css"
+        />
+        <link rel="icon" href="../../assets/images/favicon.ico">
+    </head>
+    <body>
+        <!-- Mobile Columns -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h1>Flex Grid<br /><span class="heading-2">Standard Columns & Offsets</span></h1>
+                    </div>
+                </div>
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Mobile - 4 Column Grid</h3>
+                        <p>(Effective on <b>screens</b> > 0px)<br />Classname: <b>.col--sm-[1-4]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--sm-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--sm-3">
+                        <p class="bg--secondary-light-2">3 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-2">
+                        <p class="bg--primary-base">2 Column</p>
+                    </div>
+                    <div class="col--sm-2">
+                        <p class="bg--secondary-light-2">2 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--sm-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Offsets -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Mobile - Offset Columns</h3>
+                        <p>(Effective on <b>screens</b> > 0px)<br />Classname: <b>.col--sm-[1-4]-push</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--sm-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--sm-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-1 col--sm-1-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--sm-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-1 col--sm-2-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--sm-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col--sm-1 col--sm-3-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tablet Columns -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Tablet - 8 Column Grid</h3>
+                        <p>(Effective on <b>screens</b> >= 744px)<br />Classname: <b>.col--md-[1-8]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-7">
+                        <p class="bg--secondary-light-2">7 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-2">
+                        <p class="bg--primary-base">2 Column</p>
+                    </div>
+                    <div class="col--md-6">
+                        <p class="bg--secondary-light-2">6 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-5">
+                        <p class="bg--secondary-light-2">5 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                    <div class="col--md-4">
+                        <p class="bg--secondary-light-2">4 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-5">
+                        <p class="bg--primary-base">5 Column</p>
+                    </div>
+                    <div class="col--md-3">
+                        <p class="bg--secondary-light-2">3 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-6">
+                        <p class="bg--primary-base">6 Column</p>
+                    </div>
+                    <div class="col--md-2">
+                        <p class="bg--secondary-light-2">2 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-7">
+                        <p class="bg--primary-base">7 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-8">
+                        <p class="bg--primary-base">8 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tablet Offsets -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Tablet - Offset Columns</h3>
+                        <p>(Effective on <b>screens</b> >= 744px)<br />Classname: <b>.col--md-[1-8]-push</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-1-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-2-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-3-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-4-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-5-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-6-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-1 col--md-7-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tablet - Odd Number -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Tablet - 9 Column Grid</h3>
+                        <p>(Effective on <b>screens</b> >= 744px)<br />Classname: <b>.col--md-odd-[1-9]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-8">
+                        <p class="bg--secondary-light-2">8 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-2">
+                        <p class="bg--primary-base">2 Column</p>
+                    </div>
+                    <div class="col--md-odd-7">
+                        <p class="bg--secondary-light-2">7 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-6">
+                        <p class="bg--secondary-light-2">6 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                    <div class="col--md-odd-5">
+                        <p class="bg--secondary-light-2">5 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-5">
+                        <p class="bg--primary-base">5 Column</p>
+                    </div>
+                    <div class="col--md-odd-4">
+                        <p class="bg--secondary-light-2">4 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-6">
+                        <p class="bg--primary-base">6 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--secondary-light-2">3 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-7">
+                        <p class="bg--primary-base">7 Column</p>
+                    </div>
+                    <div class="col--md-odd-2">
+                        <p class="bg--secondary-light-2">2 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-8">
+                        <p class="bg--primary-base">8 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-9">
+                        <p class="bg--primary-base">9 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-9"><p>Column-control example below</p></div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                    <div class="col--md-odd-4 col--md-odd-1-push">
+                        <p class="bg--secondary-light-2">4 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--md-odd-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tablet 9 - Column Offset -->
+
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Tablet - Offset Columns</h3>
+                        <p>(Effective on <b>screens</b> >= 744px)<br />Classname: <b>.col--md-odd-push-[1-9]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-1-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-2-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-3-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-4-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-5-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-6-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-7-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--md-odd-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--md-odd-1 col--md-odd-8-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desktop Columns -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Desktop - 12 Column Grid</h3>
+                        <p>(Effective on <b>screens</b> >= 1236px)<br />Classname: <b>.col--lg-[1-12]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-11">
+                        <p class="bg--secondary-light-2">11 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-2">
+                        <p class="bg--primary-base">2 Column</p>
+                    </div>
+                    <div class="col--lg-10">
+                        <p class="bg--secondary-light-2">10 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--lg-9">
+                        <p class="bg--secondary-light-2">9 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                    <div class="col--lg-8">
+                        <p class="bg--secondary-light-2">8 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-5">
+                        <p class="bg--primary-base">5 Column</p>
+                    </div>
+                    <div class="col--lg-7">
+                        <p class="bg--secondary-light-2">7 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-6">
+                        <p class="bg--primary-base">6 Column</p>
+                    </div>
+                    <div class="col--lg-6">
+                        <p class="bg--secondary-light-2">6 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-7">
+                        <p class="bg--primary-base">7 Column</p>
+                    </div>
+                    <div class="col--lg-5">
+                        <p class="bg--secondary-light-2">5 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-8">
+                        <p class="bg--primary-base">8 Column</p>
+                    </div>
+                    <div class="col--lg-4">
+                        <p class="bg--secondary-light-2">4 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-9">
+                        <p class="bg--primary-base">9 Column</p>
+                    </div>
+                    <div class="col--lg-3">
+                        <p class="bg--secondary-light-2">3 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-10">
+                        <p class="bg--primary-base">10 Column</p>
+                    </div>
+                    <div class="col--lg-2">
+                        <p class="bg--secondary-light-2">2 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-11">
+                        <p class="bg--primary-base">11 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-12">
+                        <p class="bg--primary-base">12 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desktop Offsets -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Desktop - Offset Columns</h3>
+                        <p>(Effective on <b>screens</b> >= 1236px)<br />Classname: <b>.col--lg-[1-12]-push</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-1-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-2-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-3-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-4-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-5-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-6-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-7-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-8-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-9-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-10-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--lg-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--lg-1 col--lg-11-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desktop Columns -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Large Large Desktopss - 12 Column Grid</h3>
+                        <p>(Effective on <b>screens</b> >= 1440px)<br />Classname: <b>.col--xl-[1-12]</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-11">
+                        <p class="bg--secondary-light-2">11 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-2">
+                        <p class="bg--primary-base">2 Column</p>
+                    </div>
+                    <div class="col--xl-10">
+                        <p class="bg--secondary-light-2">10 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-3">
+                        <p class="bg--primary-base">3 Column</p>
+                    </div>
+                    <div class="col--xl-9">
+                        <p class="bg--secondary-light-2">9 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-4">
+                        <p class="bg--primary-base">4 Column</p>
+                    </div>
+                    <div class="col--xl-8">
+                        <p class="bg--secondary-light-2">8 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-5">
+                        <p class="bg--primary-base">5 Column</p>
+                    </div>
+                    <div class="col--xl-7">
+                        <p class="bg--secondary-light-2">7 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-6">
+                        <p class="bg--primary-base">6 Column</p>
+                    </div>
+                    <div class="col--xl-6">
+                        <p class="bg--secondary-light-2">6 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-7">
+                        <p class="bg--primary-base">7 Column</p>
+                    </div>
+                    <div class="col--xl-5">
+                        <p class="bg--secondary-light-2">5 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-8">
+                        <p class="bg--primary-base">8 Column</p>
+                    </div>
+                    <div class="col--xl-4">
+                        <p class="bg--secondary-light-2">4 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-9">
+                        <p class="bg--primary-base">9 Column</p>
+                    </div>
+                    <div class="col--xl-3">
+                        <p class="bg--secondary-light-2">3 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-10">
+                        <p class="bg--primary-base">10 Column</p>
+                    </div>
+                    <div class="col--xl-2">
+                        <p class="bg--secondary-light-2">2 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-11">
+                        <p class="bg--primary-base">11 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-12">
+                        <p class="bg--primary-base">12 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Large Desktops Offsets -->
+        <section>
+            <div class="container fs--text-center">
+                <div class="row bg--white-base">
+                    <div class="col--sm-4 no-border">
+                        <h3>Large Desktops - Offset Columns</h3>
+                        <p>(Effective on <b>screens</b> >= 1440px)<br />Classname: <b>.col--xl-[1-12]-push</b></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-1-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-2-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-3-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-4-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-5-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-6-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-7-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-8-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-9-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-10-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                    <div class="col--xl-1">
+                        <p class="bg--secondary-light-2">1 Column</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col--xl-1 col--xl-11-push">
+                        <p class="bg--primary-base">1 Column</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

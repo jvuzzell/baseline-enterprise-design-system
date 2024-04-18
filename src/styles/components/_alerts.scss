@@ -1,0 +1,96 @@
+@use '../abstracts/mixins/' as *;
+
+.alert-container {
+    border-radius: var(--border-radius-25);
+}
+
+section.full-width .alert-container {
+    border-radius: 0;
+    @include mediaQuery('desktop-up') {
+        [data-alert-message] {
+            max-width: var(--max-content-width--xl);
+            padding-left: calc(-1 * var(--container--gutter--xl));
+            padding-right: calc(-1 * var(--container--gutter--xl));
+            margin: auto;
+            margin-bottom: var(--alert-gutter);
+        }
+    }
+}
+
+[data-alert-message] {
+    --alert-gutter: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 100%;
+    padding: 0 var(--alert-gutter);
+    color: var(--tertiary-base);
+    margin-bottom: var(--alert-gutter);
+
+    > .message {
+        color: var(--tertiary-base);
+        position: relative;
+        flex-grow: 1;
+    }
+
+    > .row {
+        flex-grow: 1;
+    }
+
+    .alert-msg {
+        @include mediaQuery('mobile-only') {
+            flex: 0 1 90%;
+        }
+    }
+
+    .alert-cta {
+        display: flex;
+        align-items: center;
+    }
+
+    .alert-head {
+        font-weight: var(--font-weight--medium);
+    }
+
+    &:before {
+        font-family: 'Font Awesome 6 Pro';
+        font-weight: var(--font-weight--regular);
+        margin-right: var(--icon--margin--lg);
+        font-size: var(--icon--size--lg);
+        margin-top: 2rem;
+        color: var(--tertiary-base);
+    }
+
+    .close-button {
+        color: var(--secondary-dark-2);
+        min-width: 0;
+        font-size: var(--icon--size--md);
+        font-weight: var(--font-weight--regular);
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        border: none;
+    }
+}
+
+[data-alert-message] {
+    &[data-message-type='warning']:before {
+        content: '\f06a';
+    }
+
+    &[data-message-type='error']:before {
+        content: '\f057';
+    }
+
+    &[data-message-type='message']:before {
+        content: '\f05a';
+    }
+
+    &[data-message-type='success']:before {
+        content: '\f058';
+    }
+}
+
+[data-alert-message]:not([data-status='active']) {
+    display: none;
+}

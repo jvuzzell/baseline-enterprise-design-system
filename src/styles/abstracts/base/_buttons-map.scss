@@ -1,0 +1,144 @@
+@use '../../abstracts/tokens' as *;
+
+$buttonsOnContrastingBg: (
+    'default-theme': (
+        'light-bg': (
+            'secondary': (
+                'default': (
+                    'color': var(--tertiary-base),
+                    'border-color': var(--tertiary-base),
+                ),
+                'visited': (
+                    'color': var(--tertiary-base),
+                ),
+                'hover': (
+                    'background-color': var(--btn-secondary--lgt-bg--hover),
+                ),
+                'focus-visible': (
+                    'background-color': var(--btn-secondary--lgt-bg--hover),
+                ),
+                'active': (
+                    'background-color': var(--btn-secondary--lgt-bg--active),
+                    'color': var(--white-base),
+                ),
+            ),
+            'primary': (
+                'default': (
+                    'background-color': var(--primary-base),
+                    'color': var(--white-base),
+                ),
+                'visited': (
+                    'color': var(--white-base),
+                ),
+                'hover': (
+                    'background-color': var(--primary-dark-1),
+                    'color': var(--white-base),
+                ),
+                'focus-visible': (
+                    'background-color': var(--primary-dark-1),
+                    'color': var(--white-base),
+                ),
+                'active': (
+                    'background-color': var(--primary-light-2),
+                    'color': var(--white-base),
+                ),
+                'disabled': (
+                    'background-color': var(--primary-light-3),
+                    'color': var(--white-base),
+                ),
+            ),
+            'tertiary': (
+                'default': (
+                    'color': var(--tertiary-base),
+                ),
+                'visited': (
+                    'color': var(--tertiary-base),
+                ),
+                'hover': (
+                    'background-color': var(--btn-tertiary--lgt-bg--hover),
+                    'color': var(--tertiary-base),
+                ),
+                'focus-visible': (
+                    'background-color': var(--btn-tertiary--lgt-bg--hover),
+                    'color': var(--tertiary-base),
+                ),
+                'active': (
+                    'background-color': var(--btn-tertiary--lgt-bg--active),
+                    'color': var(--tertiary-base),
+                ),
+                'disabled': (
+                    'color': var(--secondary-light-2),
+                ),
+            ),
+            '.selected': (
+                'default': (
+                    'color': var(--white-base),
+                    'background-color': var(--tertiary-base),
+                ),
+                'visited': (
+                    'color': var(--white-base),
+                ),
+                'hover': (
+                    'color': var(--tertiary-base),
+                    'background-color': var(--white-base),
+                ),
+            ),
+        ),
+        'dark-bg': (
+            'secondary': (
+                'default': (
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                ),
+                'visited': (
+                    'color': var(--white-base),
+                ),
+                'hover': (
+                    'background-color': var(--btn-secondary--drk-bg--hover),
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                ),
+                'focus-visible': (
+                    'background-color': var(--btn-secondary--drk-bg--hover),
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                ),
+                'active': (
+                    'background-color': var(--btn-secondary--drk-bg--active),
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                ),
+                'disabled': (
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                    'opacity': 60%,
+                ),
+            ),
+            'tertiary': (
+                'default': (
+                    'color': var(--white-base),
+                ),
+                'visited': (
+                    'color': var(--white-base),
+                ),
+                'hover': (
+                    'background-color': var(--btn-tertiary--drk-bg--hover),
+                    'color': var(--white-base),
+                ),
+                'focus-visible': (
+                    'background-color': var(--btn-tertiary--drk-bg--hover),
+                    'color': var(--white-base),
+                ),
+                'active': (
+                    'background-color': var(--btn-tertiary--drk-bg--active),
+                    'color': var(--white-base),
+                    'border-color': var(--white-base),
+                ),
+                'disabled': (
+                    'color': var(--white-base),
+                    'opacity': 60%,
+                ),
+            ),
+        ),
+    ),
+);

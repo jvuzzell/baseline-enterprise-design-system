@@ -1,0 +1,76 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+a {
+    cursor: pointer;
+    text-decoration: $link-default--underline;
+    font-weight: $font-weight--medium;
+
+    i {
+        color: inherit !important;
+        text-decoration: none;
+        font-weight: $font-weight--medium;
+    }
+
+    &:hover,
+    &:active {
+        text-decoration: none;
+    }
+
+    &:focus-visible {
+        outline: $outline--focus;
+        outline-offset: $outline--focus-offset;
+        border-radius: $border-radius-25;
+    }
+
+    &.disabled,
+    &[disabled] {
+        text-decoration: none;
+        pointer-events: none;
+    }
+}
+
+ol a,
+ul a,
+dl a {
+    text-decoration: none;
+    font-weight: $font-weight--regular;
+
+    &:hover,
+    &:focus-visible {
+        text-decoration: $link-default--underline;
+    }
+
+    &:focus-visible {
+        outline: $outline--focus;
+        outline-offset: $outline--focus-offset;
+        border-radius: $border-radius-25;
+    }
+}
+
+a[href^='mailto:'],
+a[href^='tel:'] {
+    font-weight: $font-weight--regular;
+    text-decoration: $link-default--underline;
+
+    &:focus-visible {
+        outline: $outline--focus;
+        outline-offset: $outline--focus-offset;
+        border-radius: $border-radius-25;
+    }
+
+    &:hover,
+    &:active {
+        font-weight: $font-weight--medium;
+    }
+
+    &:visited {
+        font-weight: $font-weight--regular;
+    }
+}
+
+/*--- Component - Anchors/Links on Contrasting Backgrounds, Styles ---*/
+
+@include colorize('links', 'light-backgrounds', #{$active-theme});
+@include colorize('links', 'dark-backgrounds', #{$active-theme});

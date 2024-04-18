@@ -1,0 +1,19 @@
+{
+  "targets": {
+    "dev": { 
+      "outputPath": "public",
+      "publicPath" : "", 
+      "assetModuleFilename" : "./public"
+    }, 
+    "prod": { 
+      "outputPath": "dist",
+      "publicPath" : "/dist", 
+      "assetModuleFilename" : "./dist"
+    }
+  }, 
+  "entryPoints" : {
+    "pages" : {
+      "directory" : ["src/pages/"] 
+    }
+  }
+}

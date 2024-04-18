@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+/*--- Utilities - Color Schemes (Foreground, Background, & Borders ) ---*/
+
+@include getColorUtilities();
+
+/*--- Utilities - Color Schemes (Gradients) ---*/
+
+.bg-outer--tertiary-base {
+    background-color: var(--tertiary-base);
+}
+
+.bg-inner--white-base {
+    background-color: var(--white-base);
+}
+
+// bg--[palette]-[color]--grad-[iteration]
+
+.bg--primary-dark-1--grad-1 {
+    background-image: linear-gradient(-84deg, var(--primary-dark-1), var(--primary-base));
+}
+
+.bg--primary-dark-2--grad-1 {
+    background-image: linear-gradient(135deg, var(--primary-dark-2), var(--primary-dark-1), var(--primary-base));
+}
+
+.bg--primary-dark-2--grad-2 {
+    background-image: linear-gradient(-82deg, var(--primary-dark-2), var(--primary-dark-1), var(--primary-base));
+}
+
+.bg--tertiary-base--grad-1 {
+    background-image: linear-gradient(0deg, var(--tertiary-base), var(--tertiary-dark-2));
+}
+
+.bg--tertiary-dark-2--grad-1 {
+    background-image: linear-gradient(132deg, var(--tertiary-dark-2), var(--tertiary-light-1));
+}
+
+.bg--tertiary-light-4--grad-1 {
+    background-image: linear-gradient(180deg, var(--tertiary-dark-2), var(--white-base));
+}
+
+.bg--tertiary-light-4--grad-2 {
+    background-image: linear-gradient(180deg, var(--tertiary-dark-2), var(--white-base) 68%);
+}

@@ -1,0 +1,54 @@
+@use '../abstracts/mixins' as *;
+
+/*--- Layout - Section Spacing ---*/
+
+/**
+ * <section>
+ * @doc-type css-framework
+ * @doc-category layout 
+ *
+ * @title Sections
+ * @description The section tag, while not custom, is the base element of the framework. Sections provide intrinsic padding, denotes as external spacing, to visually separate sections of a page. Additionally, sections act as a base for background color and curves.
+ * 
+ * @characteristic [width] Sections span full-width of the viewport 
+ * @characteristic [horizontal-spacing] Sections maintain a left and right gutter on all view ports, though it is most prominent on screen-sizes below the maximum container width
+ * @characteristic [vertical-spacing] Vertical spacing on a section and between two sections is affected by background-color, curves, and whether the section is first or the last of its type on the page
+ * @characteristic [background-color] When a background colors are applied to a section, the back
+ * @characteristic [curves] Curves can be applied to the top and bottom of a section individually or simultaneously 
+ * @characteristic [border-bottom] A bottom border can be applied to a `container` within a `section` using .bdr-bottom on the section 
+ *
+ * @uri-example-iframe /docs/iframes/sections/
+ * @uri-demo-page /demos/section-curves/
+ * @uri-related-links [Container] #content-container
+ */
+
+@include getSectionSpacing('mobile-up', 'sm');
+@include getSectionSpacing('tablet-up', 'md');
+@include getSectionSpacing('desktop-up', 'lg');
+@include getSectionSpacing('desktop-xl-up', 'xl');
+
+section[class*='bg-'] + section[class*='bg-'] {
+    margin-top: 0;
+}
+
+section:not([class*='bg-']) + section.bg--white-base {
+    margin-top: 0;
+}
+
+section.bdr-bottom {
+    .container {
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        padding-bottom: var(--sect--btm-pd--sm);
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    section.bdr-bottom {
+        .container {
+            padding-bottom: var(--sect--btm-pd--lg);
+        }
+    }
+}
+
+/*--- end ---*/

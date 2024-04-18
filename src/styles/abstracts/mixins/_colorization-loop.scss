@@ -1,0 +1,77 @@
+@use 'sass:map';
+@use 'sass:string';
+
+@use '../../abstracts/base' as *;
+@use '../../abstracts/tokens' as *;
+@use '../functions/string-replace' as *;
+
+//-- Step 1. Include specific mixin for handling colors as needed --//
+
+@use '../../abstracts/mixins/_buttons' as *;
+@use '../../abstracts/mixins/_links' as *;
+@use '../../abstracts/mixins/_tables' as *;
+@use '../../abstracts/mixins/_toggle-switch' as *;
+
+@mixin colorize($elemType, $targetBackgroundType, $theme) {
+    //-- Step 2. Point to map that defines color configuration --//
+
+    $colorConfigurations: (
+        'button': $buttonsOnContrastingBg,
+        'links': $linksOnContrastingBg,
+        'tables': $tablesOnContrastingBg,
+        'toggles': $togglesOnContrastingBg,
+    );
+
+    $elemOnContrastingBg: map.get($colorConfigurations, #{$elemType});
+    $backgroundClasses: ();
+
+    @if ($targetBackgroundType == 'dark-backgrounds') {
+        $targetBackgroundType: 'dark-bg';
+        $backgroundClasses: $darkBackgroundClasses;
+    } @else if($targetBackgroundType == 'light-backgrounds') {
+        $targetBackgroundType: 'light-bg';
+        $backgroundClasses: (
+            ''
+        ); // Placeholder because we only need the loop for lightbackgrounds to run once. Add exceptions as needed
+    } @else {
+        $backgroundClasses: $alertBackgroundClasses;
+    }
+
+    @each $bgClass in $backgroundClasses {
+        $suffix: 'drk-bg';
+        $bgSelector: '[class*=#{$bgClass}] ';
+
+        @if $targetBackgroundType == 'light-bg' {
+            $suffix: 'lgt-bg';
+            $bgSelector: '';
+        }
+
+        @if $bgClass ==
+            'bg--success-background' or
+            $bgClass ==
+            'bg--warning-background' or
+            $bgClass ==
+            'bg--error-background' or
+            $bgClass ==
+            'bg--info-background'
+        {
+            $suffix: str-replace(str-replace($bgClass, 'bg--', ''), '-background', '-bg');
+        }
+
+        @each $backgroundType, $palette in map.get($elemOnContrastingBg, $theme) {
+            @if ($backgroundType == $targetBackgroundType or $backgroundType == $suffix) {
+                //-- Step 3. Call mixin for handling color --//
+
+                @if ($elemType == 'button') {
+                    @include getButtonsOnColorBg($palette, $bgSelector, $suffix);
+                } @else if($elemType == 'links') {
+                    @include getLinksOnColorBg($palette, $bgSelector, $suffix);
+                } @else if($elemType == 'tables') {
+                    @include getTablesOnColorBg($palette, $bgSelector, $suffix);
+                } @else if($elemType == 'toggles') {
+                    @include getTogglesOnColorBg($palette, $bgSelector, $suffix);
+                }
+            } // End if - targetBackgroundType
+        } // End loop - $elemOnContrastingBg
+    } // End loop - backgroundClasses
+}

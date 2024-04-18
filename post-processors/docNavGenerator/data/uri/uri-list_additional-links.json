@@ -1,0 +1,54 @@
+{
+    "figma-guidelines": [
+        {
+            "title": "Logos",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=521-164&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=521%3A164&show-proto-sidebar=1"
+        },
+        {
+            "title": "Typography",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6550-10952&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6550%3A10952&show-proto-sidebar=1"
+        },
+        {
+            "title": "Colors",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=9268-17262&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=9268%3A17262&show-proto-sidebar=1"
+        },
+        {
+            "title": "Icons",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6901-11289&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6901%3A11289&show-proto-sidebar=1"
+        },
+        {
+            "title": "Grid System",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6929-12208&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6929%3A12208&show-proto-sidebar=1"
+        },
+        {
+            "title": "Elevation and Shaodws",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6598-11609&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6598%3A11609&show-proto-sidebar=1"
+        },
+        {
+            "title": "Buttons",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6110-10217&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6110%3A10217&show-proto-sidebar=1"
+        },
+        {
+            "title": "Links",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=7094-12083&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=7094%3A12083&show-proto-sidebar=1"
+        },
+        {
+            "title": "Form Inputs",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=7099-14221&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=7099%3A14221&show-proto-sidebar=1"
+        },
+        {
+            "title": "Cards",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=6110-10217&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=6110%3A10217&show-proto-sidebar=1"
+        },
+        {
+            "title": "Modals",
+            "uri": "https://www.figma.com/proto/iycs77Ak1awlYSOlKHSjLZ/Direct-Energy---Design-System---Digital-3.0?node-id=7099-12308&scaling=min-zoom&page-id=521%3A34&starting-point-node-id=7099%3A12308&show-proto-sidebar=1"
+        }
+    ],
+    "Font Awesome": [
+        {
+            "title": "Custom Kit",
+            "uri": "/docs/icons/"
+        }
+    ]
+}

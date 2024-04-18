@@ -1,0 +1,26 @@
+/*--- Components - Numbered List ---*/
+
+ul.numbered-list {
+    counter-reset: li;
+
+    li {
+        position: relative;
+        padding-left: 3.5rem;
+
+        &:before {
+            content: counter(li);
+            counter-increment: li;
+            height: var(--icon--size--md);
+            width: var(--icon--size--md);
+            background-color: var(--tertiary-base);
+            border-radius: var(--border-radius-100);
+            color: var(--white-base);
+            text-align: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font: var(--p-2--sm);
+            line-height: var(--p-1--spacing--sm);
+        }
+    }
+}

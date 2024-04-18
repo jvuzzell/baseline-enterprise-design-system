@@ -1,0 +1,72 @@
+@use '../abstracts/tokens' as *;
+
+nav [data-expandable-container] {
+    background-color: inherit;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+[data-expandable-container] {
+    margin-bottom: #{$v-spacing--100};
+    padding: #{$v-spacing--100} #{$h-spacing--150};
+    cursor: pointer;
+    background-color: var(--white-base);
+    color: var(--secondary-base);
+    border-radius: var(--border-radius-25);
+
+    p {
+        color: var(--secondary-base);
+    }
+
+    [data-expandable-target] {
+        overflow: hidden;
+        transition: height 250ms ease-out;
+        height: auto;
+
+        i.fa-angle-down {
+            transition: $transition--ease-25;
+            transform: rotate(0);
+        }
+    }
+
+    .accordion-content > * {
+        padding-left: #{$h-spacing--300};
+        white-space: pre-wrap;
+        color: var(--secondary-base);
+    }
+}
+
+[data-expandable-container='expanded'] {
+    [data-expandable-trigger] i.fa-angle-down {
+        transform: rotate(180deg);
+        color: var(--tertiary-base);
+    }
+    .accordion-title {
+        color: var(--tertiary-base);
+        padding-bottom: #{$v-spacing--100};
+    }
+    .accordion-content {
+        padding-bottom: calc(#{$v-spacing--150} - #{$v-spacing--100});
+    }
+}
+
+[data-expandable-container='collapsed'] [data-expandable-target] {
+    height: 0;
+}
+
+/*---Accordion Borders --- */
+.accordion--border-full [data-expandable-container] {
+    border: 1px solid var(--secondary-light-3);
+}
+
+.accordion--border-btm [data-expandable-container] {
+    border-bottom: 1px solid var(--secondary-light-3);
+}
+
+[class*='accordion--border'] [data-expandable-container] [data-expandable-trigger] i.fa-angle-down {
+    float: right;
+}
+
+.accordion--marketing [data-expandable-container] {
+    background-color: var(--tertiary-light-1);
+}

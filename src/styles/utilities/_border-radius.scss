@@ -1,0 +1,29 @@
+/*--- Utilities - Border Radius ---*/
+/**
+ * .bdr-rad
+ * @css-prefix null
+ * @doc-type css-framework
+ * @doc-category layout
+ *
+ * @title Border Radius
+ * @description The border-radius CSS property rounds the corners of an element's outer border edge.
+ * @filter-selector .bdr
+ * @uri-example-iframe /docs/iframes/borderradius/
+ */
+.bdr-rad--0 {
+    border-radius: 0;
+}
+.bdr-rad--25 {
+    border-radius: var(--border-radius-25);
+}
+.bdr-rad--50 {
+    border-radius: var(--border-radius-50);
+}
+.bdr-rad--75 {
+    border-radius: var(--border-radius-75);
+}
+.bdr-rad--100 {
+    border-radius: var(--border-radius-100);
+}
+
+/*--- end ---*/

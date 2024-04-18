@@ -1,0 +1,16 @@
+@use 'sass:map';
+
+@use '../../abstracts/base' as *;
+@use '../../abstracts/tokens' as *;
+
+@mixin mediaQuery($breakpoint) {
+    @if $breakpoint == 'mobile-up' {
+        @content;
+    } @else {
+        // Print media query enclosure
+        @media #{map.get( $breakpoints, #{$active-theme}, $breakpoint )} {
+            // Print media specific CSS
+            @content;
+        }
+    }
+}

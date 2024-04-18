@@ -1,0 +1,27 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+/*--- Utilities - Dropshadows ---*/
+/**
+ * .dropshadow
+ * @css-prefix null
+ * @doc-type css-framework
+ * @doc-category layout
+ *
+ * @title Dropshadows
+ * @description  Adds shadow effects around an element's frame. You can set multiple effects separated by commas. A box shadow is described by X and Y offsets relative to the element, blur and spread radius, and color.
+ * @characteristic [None] Main Content
+ * @characteristic [Dropshadow 1] Cards
+ * @characteristic [Dropshadow 2] Small atoms like sliders, toggles, etc
+ * @characteristic [Dropshadow 3] Buttons, interactive elements, 1st level drop down menu
+ * @characteristic [Dropshadow 4] Modals
+ * @uri-example-iframe /docs/iframes/dropshadows/
+ */
+
+@each $variant, $value in map.get($dropshadows, #{$active-theme}) {
+    .dropshadow-#{$variant} {
+        box-shadow: var(--dropshadow-#{$variant});
+    }
+}
+/*--- end ---*/

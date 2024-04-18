@@ -1,0 +1,185 @@
+@use 'sass:map';
+
+@use '../abstracts/' as *;
+
+/*--- Components - Buttons ---*/
+
+button,
+a[class*='btn'],
+[class*='btn'],
+[type='button'],
+[type='submit'],
+[type='reset'],
+[for='button'],
+[for='submit'],
+[for='reset'] {
+    /*--- Default Properties - Buttons ---*/
+
+    --btn--font: #{$btn--font};
+    --btn--min-width: #{$btn--min-width};
+    --btn--corner-radius: #{$btn--corner-radius};
+    --btn--border-width: #{$btn--border-width};
+    --btn--padding: #{$btn--button-padding};
+    --btn--padding-w-border: #{$btn--border-button-padding};
+
+    min-width: var(--btn--min-width);
+    font: var(--btn--font);
+    border-radius: var(--btn--corner-radius);
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+}
+
+a[class*='btn'] {
+    text-decoration: none;
+    border: var(--btn--border-width) solid;
+}
+
+a[class*='btn'] i {
+    margin-left: 0;
+    margin-right: var(--icon--margin--sm);
+}
+
+a[class*='btn'].icon-right i {
+    margin-left: var(--icon--margin--sm);
+    margin-right: 0;
+}
+
+/*--- Components - Buttons, Selected ---*/
+
+a[class*='btn'],
+[type='button'],
+[type='submit'],
+[type='reset'],
+label[for='button'],
+label[for='submit'],
+label[for='reset'] {
+    display: inline-block;
+    cursor: pointer;
+}
+
+label[for='button'] > i,
+label[for='submit'] > i,
+label[for='reset'] > i {
+    color: inherit !important;
+}
+
+label[for='button'] > input,
+label[for='submit'] > input,
+label[for='reset'] > input,
+label[for='button'] > input:hover,
+label[for='submit'] > input:hover,
+label[for='reset'] > input:hover,
+label[for='button'] > input:focus-visible,
+label[for='submit'] > input:focus-visible,
+label[for='reset'] > input:focus-visible,
+label[for='button'] > input:active,
+label[for='submit'] > input:active,
+label[for='reset'] > input:active {
+    background: transparent !important;
+    border: none;
+    padding: 0;
+    display: inline;
+    min-width: auto;
+    outline: none;
+}
+
+label[for='button'] > input + i,
+label[for='submit'] > input + i,
+label[for='reset'] > input + i {
+    display: inline;
+}
+
+button,
+[class*='btn'],
+[type='button'],
+[type='reset'],
+[type='submit'],
+[for='button'],
+[for='reset'],
+[for='submit'],
+button[class*='btn--secondary'],
+[class*='btn'][class*='btn--secondary'],
+[class*='btn'][class*='btn--secondary'],
+[type='button'][class*='btn--secondary'],
+[type='reset'][class*='btn--secondary'],
+[type='submit'][class*='btn--secondary'],
+[for='button'][class*='btn--secondary'],
+[for='reset'][class*='btn--secondary'],
+[for='submit'][class*='btn--secondary'] {
+    padding: var(--btn--padding-w-border);
+    border-width: #{$btn--border-width};
+    border-style: solid;
+
+    &:focus-visible {
+        outline: #{$outline--focus};
+        outline-offset: #{$outline--focus-offset};
+    }
+}
+
+button[class*='btn--primary'],
+[class*='btn'][class*='btn--primary'],
+[type='button'][class*='btn--primary'],
+[type='reset'][class*='btn--primary'],
+[type='submit'],
+[for='button'][class*='btn--primary'],
+[for='reset'][class*='btn--primary'],
+[for='submit'] {
+    padding: var(--btn--padding);
+    border: none;
+
+    &:focus-visible {
+        outline: #{$outline--focus};
+        outline-offset: #{$outline--focus-offset};
+    }
+}
+
+button[class*='btn--tertiary'],
+[class*='btn'][class*='btn--tertiary'],
+[type='button'][class*='btn--tertiary'],
+[type='reset'][class*='btn--tertiary'],
+[type='submit'][class*='btn--tertiary'],
+[for='button'][class*='btn--tertiary'],
+[for='reset'][class*='btn--tertiary'],
+[for='submit'][class*='btn--tertiary'] {
+    padding: 0;
+    min-width: unset;
+    border: none;
+
+    &:focus-visible {
+        outline: #{$outline--focus};
+        outline-offset: #{$outline--focus-offset};
+    }
+}
+
+button.selected,
+[class*='btn'].selected,
+[type='button'].selected,
+[type='submit'].selected,
+[type='reset'].selected,
+[for='button'].selected,
+[for='submit'].selected,
+[for='reset'].selected {
+    border: none;
+}
+
+/*--- Color Scheme - Buttons on Contrasting Backgrounds, Properties ---*/
+
+:root {
+    --btn-secondary--lgt-bg--hover: hsla(#{$blue--base-hsl}, #{$btn-focus--opacity});
+    --btn-secondary--lgt-bg--active: hsla(#{$blue--base-hsl}, #{$btn-active--opacity});
+
+    --btn-tertiary--lgt-bg--hover: hsla(#{$blue--base-hsl}, #{$btn-focus--opacity});
+    --btn-tertiary--lgt-bg--active: hsla(#{$blue--base-hsl}, #{$btn-active--opacity});
+
+    --btn-secondary--drk-bg--hover: hsla(#{$white-hsl}, #{$btn-focus--opacity});
+    --btn-secondary--drk-bg--active: hsla(#{$white-hsl}, #{$btn-active--opacity});
+
+    --btn-tertiary--drk-bg--hover: hsla(#{$white-hsl}, #{$btn-focus--opacity});
+    --btn-tertiary--drk-bg--active: hsla(#{$white-hsl}, #{$btn-active--opacity});
+}
+
+/*--- Color Scheme - Buttons on Contrasting Backgrounds, Styles ---*/
+
+@include colorize('button', 'light-backgrounds', #{$active-theme});
+@include colorize('button', 'dark-backgrounds', #{$active-theme});

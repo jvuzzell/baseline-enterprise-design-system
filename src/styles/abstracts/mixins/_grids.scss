@@ -1,0 +1,24 @@
+@use 'sass:map';
+@use '../../abstracts/tokens' as *;
+@use '../../abstracts/base' as *;
+@use '../mixins/breakpoints' as *;
+
+// .col--m-1 { flex: 0 1 calc((100% / 8) * 1); }
+
+@mixin getColumns($mediaQuery, $screenSize, $numberColumns) {
+    @include mediaQuery($mediaQuery) {
+        // Print grid columns
+        @for $i from 1 through $numberColumns {
+            .col--#{$screenSize}-#{$i} {
+                flex: 0 1 calc((100% /#{$numberColumns}) * #{$i});
+            }
+        }
+
+        // Print column offsets
+        @for $i from 1 through $numberColumns {
+            .col--#{$screenSize}-#{$i}-push {
+                margin-left: calc((100% /#{$numberColumns}) * #{$i});
+            }
+        }
+    }
+}

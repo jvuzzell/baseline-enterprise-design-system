@@ -1,0 +1,28 @@
+@use '../abstracts' as *;
+
+[class*='grid-divider'] [class*='col-'] {
+    position: relative;
+
+    &:not(:last-child):after {
+        border-bottom: 1px solid var(--gray-disabled);
+        content: '';
+        display: block;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        min-height: calc(var(--col-top-mg--sm) + var(--col-btm-mg--sm));
+
+        @include mediaQuery('tablet-up') {
+            position: absolute;
+            border-right: 1px solid var(--gray-disabled);
+        }
+    }
+}
+
+.grid-divider-dashed [class*='col-']:not(:last-child):after {
+    border-bottom: 1px dashed var(--gray-disabled);
+
+    @include mediaQuery('tablet-up') {
+        border-right: 1px dashed var(--gray-disabled);
+    }
+}

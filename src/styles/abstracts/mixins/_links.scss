@@ -1,0 +1,113 @@
+@use 'sass:map';
+@use 'sass:string';
+
+@use '../../abstracts/base' as *;
+@use '../../abstracts/tokens' as *;
+@use '../functions/string-replace.scss' as *;
+
+@mixin getLinksOnColorBg($palette, $bgSelector, $suffix) {
+    @each $link, $states in $palette {
+        @each $state, $properties in $states {
+            @if $link == 'default-links' {
+                @if $state == 'default' {
+                    #{$bgSelector}a,
+                    #{$bgSelector}a i {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else if $state == 'disabled' {
+                    #{$bgSelector}a[#{$state}],
+                    #{$bgSelector}a.#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}a:#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            }
+            @if $link == 'group-links' {
+                @if $state == 'default' {
+                    #{$bgSelector}ol a,
+                    #{$bgSelector}ul a,
+                    #{$bgSelector}dl a,
+                    #{$bgSelector}ol a i,
+                    #{$bgSelector}ul a i,
+                    #{$bgSelector}dl a i {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else if $state == 'disabled' {
+                    #{$bgSelector}ol a[#{$state}],
+                    #{$bgSelector}li a[#{$state}],
+                    #{$bgSelector}dl a[#{$state}],
+                    #{$bgSelector}ol a.#{$state},
+                    #{$bgSelector}li a.#{$state},
+                    #{$bgSelector}dl a.#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}ol a:#{$state},
+                    #{$bgSelector}li a:#{$state},
+                    #{$bgSelector}dl a:#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            }
+            @if $link == 'email-phone-links' {
+                @if $state == 'default' {
+                    #{$bgSelector}a[href^='mailto:'],
+                    #{$bgSelector}a[href^='tel:'] {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else if $state == 'disabled' {
+                    #{$bgSelector}a[href^='mailto:'][#{$state}],
+                    #{$bgSelector}a[href^='tel:'][#{$state}],
+                    #{$bgSelector}a[href^='mailto:'].#{$state},
+                    #{$bgSelector}a[href^='tel:'].#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                } @else {
+                    #{$bgSelector}a[href^='mailto:']:#{$state},
+                    #{$bgSelector}a[href^='tel:']:#{$state} {
+                        @each $property, $value in $properties {
+                            @if $value != null {
+                                #{$property}: #{$value};
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} // End mixin

@@ -1,0 +1,57 @@
+@use '../../abstracts/tokens' as *;
+
+// Map used to create toggle switch mixins
+
+$togglesOnContrastingBg: (
+    'default-theme': (
+        'light-bg': (
+            'slider': (
+                'default': (
+                    'background-color': var(--secondary-light-3),
+                ),
+                'disabled': (
+                    'background-color': var(--secondary-light-2),
+                ),
+            ),
+            'toggle-on': (
+                'checked': (
+                    'background-color': var(--tertiary-base),
+                ),
+                'hover': (
+                    'background-color': var(--tertiary-base),
+                ),
+                'focus': (
+                    'background-color': var(--tertiary-base),
+                ),
+                'active': (
+                    'box-shadow': var(--toggle-on--active--shadow),
+                    'background-color': var(--tertiary-base),
+                ),
+                'disabled': (
+                    'background-color': var(--secondary-light-3),
+                ),
+            ),
+            'toggle-off': (
+                'default': (
+                    'background-color': var(--white-base),
+                ),
+                'hover': (
+                    'box-shadow': var(--toggle-off--hover--shadow),
+                    'background-color': var(--white-base),
+                ),
+                'focus': (
+                    'box-shadow': var(--toggle-off--hover--shadow),
+                    'background-color': var(--white-base),
+                    'outline': $outline--focus,
+                ),
+                'active': (
+                    'box-shadow': var(--toggle-off--active--shadow),
+                    'background-color': var(--white-base),
+                ),
+                'disabled': (
+                    'background-color': var(--white-base),
+                ),
+            ),
+        ),
+    ),
+);

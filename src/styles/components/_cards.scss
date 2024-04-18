@@ -1,0 +1,142 @@
+@use '../abstracts/mixins/' as *;
+@use '../abstracts' as *;
+
+.card-container {
+    --card-body-gutter: 24px; //padding for card body
+
+    .card,
+    .card--horizontal {
+        box-shadow: $elevation-1;
+        border-radius: var(--border-radius-25);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        height: 100%;
+    }
+
+    //
+    .card-outer--horizontal {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+
+        //outer horizontal cards both img and body are equal width
+        .card-outer--img,
+        .card-outer--body {
+            flex: 0 1 50%;
+        }
+    }
+
+    .card-img img,
+    .card-outer--img img {
+        display: initial;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card-body,
+    .card-outer--body {
+        padding: var(--card-body-gutter);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        //making the button always align at bottom of card
+        button,
+        [class*='btn'] {
+            margin-top: auto;
+            align-self: flex-start;
+        }
+    }
+
+    @include mediaQuery('tablet-up') {
+        .card--horizontal {
+            flex-direction: row;
+
+            //horizontal cards both img and body are equal width
+            .card-img,
+            .card-body {
+                flex: 0 1 50%;
+            }
+        }
+    }
+
+    // card outer horizontal stacks on tablet and below screens
+    @include mediaQuery('tablet-below') {
+        .card-outer--horizontal {
+            flex-direction: column;
+
+            .card-outer--body {
+                padding: var(--card-body-gutter) 0;
+            }
+
+            // card outer images ocuupying entire screen width on tablet and below sceens
+            .card-outer--img {
+                margin: 0 calc(0px - ((var(--gutter-sm) * 4)));
+            }
+        }
+
+        // making sure that always the 1st col is image on tablet and below screens
+        .card-outer--horizontal:has(.card-outer--body:first-child) {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+// setting default card bg to white
+.card {
+    background-color: var(--white-base);
+}
+
+//scrollable cards on tab and smaller screens
+.row.card-group {
+    position: relative;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+    margin-right: 0;
+
+    [class*='col--'] {
+        display: inline-block;
+        float: none;
+
+        @include mediaQuery('large-handheld-devices-only') {
+            flex: 0 0 calc(100% / (2 + 1 / 4)); // showing 2 columns and 1/4th of 3rd column in tablet screen
+        }
+
+        @include mediaQuery('mobile-only') {
+            flex: 0 0 calc(100% / (1 + 1 / 4)); // showing 1 column and 1/4th of 2nd column in mobile screen
+        }
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    .row.card-group {
+        overflow-x: hidden; //remove the scrollable cards on desktop and higher screens
+        margin-right: 0;
+    }
+
+    .card-outer--horizontal {
+        --card-outer-body-gutter: 7.5rem;
+        --card-group--overflow: 75%;
+
+        .card-outer--body {
+            margin: var(--card-outer-body-gutter) 0;
+        }
+        .card-outer--body:first-child {
+            padding-left: 0;
+        }
+
+        .card-group {
+            width: calc(100% + var(--card-group--overflow));
+            z-index: 100;
+            justify-content: center;
+        }
+
+        .card-outer--body:not(:first-child) .card-group {
+            margin-left: calc(0% - var(--card-group--overflow));
+        }
+    }
+}

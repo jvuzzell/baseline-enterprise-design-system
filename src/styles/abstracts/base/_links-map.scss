@@ -1,0 +1,67 @@
+@use '../../abstracts/tokens' as *;
+
+// Map used to create media query mixins
+
+$linksOnContrastingBg: (
+    'default-theme': (
+        'light-bg': (
+            'default-links': (
+                'default': (
+                    'color': 'var(--tertiary-base)',
+                    'text-decoration-color': 'var(--tertiary-base)',
+                ),
+                'hover': (
+                    'color': 'var(--tertiary-dark-1)',
+                    'text-decoration-color': 'var(--tertiary-dark-1)',
+                ),
+                'focus-visible': (
+                    'color': 'var(--tertiary-dark-1)',
+                    'text-decoration-color': 'var(--tertiary-dark-1)',
+                ),
+                'active': (
+                    'color': 'var(--tertiary-light-2)',
+                    'text-decoration-color': 'var(--tertiary-light-2)',
+                ),
+                'visited': (
+                    'color': 'var(--tertiary-light-2)',
+                ),
+                'disabled': (
+                    'color': 'var(--secondary-light-3)',
+                    'text-decoration-color': 'var(--secondary-light-3)',
+                ),
+            ),
+            'email-phone-links': (
+                'active': (
+                    'color': 'var(--tertiary-base)',
+                    'text-decoration-color': 'var(--tertiary-base)',
+                ),
+            ),
+        ),
+        'dark-bg': (
+            'default-links': (
+                'default': (
+                    'color': 'var(--white-base)',
+                    'text-decoration-color': 'var(--white-base)',
+                ),
+                'hover': (
+                    'color': 'var(--white-base)',
+                    'text-decoration-color': 'var(--white-base)',
+                    'opacity': 75%,
+                ),
+                'focus-visible': (
+                    'color': 'var(--white-base)',
+                    'text-decoration-color': 'var(--white-base)',
+                    'opacity': 75%,
+                ),
+                'active': (
+                    'color': 'var(--white-base)',
+                    'text-decoration-color': 'var(--white-base)',
+                ),
+                'disabled': (
+                    'color': 'var(--white-base)',
+                    'text-decoration-color': 'var(--white-base)',
+                ),
+            ),
+        ),
+    ),
+);

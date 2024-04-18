@@ -1,0 +1,104 @@
+@use 'sass:map';
+
+@use '../abstracts' as *;
+
+/*--- Components - Tables  ---*/
+
+table {
+    display: table;
+    border-spacing: $table--border-spacing;
+    border-style: solid;
+    border-width: $table--border-width;
+    width: fit-content;
+
+    tr {
+        border-bottom-style: solid;
+        border-bottom-width: $table--border-width;
+
+        &.thead {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+            border-bottom-style: solid;
+            border-bottom-width: $table-heading--border-width;
+
+            td {
+                padding: $table-cell--padding;
+                font: $table-head--font;
+                letter-spacing: $table-head--line-height;
+                border-right: none;
+            }
+        }
+    }
+
+    td {
+        padding: $table-cell--padding;
+        font: $table-body--font;
+        letter-spacing: $table-body--line-height;
+    }
+
+    .header-frozen {
+        max-height: 286px; // Set the max height for the table body
+        overflow-y: auto; // Enable header frozen
+    }
+}
+
+@include mediaQuery('desktop-up') {
+    .table--layout-fixed {
+        table-layout: fixed;
+        width: 100%;
+
+        tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+    }
+
+    tbody {
+        max-height: 286px;
+        overflow-y: auto;
+        display: block;
+    }
+}
+
+@include mediaQuery('tablet-below') {
+    .table--responsive {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .header-frozen {
+        display: block;
+    }
+
+    table.table--transpose {
+        tr.thead {
+            position: sticky;
+            border-bottom: none;
+            left: 0;
+            display: inline-block;
+            border-right-width: $table-heading--border-width;
+            border-right-style: solid;
+
+            td {
+                display: block;
+            }
+        }
+
+        tr {
+            display: inline-block;
+            border-bottom: none;
+        }
+
+        td {
+            display: block;
+            border-bottom-style: solid;
+            border-bottom-width: $table--border-width;
+        }
+    }
+}
+
+@include colorize('tables', 'light-backgrounds', #{$active-theme});

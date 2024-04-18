@@ -1,0 +1,143 @@
+@use 'sass:map';
+@use '../../abstracts/tokens' as *;
+@use '../../abstracts/base' as *;
+@use '../mixins/breakpoints' as *;
+
+//-- Sections ---//
+@mixin getSectionSpacing($mediaQuery, $screenSize) {
+    // Print media query
+    @include mediaQuery(#{$mediaQuery}) {
+        // Fixed Output
+        section {
+            margin-top: var(--sect--top-pd--#{$screenSize});
+            padding-left: calc(var(--gutter-#{$screenSize}) * 4);
+            padding-right: calc(var(--gutter-#{$screenSize}) * 4);
+        }
+        section:first-of-type {
+            margin: 0;
+            padding-top: var(--sect--top-pd--#{$screenSize});
+        }
+        section:last-of-type {
+            padding-bottom: var(--sect--btm-pd--#{$screenSize});
+        }
+
+        section.full-width {
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        // Dynamic Output
+        @each $type, $categories in map.get($spacing, #{$active-theme}, 'section') {
+            @if #{$type} != '' {
+                $count: 0;
+                // Output styles for padding top and bottom for sections
+                // at screen sizes "sm," "md," "lg," and "xl"
+                section[class*='#{$type}'],
+                footer[class*='#{$type}'] {
+                    @each $variant, $sizes in $categories {
+                        @each $size, $value in $sizes {
+                            @if $size == #{$screenSize} {
+                                @if $count == 0 {
+                                    padding-top: var(--sect-#{$type}--#{$variant}--#{$size});
+                                    $count: 1;
+                                } @else {
+                                    padding-bottom: var(--sect-#{$type}--#{$variant}--#{$size});
+                                    $count: 0;
+                                }
+                            }
+                        }
+                    }
+                } // end print section style
+            }
+        }
+
+        // Fixed Output
+        section[class*='bg-top-curv'][class*='bg-btm-curv'] {
+            padding-top: var(--sect--top-curv--top-pd--#{$screenSize});
+            padding-bottom: var(--sect--btm-curv--btm-pd--#{$screenSize});
+        }
+    }
+}
+
+//-- Grid - Gutters ---//
+@mixin getGridGutters($mediaQuery, $screenSize) {
+    // Print media query
+    @include mediaQuery(#{$mediaQuery}) {
+        $count: 0;
+        // Output CSS for gutters at screen sizes "sm," "md," "lg," or "xl"
+        @each $size, $value in map.get($spacing, #{$active-theme}, 'gutter') {
+            @if $size == #{$screenSize} {
+                [class*='col'],
+                [class*='col--'] {
+                    padding-left: var(--gutter-#{$size});
+                    padding-right: var(--gutter-#{$size});
+                }
+            }
+        }
+    }
+}
+
+//-- Grid - Margin Bottoms ---//
+@mixin getColumnMgBtm($mediaQuery, $screenSize) {
+    // Print media query
+    @include mediaQuery(#{$mediaQuery}) {
+        $count: 0;
+        [class*='col'],
+        [class*='col--'] {
+            // Output CSS for margin bottom at screen sizes "sm," "md," "lg," or "xl"
+            @each $type, $variants in map.get($spacing, #{$active-theme}, 'column') {
+                @each $size, $value in $variants {
+                    @if $size == #{$screenSize} {
+                        @if $count == 0 {
+                            margin-top: var(--col-#{$type}--#{$size});
+                            $count: 1;
+                        } @else {
+                            margin-bottom: var(--col-#{$type}--#{$size});
+                            $count: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//-- Margins & Padding Utilities ---//
+$dir: (
+    'top': 't',
+    'right': 'r',
+    'bottom': 'b',
+    'left': 'l',
+);
+
+@mixin getUtilitySpacing($mediaQuery, $screenSize, $type) {
+    // Print media query
+    @include mediaQuery(#{$mediaQuery}) {
+        // String manipulation removes extra hyphen when target size is blank
+        $screenSize: -#{$screenSize};
+
+        @if ($screenSize == '-') {
+            $screenSize: #{''};
+        }
+
+        // Prints - padding or margin
+        //          * top, right, bottom, left
+        //          * limited to screen sizes "sm," "md," "lg," or "xl"
+        // in intervals of 50 up to 1000
+        @for $i from 0 through 1000 {
+            @if (($i % 50) == 0) {
+                @each $d, $abr in $dir {
+                    // Output Styles - Example: .pd-r--70 { padding-right: 7rem; }
+                    .#{$type}-#{$abr}-#{$screenSize}-#{($i * 0.1)} {
+                        @if ($type == 'mg') {
+                            margin-#{$d}: 1rem * ($i * 0.01);
+                        }
+                        @if ($type == 'pd') {
+                            padding-#{$d}: 1rem * ($i * 0.01);
+                        }
+                    }
+                }
+            }
+        } // end for loop
+    } // end media query
+}

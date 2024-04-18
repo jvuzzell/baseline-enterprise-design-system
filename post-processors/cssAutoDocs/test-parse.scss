@@ -1,0 +1,130 @@
+:root {
+    /**
+   * Description: Styles for the footer section
+   * @css-prefix null
+   *
+   * @author David Johnson
+   * @version 1.5
+   */
+
+    --fa-root: #ffff;
+
+    /*--- end ---*/
+}
+
+/**
+ * Description: Styles for the footer section
+ * @css-prefix :root
+ * @css-prefix header
+ * @css-variable-prefix --fa 
+ *
+ * @author David Johnson
+ * @version 1.5
+ */
+
+:root {
+    --fa-foo: #555;
+}
+
+.header .site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/*--- end ---*/
+
+/**
+ * Description: Styles for the footer section
+ * @css-prefix $fa-
+ *
+ * @author David Johnson
+ * @version 1.5
+ */
+
+$fa-root: #ffff;
+
+/*--- end ---*/
+
+/**
+ * Description: Styles for the header section
+ * @css-prefix .header .site-header
+ * @css-prefix .header .header-container
+ * @css-prefix .header .logo
+ *
+ * @author John Doe
+ * @version 1.0
+ */
+
+.header .site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.header .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/*--- end ---*/
+
+/**
+ * Description: Styles for the main section
+ * @css-prefix .cont
+ * @css-prefix .fa--
+
+ * @author Jane Smith
+ * @version 2.0
+ */
+
+.fa--moonshine {
+    width: 100px;
+}
+
+.fa--rayman-frying-pan {
+    transform: translateX(-50%);
+}
+
+.content {
+    margin: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.main .sidebar {
+    margin: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/*--- end ---*/
+
+/**
+ * Description: Styles for the footer section
+ * @css-prefix .footer .footer-container
+ * @css-prefix .footer .footer-link
+ *
+ * @author David Johnson
+ * @version 1.5
+ */
+
+.footer .footer-container {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+}
+
+.footer .footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*--- end ---*/

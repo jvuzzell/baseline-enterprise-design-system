@@ -1,0 +1,12 @@
+@use '../abstracts/mixins/' as *;
+
+@include getUtilitySpacing('mobile-up', '', 'mg');
+
+@include getUtilitySpacing('mobile-only', 'sm', 'mg');
+@include getUtilitySpacing('large-handheld-devices-only', 'md', 'mg');
+@include getUtilitySpacing('desktop-only', 'lg', 'mg');
+@include getUtilitySpacing('desktop-xl-only', 'xl', 'mg');
+
+.center-block {
+    margin: 0 auto;
+}

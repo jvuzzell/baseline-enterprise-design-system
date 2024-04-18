@@ -1,0 +1,11 @@
+[class*='col--'] {
+    border: 1px dashed var(--success-element);
+}
+
+[class*='row']:not([class*='bg--white-base']) {
+    border: 1px dashed var(--error-element);
+}
+
+.no-border {
+    border: none;
+}

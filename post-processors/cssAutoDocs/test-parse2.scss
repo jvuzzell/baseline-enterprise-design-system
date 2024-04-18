@@ -1,0 +1,36 @@
+/**
+ * Description: Styles for the footer section 
+ * @title Test 
+ * @description This is a test
+ * @filter-selector .row.even-3--sm 
+ * @filter-css-var --
+ * @filter-scss-var $
+ * 
+ */
+
+:root {
+    --foo-bar: #fff;
+    --green-bar: #fff;
+}
+
+$deep-sea: #fff;
+$makeshit: blue;
+
+.row.even-3--sm > [class*='col'] {
+    background-color: #555;
+    color: #fff;
+    padding: var(--red-shift);
+}
+
+.footer > .footer-container {
+    background-color: #555;
+    color: #fff;
+    padding: var(--red-shift);
+}
+
+.footer .footer-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+/*--- end ---*/

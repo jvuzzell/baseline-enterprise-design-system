@@ -1,0 +1,222 @@
+//-- Breakpoints
+
+// Desktop - xl
+$desktop-xl--min-width: 1900px;
+
+// Desktop - lg
+$desktop--max-width: 1899.998px;
+$desktop--min-width: 992px;
+
+// Tablet - md
+$tablet--max-width: 991.998px;
+$tablet--min-width: 768px;
+
+// Mobile Landscape
+$mobile-landscape--max-width: 767.998px;
+$mobile-landscape--min-width: 576px;
+
+// Mobile - sm
+$mobile--max-width: 575.998px;
+$mobile--min-width: 0px;
+
+//-- Content Width
+
+$content--full-width: 100%;
+$content--width-sm: 540px;
+$content--width-md: 800px;
+$content--width-lg: 1236px;
+$content--width-xl: 1440px;
+
+//-- Color Schemes
+
+$white-hsl: 0, 0%, 100%;
+$black-hsl: 0, 0%, 0%;
+
+$orange--base-hsl: 19, 100%, 50%;
+$orange--light-1-hsl: 15, 75%, 97%;
+$orange--light-2-hsl: 19, 100%, 70%;
+$orange--light-3-hsl: 19, 100%, 61%;
+$orange--dark-1-hsl: 19, 100%, 39%;
+$orange--dark-2-hsl: 19, 100%, 30%;
+
+$gray--base-hsl: 0, 1%, 26%;
+$gray--light-1-hsl: 0, 0%, 98%;
+$gray--light-2-hsl: 0, 4%, 95%;
+$gray--light-3-hsl: 0, 1%, 77%;
+$gray--dark-1-hsl: 0, 0%, 58%;
+$gray--dark-2-hsl: 0, 0%, 40%;
+
+$blue--base-hsl: 195, 100%, 23%;
+$blue--light-1-hsl: 200, 24%, 93%;
+$blue--light-2-hsl: 195, 100%, 29%;
+$blue--light-3-hsl: 195, 100%, 39%;
+$blue--dark-1-hsl: 195, 100%, 12%;
+$blue--dark-2-hsl: 195, 100%, 18%;
+
+$red--base-hsl: 9, 100%, 37%;
+$red--dark-1-hsl: 354, 61%, 28%;
+$red--light-1-hsl: 355, 70%, 91%;
+
+$yellow--base-hsl: 35, 97%, 57%;
+$yellow--dark-1-hsl: 45, 94%, 27%;
+$yellow--light-1-hsl: 46, 100%, 90%;
+
+$green--base-hsl: 140, 100%, 27%;
+$green--dark-1-hsl: 133, 61%, 19%;
+$green--light-1-hsl: 134, 41%, 88%;
+
+//-- Typography
+
+$font-stack--sans-serif: 'Roboto', sans-serif;
+$base-font-size: 62.5%; // Equivalent of 10px when placed on HTML tag
+
+$font-size--mob-lg-1: 3.4rem;
+$font-size--dsk-lg-1: 4.8rem;
+
+$line-height--mob-lg-1: 4rem;
+$line-height--dsk-lg-1: 5.6rem;
+
+$letter-spacing--mob-lg-1: 0rem;
+$letter-spacing--dsk-lg-1: 0rem;
+
+$font-size--mob-lg-2: 2.4rem;
+$font-size--dsk-lg-2: 3.2rem;
+
+$line-height--mob-lg-2: 3.2rem;
+$line-height--dsk-lg-2: 4rem;
+
+$letter-spacing--mob-lg-2: 0rem;
+$letter-spacing--dsk-lg-2: 0rem;
+
+$font-size--mob-lg-3: 2rem;
+$font-size--dsk-lg-3: 2.4rem;
+
+$line-height--mob-lg-3: 2.8rem;
+$line-height--dsk-lg-3: 3.2rem;
+
+$letter-spacing--mob-lg-3: 0.015rem;
+$letter-spacing--dsk-lg-3: 0.015rem;
+
+$font-size--mob-lg-4: 1.8rem;
+$font-size--dsk-lg-4: 2rem;
+
+$line-height--mob-lg-4: 2.6rem;
+$line-height--dsk-lg-4: 2.8rem;
+
+$letter-spacing--mob-lg-4: 0.015rem;
+$letter-spacing--dsk-lg-4: 0.015rem;
+
+$font-size--mob-lg-5: 1.6rem;
+$font-size--dsk-lg-5: 1.8rem;
+
+$line-height--mob-lg-5: 2.4rem;
+$line-height--dsk-lg-5: 2.6rem;
+
+$letter-spacing--mob-lg-5: 0.015rem;
+$letter-spacing--dsk-lg-5: 0.015rem;
+
+$font-size--mob-lg-6: 1.4rem;
+$font-size--dsk-lg-6: 1.4rem;
+
+$line-height--mob-lg-6: 2rem;
+$line-height--dsk-lg-6: 2rem;
+
+$letter-spacing--mob-lg-6: 0.01rem;
+$letter-spacing--dsk-lg-6: 0.01rem;
+
+$font-size--mob-sm-1: 1.6rem;
+$font-size--dsk-sm-1: 1.6rem;
+
+$line-height--mob-sm-1: 2.4rem;
+$line-height--dsk-sm-1: 2.4rem;
+
+$letter-spacing--mob-sm-1: 0.05rem;
+$letter-spacing--dsk-sm-1: 0.05rem;
+
+$font-size--mob-sm-2: 1.4rem;
+$font-size--dsk-sm-2: 1.4rem;
+
+$line-height--mob-sm-2: 2rem;
+$line-height--dsk-sm-2: 2.2rem;
+
+$letter-spacing--mob-sm-2: 0.025rem;
+$letter-spacing--dsk-sm-2: 0.025rem;
+
+$font-size--mob-sm-3: 1.2rem;
+$font-size--dsk-sm-3: 1.2rem;
+
+$line-height--mob-sm-3: 1.8rem;
+$line-height--dsk-sm-3: 2rem;
+
+$letter-spacing--mob-sm-3: 0.025rem;
+$letter-spacing--dsk-sm-3: 0.04rem;
+
+//-- Font Weight
+
+$font-weight--regular: 400;
+$font-weight--medium: 500;
+$font-weight--bold: 700;
+
+//-- List Styles
+
+$list-item-spacing-s--sm: 0.8rem;
+$list-item-spacing-s--md: 0.8rem;
+$list-item-spacing-s--lg: 0.8rem;
+$list-item-spacing-s--xl: 0.8rem;
+
+$list-item-spacing-m--sm: 1.6rem;
+$list-item-spacing-m--md: 1.6rem;
+$list-item-spacing-m--lg: 1.6rem;
+$list-item-spacing-m--xl: 1.6rem;
+
+$list-item-spacing-l--sm: 1.6rem;
+$list-item-spacing-l--md: 1.6rem;
+$list-item-spacing-l--lg: 1.6rem;
+$list-item-spacing-l--xl: 1.6rem;
+
+//-- Vertical Spacing
+
+$v-spacing--25: 0.4rem;
+$v-spacing--50: 0.75rem;
+$v-spacing--100: 1.6rem; // 100% of base font-size
+$v-spacing--150: 2.4rem;
+$v-spacing--200: 3.2rem;
+$v-spacing--300: 4.8rem;
+$v-spacing--400: 6.4rem;
+$v-spacing--500: 8rem;
+
+//-- Horizontal Spacing
+$h-spacing--25: 0.4rem;
+$h-spacing--50: 0.75rem;
+$h-spacing--60: 1rem;
+$h-spacing--100: 1.6rem; // 100% of base font-size
+$h-spacing--150: 2.4rem;
+$h-spacing--200: 3.2rem;
+$h-spacing--300: 4.8rem;
+$h-spacing--400: 6.4rem;
+$h-spacing--500: 8rem;
+
+//-- Border-radius
+
+$border-radius-25: 0.5rem;
+$border-radius-50: 0.8rem;
+$border-radius-75: 1.2rem;
+$border-radius-100: 1.6rem;
+
+//-- Dropshadows
+
+$elevation-1: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 2px 1px 0 rgba(0, 0, 0, 0.12), 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+$elevation-2: 0 8px 10px 0 rgba(0, 0, 0, 0.14), 0 3px 14px 0 rgba(0, 0, 0, 0.12), 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+$elevation-3: 0 9px 12px 0 rgba(0, 0, 0, 0.14), 0 3px 16px 0 rgba(0, 0, 0, 0.12), 0 5px 6px 0 rgba(0, 0, 0, 0.2);
+
+$elevation-4: 0 16px 24px 0 rgba(0, 0, 0, 0.14), 0 6px 30px 0 rgba(0, 0, 0, 0.12), 0 8px 10px 0 rgba(0, 0, 0, 0.2);
+
+//-- Transitions
+
+$transition--ease-10: all 100ms ease;
+$transition--ease-15: all 175ms ease;
+$transition--ease-25: all 250ms ease;
+$transition--ease-40: all 400ms ease;
+$transition--ease-50: all 500ms ease;

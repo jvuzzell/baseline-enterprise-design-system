@@ -1,0 +1,67 @@
+@use '../../abstracts/tokens' as *;
+
+$tablesOnContrastingBg: (
+    'default-theme': (
+        'light-bg': (
+            // Transpose table map for  mobile and tablet screens
+            'tablet-below':
+                (
+                    'table--transpose': (
+                        'table': (
+                            'border-color': var(--secondary-light-3),
+                        ),
+                        'thead': (
+                            'tr': (
+                                'color': var(--tertiary-base),
+                                'border-right-color': var(--tertiary-base),
+                            ),
+                            'td': (
+                                'background-color': var(--tertiary-light-1),
+                            ),
+                            'td:nth-child(even)': (
+                                'background-color': var(--tertiary-light-1),
+                            ),
+                        ),
+                        'tbody': (
+                            'td': (
+                                'border-bottom-color': var(--secondary-light-3),
+                            ),
+                            'tr:nth-child(even)': (
+                                'background-color': 'transparent',
+                            ),
+                            'td:nth-child(even)': (
+                                'background-color': var(--secondary-light-2),
+                            ),
+                        ),
+                    ),
+                ),
+
+            // Default table  map for all screens
+            'mobile-up':
+                (
+                    'table--default': (
+                        'table': (
+                            'border-color': var(--secondary-light-3),
+                        ),
+                        'thead': (
+                            'tr': (
+                                'color': var(--tertiary-base),
+                                'border-bottom-color': var(--tertiary-base),
+                            ),
+                            'td': (
+                                'background-color': var(--tertiary-light-1),
+                            ),
+                        ),
+                        'tbody': (
+                            'tr': (
+                                'border-bottom-color': var(--secondary-light-3),
+                            ),
+                            'tr:nth-child(even)': (
+                                'background-color': var(--secondary-light-1),
+                            ),
+                        ),
+                    ),
+                ),
+        ),
+    ),
+);
