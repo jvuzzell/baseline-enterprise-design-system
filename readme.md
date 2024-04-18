@@ -3,8 +3,8 @@ Welcome to the Enterprise Design System project, a robust development template f
  
 ## Table of Contents
 1. [Features](#features)
-1. [Project Structure](#projec
-1. [Getting Started](#getting-started)t-structure)
+1. [Project Structure](#project-structure)
+1. [Getting Started](#getting-started)
 1. [Usage](#usage)
 1. [Development](#development)
 
