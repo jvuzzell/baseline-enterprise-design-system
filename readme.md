@@ -1,5 +1,19 @@
 # WIP - Enterprise Design System (BEDS)
 Welcome to the Enterprise Design System project, a robust development template for building scalable and efficient web applications using HTML, CSS, and JavaScript with the power of Webpack and npm. 
+ 
+## Table of Contents
+1. [Features](#features)
+1. [Project Structure](#projec
+1. [Getting Started](#getting-started)t-structure)
+1. [Usage](#usage)
+1. [Development](#development)
+
+## Additional Documentation
+1. [Post Processing Overview](docs/post-processing/Post-Processing-Overview.md)
+1. [CSS Auto Docs](docs/post-processing/CSS-AutoDocs.md)
+1. [EDS Nav Generator](docs/post-processing/EDS-Nav-Generator.md)
+1. [Search Aggregator](docs/post-processing/Search-Aggregator.md)
+1. [CSS Icon Class Scanner](docs/post-processing/CSS-Icon-Class-Scanner.md)
 
 ## Demo
 ![EDS Framework Demo](/docs/assets/20240418_eds-basic-site-demo.jpg "EDS Framework Demo")
@@ -69,7 +83,7 @@ cd rce-app-starter
 npm install
 ```
 
-### Running the Project
+## Usage
 
 - **Development mode:** This will start a dev server with hot reloading.
 ```bash
@@ -90,17 +104,18 @@ npm run watch
 npm run deploy
 ```
 
-### Development
+## Development
 
-#### Adding a New Page
+### Adding a New Page
 Create a new HTML and corresponding JS file in the `src/pages/` directory.
 
-#### Styles
+### Styles
 Base styles, utilities, components, and layout-specific styles are placed in respective folders within `src/styles/`.
 Use the `main.scss` file to import other stylesheets.
 
-#### Components
+### Components
 JavaScript components are located in `src/components/`.
 Each component should be modular and reusable across different parts of the application.
 
-To learn how to use the RCE framework, review the documentation here: https://github.com/jvuzzell/RCE-Framework.
+## Notes 
+The EDS user interface is powered by the RCE framework. To learn how to use the RCE framework, review the documentation here: https://github.com/jvuzzell/RCE-Framework.
