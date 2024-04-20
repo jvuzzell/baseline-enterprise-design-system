@@ -70,7 +70,7 @@ a[href^='tel:'] {
     }
 }
 
-/*--- Component - Anchors/Links on Contrasting Backgrounds, Styles ---*/
+/*--- Color Scheme - Anchors/Links on Contrasting Backgrounds, Styles ---*/
 
 @include colorize('links', 'light-backgrounds', #{$active-theme});
 @include colorize('links', 'dark-backgrounds', #{$active-theme});

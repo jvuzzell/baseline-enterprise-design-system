@@ -101,4 +101,5 @@ table {
     }
 }
 
+/*--- Color Scheme - Tables  ---*/
 @include colorize('tables', 'light-backgrounds', #{$active-theme});
