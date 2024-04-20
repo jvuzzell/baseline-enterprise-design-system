@@ -1,4 +1,4 @@
-# WIP - Enterprise Design System (BEDS)
+# WIP - Baseline Enterprise Design System (BEDS)
 Welcome to the Enterprise Design System project, a robust development template for building scalable and efficient web applications using HTML, CSS, and JavaScript with the power of Webpack and npm. 
  
 ## Table of Contents
@@ -9,6 +9,7 @@ Welcome to the Enterprise Design System project, a robust development template f
 1. [Development](#development)
 
 ## Additional Documentation
+1. [SCSS Development](docs/scss-development/scss-framework.md)
 1. [Post Processing Overview](docs/post-processing/Post-Processing-Overview.md)
 1. [CSS Auto Docs](docs/post-processing/CSS-AutoDocs.md)
 1. [EDS Nav Generator](docs/post-processing/EDS-Nav-Generator.md)
