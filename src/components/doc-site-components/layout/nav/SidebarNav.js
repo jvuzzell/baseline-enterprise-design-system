@@ -1,4 +1,4 @@
-import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus-js/Factory';
+import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
 
 (function(
     Factory,
@@ -22,7 +22,7 @@ import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus
         hooks : {
 
             onMount : function( state ) { 
-                this.component().dispatch.insertTemplate( '#sidebar' );
+                this.component().dispatch.insertTemplate( '#menu-items' );
                 this.component().dispatch.updateHeading( state.heading);
             }, 
 
@@ -45,7 +45,7 @@ import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus
         },
         template : `
             <div>
-                <h1 data-heading></h1>
+                <h3 data-heading>Side bar</h3>
             </div>
         `, 
         debug: true

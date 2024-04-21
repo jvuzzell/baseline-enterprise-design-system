@@ -1,5 +1,5 @@
 @use '../../../src/styles/main.scss' as *;
-@use '../../../src/styles/abstracts/tokens/design-tokens' as *;
+@use '../../../src/styles/abstracts/tokens/base-design-tokens' as *;
 
 body {
     background-color: var(--primary-base);
