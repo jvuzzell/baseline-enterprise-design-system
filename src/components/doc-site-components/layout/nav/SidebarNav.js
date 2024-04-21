@@ -28,14 +28,14 @@ import { initExpandables } from 'expandables-js';
                 <div
                     data-expandable-container="collapsed"
                     data-expandable-id=""
-                    class="expandable-container"
+                    class="expandable-container bg--primary-base"
                 >
                     <button
                         data-expandable-trigger="click"
                         class="btn--tertiary icon-right h-5 fw--semibold"
                         data-section-title
                     >
-                        <i class="fa fa-angle-right"></i>
+                        <i class="fa fa-chevron-right"></i>
                     </button>
                     <div
                         class="expandable-content"
