@@ -11,7 +11,8 @@
         "format": "prettier --write .",
         "precommit": "lint-staged",
         "prepare": "husky install",
-        "watch": "webpack --mode development --env env=dev watch=true"
+        "watch": "webpack --mode development --env env=dev watch=true",
+        "post-process": "node post-processors/run-post-processes.js"
     },
     "keywords": [],
     "author": "Joshua Uzzell <josh.uzzell@gmail.com>",
