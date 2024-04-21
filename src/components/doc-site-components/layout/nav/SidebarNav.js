@@ -1,60 +1,145 @@
-import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
+import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus-js/Factory';
+import sidebarNavigationData from '../../../../content/data/sidebar-navigation.json';
+import { Expandables, initExpandables } from 'expandables-js';
 
 (function(
     Factory,
-    ComponentConfigs
+    ComponentConfigs, 
+    initExpandables
 ){
     let initialState = {
         componentName : 'sidebarNav', 
-        heading : "Sidebar Nav 2"
+        sidebarNavData : sidebarNavigationData
     };
 
     // Step 1 - Configuration
-    ComponentConfigs.exampleComponent = {
+    ComponentConfigs.sidebarNavigation = {
 
-        eventBus : [ 'GlobalComponentEvents' ],
+        eventBus : [],
         state : initialState, 
         props : {
             eventListeners: {
 
-            }
+            }, 
+            tmplTopLevelNavItem: `
+                <li
+                    class="mg-b--0" 
+                    data-top-level-nav-item
+                ></li>
+            `, 
+            tmplNestedMenu: `
+                <div
+                    data-expandable-container="collapsed"
+                    data-expandable-id=""
+                    class="expandable-container"
+                >
+                    <button
+                        data-expandable-trigger="click"
+                        class="btn--tertiary icon-right h-5 fw--semibold"
+                        data-section-title
+                    >
+                        <i class="fa fa-angle-right"></i>
+                    </button>
+                    <div
+                        class="expandable-content"
+                        data-expandable-target=""
+                    >
+                        <ul 
+                            class="mg-t--10"
+                            data-nest-menu
+                        ></ul>
+                    </div>
+                </div>
+            `,
+            tmplLink: `
+                <li>
+                    <a
+                        class="mg-b--10 display-block"
+                    >
+                    </a>
+                </li>
+            `
         },
         hooks : {
+            beforeCreate : function( state, inlineTemplateNode ) { 
+                let sidebarNavConfig    = ComponentConfigs.sidebarNavigation;
+                let props               = sidebarNavConfig.props;
+                let sidebarNode         = inlineTemplateNode.cloneNode();
+                let tmplTopLevelNavItem = props.tmplTopLevelNavItem;
+                let tmplNestedMenu      = props.tmplNestedMenu;
+                let tmplLink            = props.tmplLink;
+ 
+                Object.entries(state.sidebarNavData).map(function([sectionTitle, sectionItems]) {
+                    let topLevelNavNode = Factory.templateToHTML( tmplTopLevelNavItem );
+                    let nestedMenuNode  = Factory.templateToHTML( tmplNestedMenu );
+                    
+                    nestedMenuNode.querySelector('[data-section-title').innerHTML += sectionTitle;
+                    nestedMenuNode.setAttribute('data-expandable-id','uri-' + sectionTitle);
+                    nestedMenuNode.querySelector('[data-expandable-target]').setAttribute('data-expandable-target', 'uri-' + sectionTitle);
 
-            onMount : function( state ) { 
-                this.component().dispatch.insertTemplate( '#menu-items' );
-                this.component().dispatch.updateHeading( state.heading);
-            }, 
+                    sectionItems.map((item, index) => {
+                        let linkNode = Factory.templateToHTML( tmplLink );
+                        let anchor = linkNode.querySelector('a'); 
+                        
+                        anchor.href = (() => {
+                            return sectionTitle === 'css-framework' ||
+                                   sectionTitle === 'design-tokens' ||
+                                   sectionTitle === 'demos'
+                                        ? sectionTitle !== 'demos'
+                                            ? '/docs/' + sectionTitle + '/' + item.uri
+                                            : '/demos' + item.uri
+                                        : item.uri
+                        })(); 
+                        
+                        anchor.target = (() => {
+                            return sectionTitle !== 'css-framework' &&
+                                   sectionTitle !== 'design-tokens' &&
+                                   sectionTitle !== 'Font Awesome'
+                                        ? '_blank'
+                                        : ''
+                        })
 
-            onUpdate : function( delta ) { 
-                this.component().dispatch.updateHeading( delta.heading);
+                        anchor.innerHTML = sidebarNavConfig.dispatch.capitalizeWords(item.title);
+
+                        nestedMenuNode.querySelector('[data-nest-menu]').appendChild(linkNode);
+                    })
+
+                    sidebarNode.appendChild(
+                        topLevelNavNode.appendChild( nestedMenuNode )
+                    );
+                }); 
+
+                inlineTemplateNode.innerHTML = sidebarNode.innerHTML;
+            },
+            onMount : function( state ) {
+                initExpandables();
             }
-
+            
         },  
         dispatch : {
-            
-            commitHeading : function( inputValue ) {
-                this.component().commit.state({ 'heading' : inputValue });
-            },
 
-            updateHeading : function( heading ) { 
-                let node = this.component().get.inlineTemplateNode();
-                node.querySelector('[data-heading]').innerText = heading;
-            },
+            /**
+             * Capitalizes words within the sidebar navigation data object
+             * 
+             * @param {string} str 
+             * @returns {string}
+             */
+            capitalizeWords : (str) => {
+                return str
+                    .split('-')
+                    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+                    .join(' ');
+            }
 
         },
-        template : `
-            <div>
-                <h3 data-heading>Side bar</h3>
-            </div>
-        `, 
         debug: true
     }
 
     // Step 2 - Registration
-    Factory.registerComponent( ComponentConfigs.exampleComponent );
+    Factory.registerComponent( ComponentConfigs.sidebarNavigation );
 
 })(
     Factory,
-    ComponentConfigs
+    ComponentConfigs,
+    initExpandables
 );
