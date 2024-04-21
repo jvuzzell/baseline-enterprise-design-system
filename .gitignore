@@ -9,3 +9,7 @@ deploy/targets
 /.bashrc 
 .git
 .npmrc
+src/pages/*/*/*.html
+src/pages/*/*.html
+src/pages/*.html
+!src/pages/demos/*/*.html

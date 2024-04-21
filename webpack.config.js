@@ -12,7 +12,34 @@ let entryPoints = {};
 
 while (directories.length > 0) {
     let directory = directories.pop();
+
+    // Skip processing for any directory named 'demo'
+    if (directory.includes('/demo/') || directory.endsWith('/demo')) {
+        continue;
+    }
+
     let dirContents = fs.readdirSync(directory).map((file) => path.join(directory, file));
+
+    dirContents.filter((file) => file.endsWith('.htm')).forEach((tmplFile) => {
+        const newHtmlFile = tmplFile.replace(/\.htm$/, '.html');
+        
+        fs.copyFileSync(tmplFile, newHtmlFile);
+        let content = fs.readFileSync(newHtmlFile, 'utf8');
+
+        const tagRegex = /{{(.*)}}/g;
+        let match;
+
+        while ((match = tagRegex.exec(content)) !== null) {
+            const componentPath = path.join(path.dirname(newHtmlFile), match[1]); 
+
+            if (fs.existsSync(componentPath)) {
+                const componentContent = fs.readFileSync(componentPath, 'utf8');
+                content = content.replace(match[0], componentContent);
+            }
+        }
+
+        fs.writeFileSync(newHtmlFile, content, 'utf8');
+    });
 
     htmlFiles.push(...dirContents.filter((file) => file.endsWith('.html')));
     directories.push(...dirContents.filter((file) => fs.statSync(file).isDirectory()));
@@ -91,7 +118,7 @@ module.exports = (env) => {
                     generator: {
                         filename: 'assets/webfonts/[name][ext]',
                     },
-                },
+                }
             ],
         },
         resolve: {
@@ -108,9 +135,9 @@ module.exports = (env) => {
                     template: htmlFile,
                     filename: htmlFile.replace(htmlFileRegex, ''),
                     chunks: [htmlFile.replace(htmlFileRegex, '')],
-                    inject: false,
+                    inject: false
                 });
-            }),
+            })
         ],
         devServer: {
             historyApiFallback: true,
