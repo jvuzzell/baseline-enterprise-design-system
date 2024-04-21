@@ -1,6 +1,6 @@
 import { Factory, ComponentConfigs, ComponentProps } from 'ui-component-eventbus-js/Factory';
 import sidebarNavigationData from '../../../../content/data/sidebar-navigation.json';
-import { Expandables, initExpandables } from 'expandables-js';
+import { initExpandables } from 'expandables-js';
 
 (function(
     Factory,
@@ -18,9 +18,6 @@ import { Expandables, initExpandables } from 'expandables-js';
         eventBus : [],
         state : initialState, 
         props : {
-            eventListeners: {
-
-            }, 
             tmplTopLevelNavItem: `
                 <li
                     class="mg-b--0" 
