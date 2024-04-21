@@ -1,30 +1,26 @@
 [
     {
-        "script": "commentParser/commentParser.js",
-        "parameters": ["public/assets/styles/main.css", "src/pages/docs/data"]
+        "script": "cssAutoDocs/parser.js",
+        "parameters": ["public/assets/styles/main.css", "src/content/data"]
     },
     {
         "script": "docNavGenerator/scan-design-system-for-uri.js",
-        "parameters": ["src/pages/docs/data/design-system-meta-doc.json", "./post-process/docNavGenerator/data/uri"]
+        "parameters": ["src/content/data/design-system-meta-doc.json", "./src/content/data/uri"]
     },
     {
         "script": "docNavGenerator/scan-subfolder-for-uri.js",
-        "parameters": ["src/pages/demos", "./post-process/docNavGenerator/data/uri"]
+        "parameters": ["src/pages/demos", "./src/content/data/uri"]
     },
     {
         "script": "utilities/merge-json.js",
-        "parameters": ["./post-process/docNavGenerator/data/uri", "./src/pages/docs/data/sidebar-navigation.json"]
-    },
-    {
-        "script": "iconClassScanner/generate-icon-listing.js",
-        "parameters": ["fak", "public/assets/styles/custom-icons.css", "./src/pages/docs/data/", "custom-icons.json"]
+        "parameters": ["./src/content/data/uri", "./src/content/data/sidebar-navigation.json"]
     },
     {
         "script": "searchAggregate/search-aggregator.js",
         "parameters": [
             "framework-aggregate",
-            "./src/pages/docs/data/design-system-meta-doc.json",
-            "./post-process/docNavGenerator/data/search-aggregates/",
+            "./src/content/data/design-system-meta-doc.json",
+            "./src/content/data/search-aggregates/",
             "search-aggregate_design-system.json"
         ]
     },
@@ -32,34 +28,16 @@
         "script": "searchAggregate/search-aggregator.js",
         "parameters": [
             "uri-aggregate",
-            "./post-process/docNavGenerator/data/uri/uri-list_demos.json",
-            "./post-process/docNavGenerator/data/search-aggregates/",
+            "./src/content/data/uri/uri-list_demos.json",
+            "./src/content/data/search-aggregates/",
             "search-aggregate_demos.json"
-        ]
-    },
-    {
-        "script": "searchAggregate/search-aggregator.js",
-        "parameters": [
-            "domain-aggregate",
-            "./post-process/docNavGenerator/data/uri/uri-list_additional-links.json",
-            "./post-process/docNavGenerator/data/search-aggregates/",
-            "search-aggregate_figma-guidelines.json"
-        ]
-    },
-    {
-        "script": "searchAggregate/search-aggregator.js",
-        "parameters": [
-            "icon-aggregate",
-            "src/pages/docs/data/custom-icons.json",
-            "./post-process/docNavGenerator/data/search-aggregates/",
-            "search-aggregate_font-awesome-icons.json"
         ]
     },
     {
         "script": "utilities/merge-json.js",
         "parameters": [
-            "./post-process/docNavGenerator/data/search-aggregates",
-            "./src/pages/docs/data/searchable-cache.json"
+            "./src/content/data/search-aggregates",
+            "./src/content/data/searchable-cache.json"
         ]
     }
 ]
