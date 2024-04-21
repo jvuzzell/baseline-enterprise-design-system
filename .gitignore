@@ -13,3 +13,4 @@ src/pages/*/*/*.html
 src/pages/*/*.html
 src/pages/*.html
 !src/pages/demos/*/*.html
+src/content/
