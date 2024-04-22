@@ -69,8 +69,8 @@ import { initExpandables } from 'expandables-js';
                 Object.entries(state.sidebarNavData).map(function([sectionTitle, sectionItems]) {
                     let topLevelNavNode = Factory.templateToHTML( tmplTopLevelNavItem );
                     let nestedMenuNode  = Factory.templateToHTML( tmplNestedMenu );
-                    
-                    nestedMenuNode.querySelector('[data-section-title').innerHTML += sectionTitle;
+
+                    nestedMenuNode.querySelector('[data-section-title').innerHTML += sidebarNavConfig.dispatch.capitalizeWords(sectionTitle);
                     nestedMenuNode.setAttribute('data-expandable-id','uri-' + sectionTitle);
                     nestedMenuNode.querySelector('[data-expandable-target]').setAttribute('data-expandable-target', 'uri-' + sectionTitle);
 
