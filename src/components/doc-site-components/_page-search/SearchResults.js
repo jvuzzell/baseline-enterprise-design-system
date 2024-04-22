@@ -13,7 +13,7 @@ import searchableCache from '../../../content/data/searchable-cache.json';
     };
 
     // Step 1 - Configuration
-    ComponentConfigs.searchResults = {
+    ComponentConfigs.SearchResults = {
         eventBus : [ 'GlobalComponentEvents' ],
         state : initialState,
         props : { 
@@ -176,7 +176,7 @@ import searchableCache from '../../../content/data/searchable-cache.json';
     }
 
     // Step 2 - Registration
-    Factory.registerComponent( ComponentConfigs.searchResults );
+    Factory.registerComponent( ComponentConfigs.SearchResults );
 
 })(
     Factory,

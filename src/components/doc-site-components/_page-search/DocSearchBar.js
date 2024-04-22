@@ -10,7 +10,7 @@ import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
     };
 
     // Step 1 - Configuration
-    ComponentConfigs.docSearchBar = {
+    ComponentConfigs.DocSearchBar = {
 
         eventBus : [ 'GlobalComponentEvents' ],
         state : initialState, 
@@ -81,7 +81,7 @@ import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
     }
 
     // Step 2 - Registration
-    Factory.registerComponent( ComponentConfigs.docSearchBar );
+    Factory.registerComponent( ComponentConfigs.DocSearchBar );
 
 })(
     Factory,
