@@ -59,12 +59,12 @@ import { initExpandables } from 'expandables-js';
         },
         hooks : {
             beforeCreate : function( state, inlineTemplateNode ) { 
-                let sidebarNavConfig    = ComponentConfigs.sidebarNavigation;
-                let props               = sidebarNavConfig.props;
-                let sidebarNode         = inlineTemplateNode.cloneNode();
-                let tmplTopLevelNavItem = props.tmplTopLevelNavItem;
-                let tmplNestedMenu      = props.tmplNestedMenu;
-                let tmplLink            = props.tmplLink;
+                const sidebarNavConfig    = ComponentConfigs.sidebarNavigation;
+                const props               = sidebarNavConfig.props;
+                const sidebarNode         = inlineTemplateNode.cloneNode();
+                const tmplTopLevelNavItem = props.tmplTopLevelNavItem;
+                const tmplNestedMenu      = props.tmplNestedMenu;
+                const tmplLink            = props.tmplLink;
  
                 Object.entries(state.sidebarNavData).map(function([sectionTitle, sectionItems]) {
                     let topLevelNavNode = Factory.templateToHTML( tmplTopLevelNavItem );
@@ -128,8 +128,7 @@ import { initExpandables } from 'expandables-js';
                     .join(' ');
             }
 
-        },
-        debug: true
+        }
     }
 
     // Step 2 - Registration
