@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Search - Baseline EDS</title> 
+
+    {{../../template-parts/modules/head-includes.htm}}
+</head>
+<body data-overlay="inactive" data-loading-screen class="sidebar-expanded base"> 
+
+    {{../../template-parts/modules/sidebar.htm}}
+
+    <main>
+        <section class="bg--primary-light-1 bg-btm-curv">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Search Results</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row card-group">
+                    <div class="col">
+                        <form data-inline-template="docSearchBar">
+                            <div class="row">
+                                <div class="col">
+                                    <label
+                                        class="wrap--text-input mg-b--20"
+                                        htmlFor="searchTerm"
+                                    >
+                                        <input
+                                            name="searchTerm"
+                                            type="text"
+                                            placeholder="Search Term"
+                                        />
+                                        <span>Enter search term here</span>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <input
+                                        type="submit"
+                                        value="Search"
+                                    />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <hr class="mg-t--20 mg-b--20 bg--secondary-light-3" />
+                <div class="row">
+                    <div class="col">
+                        <div data-inline-template="searchResults">
+                            <p class="h-3">No results found.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-fly-containers></div>
+
+    <script src="index.html.js" defer></script>
+    
+</body>
+</html>

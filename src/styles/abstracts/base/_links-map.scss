@@ -7,23 +7,23 @@ $linksOnContrastingBg: (
         'light-bg': (
             'default-links': (
                 'default': (
-                    'color': 'var(--tertiary-base)',
-                    'text-decoration-color': 'var(--tertiary-base)',
+                    'color': 'var(--primary-base)',
+                    'text-decoration-color': 'var(--primary-base)',
                 ),
                 'hover': (
-                    'color': 'var(--tertiary-dark-1)',
-                    'text-decoration-color': 'var(--tertiary-dark-1)',
+                    'color': 'var(--primary-dark-1)',
+                    'text-decoration-color': 'var(--primary-dark-1)',
                 ),
                 'focus-visible': (
-                    'color': 'var(--tertiary-dark-1)',
-                    'text-decoration-color': 'var(--tertiary-dark-1)',
+                    'color': 'var(--primary-dark-1)',
+                    'text-decoration-color': 'var(--primary-dark-1)',
                 ),
                 'active': (
-                    'color': 'var(--tertiary-light-2)',
-                    'text-decoration-color': 'var(--tertiary-light-2)',
+                    'color': 'var(--primary-light-2)',
+                    'text-decoration-color': 'var(--primary-light-2)',
                 ),
                 'visited': (
-                    'color': 'var(--tertiary-light-2)',
+                    'color': 'var(--primary-light-2)',
                 ),
                 'disabled': (
                     'color': 'var(--secondary-light-3)',

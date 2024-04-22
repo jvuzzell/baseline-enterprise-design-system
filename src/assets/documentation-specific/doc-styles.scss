@@ -3,7 +3,6 @@
 
 body {
     background-color: var(--primary-base);
-    display: flex;
     --collapsed-nav: 95px;
     --expanded-nav: 280px;
     --page-top-border: 15px;
@@ -67,7 +66,6 @@ main {
     min-height: calc(100vh - var(--page-top-border));
     border-top-left-radius: var(--page-top-border);
     border-top-right-radius: var(--page-top-border);
-    padding-right: var(--page-top-border);
     
     overflow: hidden;
 }
@@ -246,7 +244,7 @@ i.fa-magnifying-glass {
     font-size: 18px !important;
 }
 
-section.search .link-type {
+.link-type {
     padding: 5px;
     transform: translateY(-3px);
     display: inline-block;
