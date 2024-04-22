@@ -83,7 +83,7 @@ import { initExpandables } from 'expandables-js';
                                    sectionTitle === 'design-tokens' ||
                                    sectionTitle === 'demos'
                                         ? sectionTitle !== 'demos'
-                                            ? '/docs/' + sectionTitle + '/' + item.uri
+                                            ? '/' + sectionTitle + '/' + item.uri
                                             : '/demos' + item.uri
                                         : item.uri
                         })(); 

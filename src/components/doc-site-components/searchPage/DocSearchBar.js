@@ -18,7 +18,7 @@ import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
             eventListeners: {
                 handleFormSubmit: {
                     listener : 'keydown', 
-                    selector : 'input[type=submit]',
+                    selector : 'input[name=searchTerm]',
                     callback : ( event, component ) => { 
                         if(event.key === 'Enter') {
                             event.preventDefault();
