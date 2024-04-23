@@ -13,7 +13,7 @@ import { initExpandables } from 'expandables-js';
     };
 
     // Step 1 - Configuration
-    ComponentConfigs.sidebarNavigation = {
+    ComponentConfigs.SidebarNavigation = {
 
         eventBus : [],
         state : initialState, 
@@ -59,7 +59,7 @@ import { initExpandables } from 'expandables-js';
         },
         hooks : {
             beforeCreate : function( state, inlineTemplateNode ) { 
-                const sidebarNavConfig    = ComponentConfigs.sidebarNavigation;
+                const sidebarNavConfig    = ComponentConfigs.SidebarNavigation;
                 const props               = sidebarNavConfig.props;
                 const sidebarNode         = inlineTemplateNode.cloneNode();
                 const tmplTopLevelNavItem = props.tmplTopLevelNavItem;
@@ -132,7 +132,7 @@ import { initExpandables } from 'expandables-js';
     }
 
     // Step 2 - Registration
-    Factory.registerComponent( ComponentConfigs.sidebarNavigation );
+    Factory.registerComponent( ComponentConfigs.SidebarNavigation );
 
 })(
     Factory,

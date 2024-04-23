@@ -10,7 +10,7 @@ import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
     };
 
     // Step 1 - Configuration
-    ComponentConfigs.exampleComponent = {
+    ComponentConfigs.SidebarSearchForm = {
 
         eventBus : [ 'GlobalComponentEvents' ],
         state : initialState, 
@@ -47,7 +47,7 @@ import { Factory, ComponentConfigs } from 'ui-component-eventbus-js/Factory';
     }
 
     // Step 2 - Registration
-    Factory.registerComponent( ComponentConfigs.exampleComponent );
+    Factory.registerComponent( ComponentConfigs.SidebarSearchForm );
 
 })(
     Factory,

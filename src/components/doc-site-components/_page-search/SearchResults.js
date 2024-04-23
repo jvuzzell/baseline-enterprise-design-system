@@ -32,8 +32,8 @@ import searchableCache from '../../../content/data/searchable-cache.json';
         },
         hooks : { 
             beforeCreate : function( state, inlineTemplateNode ) { 
-                const searchBarComponent = ComponentConfigs.searchResults; 
-          
+                const searchBarComponent = ComponentConfigs.SearchResults; 
+
                 const results = searchBarComponent.dispatch.getSearchResults(  
                     searchBarComponent.dispatch.getQueryParam()
                 );
@@ -72,7 +72,7 @@ import searchableCache from '../../../content/data/searchable-cache.json';
 
             renderResults : function ( results, inlineTemplateNode = null ) { 
                 const searchResultsNode  = (inlineTemplateNode) ? inlineTemplateNode : this.component().get.inlineTemplateNode();
-                const props              = ComponentConfigs.searchResults.props;
+                const props              = ComponentConfigs.SearchResults.props;
                 const tmplNoResults      = props.tmplNoResults;
                 const tmplResultsListing = props.tmplResultsListing;
                 const tmplResultsItem    = props.tmplResultsItem;
