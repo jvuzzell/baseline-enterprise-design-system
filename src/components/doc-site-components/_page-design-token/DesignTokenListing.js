@@ -51,8 +51,8 @@ import { DesignDocToken } from '../../../types';
                 processedDesignToken = DesignSystemMeta.map((designDocToken, index) => {
                     /** @type{DesignDocToken} */
                     let docToken        = designDocToken[0]; 
-                    let title       = thisDispatch.findTag( meta, 'title' ); 
-                    let description = thisDispatch.findTag( meta, 'description' ); 
+                    let title       = thisDispatch.findTag( docToken, 'title' ); 
+                    let description = thisDispatch.findTag( docToken, 'description' ); 
         
                     return (thisDispatch.findTag(docToken, 'doc-type').value === state.documentType && ({ 
                         titleString         : (title !== undefined) ? title.value : null, 
@@ -144,7 +144,7 @@ import { DesignDocToken } from '../../../types';
                     titleNode.innerHTML = token.titleString;
                     titleNode.setAttribute(
                         'id',
-                        this.generateId()
+                        this.generateId(token.titleString)
                     );
                     designTokenNode.querySelector('.sub-title').innerHTML = token.subTitleString; 
 
