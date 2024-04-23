@@ -178,6 +178,10 @@ iframe {
         padding-bottom: 8px;
     }
 }
+ 
+tbody { 
+    max-height: unset;
+}
 
 nav {
     position: relative;
