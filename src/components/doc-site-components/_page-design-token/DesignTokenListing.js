@@ -63,7 +63,6 @@ import { DesignDocToken } from '../../../types';
                 }); 
 
                 tokenNode = thisDispatch.appendDesignTokenNodes( processedDesignToken, thisComponent.props.tmplDesignToken ); 
-
             }
         },
         dispatch : {
