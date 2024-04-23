@@ -89,12 +89,7 @@ import searchableCache from '../../../content/data/searchable-cache.json';
     
                         resultNode.querySelector('[data-link-type]').innerText = ( metadata.linkType !== undefined ) ? metadata.linkType : metadata[0].linkType;
                         
-                        anchorNode.href      = ( link.includes('css-framework') || link.includes('design-tokens') )
-                                                ? '/docs' + link
-                                                : link;
-                        anchorNode.rel       = ( link.includes('http') || link.includes('/demos') )
-                                                ? 'noopener noreferrer'
-                                                : '';
+                        anchorNode.href      = link;
                         anchorNode.target    = ( link.includes('http') || link.includes('/demos') ) ? '_blank' : '';
                         anchorNode.innerText = ( metadata.some((meta) => meta.title) )
                                                 ? metadata
