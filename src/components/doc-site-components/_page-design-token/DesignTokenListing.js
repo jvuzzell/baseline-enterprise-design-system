@@ -48,17 +48,18 @@ import { DesignDocToken } from '../../../types';
                 let processedDesignToken = {};
                 let tokenNode;
 
-                processedDesignToken = DesignSystemMeta.map((designMeta, index) => {
-                    let meta        = designMeta[0]; 
+                processedDesignToken = DesignSystemMeta.map((designDocToken, index) => {
+                    /** @type{DesignDocToken} */
+                    let docToken        = designDocToken[0]; 
                     let title       = thisDispatch.findTag( meta, 'title' ); 
                     let description = thisDispatch.findTag( meta, 'description' ); 
         
-                    return (thisDispatch.findTag(meta, 'doc-type').value === state.documentType && ({ 
+                    return (thisDispatch.findTag(docToken, 'doc-type').value === state.documentType && ({ 
                         titleString         : (title !== undefined) ? title.value : null, 
-                        subTitleString      : meta.description,
+                        subTitleString      : docToken.description,
                         descriptionString   : (description !== undefined) ? description.value : null,
-                        characteristicsNode : thisDispatch.generateCharacteristicNode( designMeta[0] ), 
-                        tokenValuesNode     : thisDispatch.generateTokenValueNode( designMeta[0] )
+                        characteristicsNode : thisDispatch.generateCharacteristicNode( docToken ), 
+                        tokenValuesNode     : thisDispatch.generateTokenValueNode( docToken )
                     }))
                 }); 
 
@@ -120,9 +121,9 @@ import { DesignDocToken } from '../../../types';
              * @param {DesignDocToken} designDocToken 
              * @returns {node} 
              */
-            generateTokenValueNode : function( designMeta ) { 
-                return ( designMeta.cssVariables && (
-                    TokenValueListingConfig.dispatch.returnTableNode( designMeta.cssVariables )
+            generateTokenValueNode : function( designDocToken ) { 
+                return ( designDocToken.cssVariables && (
+                    TokenValueListingConfig.dispatch.returnTableNode( designDocToken.cssVariables )
                 ));
             },
 
