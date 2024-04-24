@@ -1,3 +1,4 @@
+import '../../index';
 import { initBackgroundToggle } from '../../../assets/demo-scripts/backgroundToggle';
 import { FormValidation, initFormValidation } from 'html5-form-validation-js/html5-form-validation.js';
 
