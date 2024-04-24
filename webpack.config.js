@@ -13,11 +13,6 @@ let entryPoints = {};
 while (directories.length > 0) {
     let directory = directories.pop();
 
-    // Skip processing for any directory named 'demo'
-    if (directory.includes('/demo/') || directory.endsWith('/demo')) {
-        continue;
-    }
-
     let dirContents = fs.readdirSync(directory).map((file) => path.join(directory, file));
 
     dirContents.filter((file) => file.endsWith('.htm')).forEach((tmplFile) => {
