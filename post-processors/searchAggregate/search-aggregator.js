@@ -105,7 +105,7 @@ function uriAggregator(json) {
     Object.keys(json).forEach((key) => {
         json[key].forEach((item) => {
             const { title, uri } = item;
-            converted[`${'/' + key + uri}`] = [
+            converted[`${uri}`] = [
                 {
                     title: title,
                 },
@@ -137,7 +137,7 @@ function iconAggregator(json) {
     let converted = {};
 
     json.map((item) => {
-        converted[`/docs/icons/?iconFilter=${item}`] = [{ title: item }];
+        converted[`/icons/?iconFilter=${item}`] = [{ title: item }];
     });
 
     return converted;

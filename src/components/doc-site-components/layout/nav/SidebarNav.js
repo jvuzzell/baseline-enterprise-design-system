@@ -80,21 +80,10 @@ import { initExpandables } from 'expandables-js';
                         
                         anchor.href = (() => {
                             return sectionTitle === 'css-framework' ||
-                                   sectionTitle === 'design-tokens' ||
-                                   sectionTitle === 'demos'
-                                        ? sectionTitle !== 'demos'
-                                            ? '/' + sectionTitle + '/' + item.uri
-                                            : '/demos' + item.uri
+                                   sectionTitle === 'design-tokens' 
+                                        ? '/' + sectionTitle + '/' + item.uri
                                         : item.uri
-                        })(); 
-                        
-                        anchor.target = (() => {
-                            return sectionTitle !== 'css-framework' &&
-                                   sectionTitle !== 'design-tokens' &&
-                                   sectionTitle !== 'Font Awesome'
-                                        ? '_blank'
-                                        : ''
-                        })
+                        })();
 
                         anchor.innerHTML = sidebarNavConfig.dispatch.capitalizeWords(item.title);
 
@@ -126,6 +115,17 @@ import { initExpandables } from 'expandables-js';
                     .split('-')
                     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
                     .join(' ');
+            }, 
+
+            /**
+             * Retrieves searchTerm GET parameter from URI
+             * 
+             * @returns {string}
+             */
+            getQueryParam : function() { 
+                const search = window.location.search;
+                const params = new URLSearchParams(search);
+                return params.get('searchTerm');
             }
 
         }

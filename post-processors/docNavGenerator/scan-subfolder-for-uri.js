@@ -7,7 +7,7 @@ function scanSubfolders(directory) {
         .filter((dirent) => dirent.isDirectory())
         .map((dirent) => ({
             title: dirent.name,
-            uri: `/${dirent.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
+            uri: `/${dirent.path.split("/").pop()}/${dirent.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`,
         }));
 
     return subfolders;

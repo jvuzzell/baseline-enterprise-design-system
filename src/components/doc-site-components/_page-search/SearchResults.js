@@ -90,7 +90,7 @@ import searchableCache from '../../../content/data/searchable-cache.json';
                         resultNode.querySelector('[data-link-type]').innerText = ( metadata.linkType !== undefined ) ? metadata.linkType : metadata[0].linkType;
                         
                         anchorNode.href      = link;
-                        anchorNode.target    = ( link.includes('http') || link.includes('/demos') ) ? '_blank' : '';
+                        anchorNode.target    = ( link.includes('http') ) ? '_blank' : '';
                         anchorNode.innerText = ( metadata.some((meta) => meta.title) )
                                                 ? metadata
                                                     .find((meta) => meta.title)
