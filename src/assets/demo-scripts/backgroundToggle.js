@@ -1,6 +1,6 @@
 export function initBackgroundToggle() {
     const contrastButton = document.getElementById('contrast');
-    const sectionElements = document.querySelectorAll('section');
+    const sectionElements = document.querySelectorAll('section:not(:first-child)');
 
     let state = {
         active: 0,
@@ -28,7 +28,7 @@ export function initBackgroundToggle() {
         'bg--error-background',
         'bg--success-background',
         'bg--warning-background',
-        'bg--info-background',
+        'bg--info-background'
     ];
 
     for (let i = 0; i < sectionElements.length; i++) {
