@@ -52,10 +52,11 @@ $col-multiplier: 2;
         padding-right: calc(#{$multiplier} * var(--container--gutter--xl));
         margin: calc(var(--gutter-sm) * (#{$row-multiplier} * 2)) auto;
     }
-    .full-width > .container {
-        padding: 0;
-        max-width: none;
-    }
+}
+
+.full-width > .container {
+    padding: 0;
+    max-width: none;
 }
 
 .container.max-width--sm {

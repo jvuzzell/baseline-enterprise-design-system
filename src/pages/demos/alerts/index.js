@@ -1,3 +1,4 @@
+import '../../index';
 import { BannerAlert } from 'banner-alert-js/banner-alert.js';
 
 const Alerts = {

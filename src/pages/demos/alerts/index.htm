@@ -1,34 +1,58 @@
-<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta
-            http-equiv="X-UA-Compatible"
-            content="IE=edge"
-        />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-        />
-        <title>Banner Alert Demo</title>
-        <link
-            rel="stylesheet"
-            href="../../assets/styles/main.css"
-        />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Alert Demo- Baseline EDS</title> 
 
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-        />
+    {{../../../template-parts/modules/head-includes.htm}}
+    
+</head>
+<body data-overlay="inactive" data-loading-screen class="sidebar-expanded base"> 
 
-        <link rel="icon" href="../../assets/images/favicon.ico">
-        <script
-            src="../alerts/index.html.js"
-            defer
-        ></script>
-    </head>
+    <div class="full-width">
 
-    <body>
+            <div
+                class="alert-container bg--success-background"
+            >
+                <div
+                    data-alert-message
+                    data-message-type="success"
+                    data-status="active"
+                >
+                    <div class="row">
+                        <div class="alert-msg col--lg-9">
+                            <h4 class="alert-head">This is a success alert headline</h4>
+                            <span class="p-2"
+                                >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at
+                                porttitor sem. Aliquam erat volutpat. Donec placerat nisl
+                            </span>
+                        </div>
+                        <div class="alert-cta col--lg-3">
+                            <button
+                                class="btn"
+                                href="#"
+                                >sample Text</button
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    {{../../../template-parts/modules/sidebar.htm}}
+
+    <main id="root-element">
+        <section class="bg--primary-light-1 bg-btm-curv">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Banner Alerts</h1>
+                    </div>
+                </div>
+            </div>
+        </section> 
         <section class="full-width">
             <div class="container">
                 <div class="row">
@@ -39,7 +63,6 @@
                         <div class="full-width-banner-alerts">
                             <div
                                 class="alert-container bg--warning-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -69,7 +92,6 @@
                         <div class="full-width-banner-alerts">
                             <div
                                 class="alert-container bg--error-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -99,7 +121,6 @@
                         <div class="full-width-banner-alerts">
                             <div
                                 class="alert-container bg--success-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -129,7 +150,6 @@
                         <div class="full-width-banner-alerts">
                             <div
                                 class="alert-container bg--info-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -233,7 +253,6 @@
                         <div class="banner-alerts">
                             <div
                                 class="alert-container bg--warning-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -255,7 +274,6 @@
                         <div class="banner-alerts">
                             <div
                                 class="alert-container bg--error-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -277,7 +295,6 @@
                         <div class="banner-alerts">
                             <div
                                 class="alert-container bg--success-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -299,7 +316,6 @@
                         <div class="banner-alerts">
                             <div
                                 class="alert-container bg--info-background"
-                                data-ref="module_systemAlert_50119"
                             >
                                 <div
                                     data-alert-message
@@ -331,7 +347,6 @@
                 <div class="banner-alerts">
                     <div
                         class="alert-container bg--warning-background"
-                        data-ref="module_systemAlert_50119"
                     >
                         <div
                             data-alert-message
@@ -360,7 +375,6 @@
                 <div class="banner-alerts">
                     <div
                         class="alert-container bg--error-background"
-                        data-ref="module_systemAlert_50119"
                     >
                         <div
                             data-alert-message
@@ -389,7 +403,6 @@
                 <div class="banner-alerts">
                     <div
                         class="alert-container bg--success-background"
-                        data-ref="module_systemAlert_50119"
                     >
                         <div
                             data-alert-message
@@ -418,7 +431,6 @@
                 <div class="banner-alerts">
                     <div
                         class="alert-container bg--info-background"
-                        data-ref="module_systemAlert_50119"
                     >
                         <div
                             data-alert-message
@@ -446,5 +458,7 @@
                 </div>
             </div>
         </section>
-    </body>
+    </main>
+    <script src="alerts/index.html.js"></script>
+</body>
 </html>

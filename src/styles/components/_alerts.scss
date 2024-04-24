@@ -4,17 +4,18 @@
     border-radius: var(--border-radius-25);
 }
 
-section.full-width .alert-container {
+.full-width .alert-container {
     border-radius: 0;
-    @include mediaQuery('desktop-up') {
-        [data-alert-message] {
-            max-width: var(--max-content-width--xl);
-            padding-left: calc(-1 * var(--container--gutter--xl));
-            padding-right: calc(-1 * var(--container--gutter--xl));
-            margin: auto;
-            margin-bottom: var(--alert-gutter);
-        }
+    padding-left: var(--gutter-xl);
+    padding-right: var(--gutter-xl);
+    [data-alert-message] {
+        max-width: var(--max-content-width--xl);
+        padding-left: calc(-1 * var(--container--gutter--xl));
+        padding-right: calc(-1 * var(--container--gutter--xl));
+        margin: auto;
+        margin-bottom: var(--alert-gutter);
     }
+    
 }
 
 [data-alert-message] {
@@ -53,7 +54,7 @@ section.full-width .alert-container {
     }
 
     &:before {
-        font-family: 'Font Awesome 6 Pro';
+        font-family: var(--icon-family);
         font-weight: var(--font-weight--regular);
         margin-right: var(--icon--margin--lg);
         font-size: var(--icon--size--lg);
@@ -75,7 +76,7 @@ section.full-width .alert-container {
 
 [data-alert-message] {
     &[data-message-type='warning']:before {
-        content: '\f06a';
+        content: '\f0f3';
     }
 
     &[data-message-type='error']:before {
@@ -83,7 +84,7 @@ section.full-width .alert-container {
     }
 
     &[data-message-type='message']:before {
-        content: '\f05a';
+        content: '\f075';
     }
 
     &[data-message-type='success']:before {

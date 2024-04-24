@@ -1,8 +1,10 @@
+@use '../abstracts' as *;
 /*--- Components - Icons ---*/
 
 :root {
     --fa-pull-margin: 3rem;
     --fa-li-width: 32px;
+    --icon-family: "#{$font-stack--icons}";
 }
 
 i,

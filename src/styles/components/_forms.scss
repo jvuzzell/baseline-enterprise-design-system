@@ -148,7 +148,7 @@ select,
         padding-right: calc(var(--input--base-padding) / 2);
         font-size: var(--input--font-size--md);
         line-height: var(--input--font-size--md);
-        font-family: 'Font Awesome 6 Free';
+        font-family: var(--icon-family);
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         display: var(--fa-display, inline-block);
@@ -268,7 +268,7 @@ select,
                 transform: translateY(-50%);
                 margin: 0 auto;
                 padding-left: 3px;
-                font-family: 'Font Awesome 6 Free'; 
+                font-family: var(--icon-family); 
                 font-weight: 600;
                 -moz-osx-font-smoothing: grayscale;
                 -webkit-font-smoothing: antialiased;
@@ -310,7 +310,7 @@ select,
         padding-right: calc(var(--input--base-padding) / 2);
         font-size: var(--input--font-size--md);
         line-height: var(--input--font-size--md);
-        font-family: 'Font Awesome 6 Free';
+        font-family: var(--icon-family);
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
         display: var(--fa-display, inline-block);
@@ -333,7 +333,7 @@ select,
     padding-right: calc(var(--input--base-padding) / 2);
     font-size: var(--input--font-size--md);
     line-height: var(--input--font-size--md);
-    font-family: 'Font Awesome 6 Free';
+    font-family: var(--icon-family);
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     display: var(--fa-display, inline-block);
