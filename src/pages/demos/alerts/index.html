@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Alert Demo - Baseline EDS</title> 
 
-    {{../../../template-parts/modules/head-includes.htm}}
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="/assets/styles/doc-styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
 </head>
 <body data-overlay="inactive" data-loading-screen class="sidebar-expanded base"> 
@@ -41,7 +43,39 @@
 
     </div>
 
-    {{../../../template-parts/modules/sidebar.htm}}
+    <aside id="sidebar">
+    <a href="/">
+        <img
+            class="logo"
+            src="/assets/images/logo.svg"
+            alt="Stacked Logo"
+        />
+        <img
+            class="logo-sm"
+            src="/assets/images/logo-sm.svg"
+            alt="Logomark"
+        />
+    </a>
+    <nav>
+        <form 
+            id="search-form" 
+            data-inline-template="sidebarSearchForm"
+            class="mg-l--25 mg-b--30"
+        >
+            <label for="search-term" class="wrap--text-input has-lead-icon">
+                <input 
+                    type="text" 
+                    id="search-term"
+                    name="search-term"
+                    placeholder=""
+                />
+                <i class="fa fa-magnifying-glass icon-sm clr--primary-base"></i>
+                <span>Search Site</span>
+            </label>
+        </form>
+        <ul id="menu-item" data-inline-template="sidebarNav" data-expandable-group></ul>
+    </nav>
+</aside>
 
     <main id="root-element">
         <section class="bg--primary-light-1 bg-btm-curv">
