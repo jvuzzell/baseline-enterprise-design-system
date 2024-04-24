@@ -1,2 +1,2 @@
-import '../../../styles/main.scss';
+import '../../index';
 import './grid-demo.scss';
