@@ -76,7 +76,8 @@ import { initExpandables } from 'expandables-js';
                     nestedMenuNode.setAttribute('data-expandable-id','uri-' + sectionTitle);
                     nestedMenuNode.querySelector('[data-expandable-target]').setAttribute('data-expandable-target', 'uri-' + sectionTitle);
 
-                    ( ( activeMenuSection === capitalizedSectionTitle ) && nestedMenuNode.setAttribute('data-expandable-container', 'expanded') );
+                    (( activeMenuSection === capitalizedSectionTitle ) 
+                        && nestedMenuNode.setAttribute('data-expandable-container', 'expanded') );
 
                     sectionItems.map((item, index) => {
                         let linkNode = Factory.templateToHTML( tmplLink );
