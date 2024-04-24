@@ -5,11 +5,11 @@ $buttonsOnContrastingBg: (
         'light-bg': (
             'secondary': (
                 'default': (
-                    'color': var(--tertiary-base),
-                    'border-color': var(--tertiary-base),
+                    'color': var(--primary-base),
+                    'border-color': var(--primary-base),
                 ),
                 'visited': (
-                    'color': var(--tertiary-base),
+                    'color': var(--primary-base),
                 ),
                 'hover': (
                     'background-color': var(--btn-secondary--lgt-bg--hover),
@@ -49,22 +49,22 @@ $buttonsOnContrastingBg: (
             ),
             'tertiary': (
                 'default': (
-                    'color': var(--tertiary-base),
+                    'color': var(--primary-base),
                 ),
                 'visited': (
-                    'color': var(--tertiary-base),
+                    'color': var(--primary-base),
                 ),
                 'hover': (
-                    'background-color': var(--btn-tertiary--lgt-bg--hover),
-                    'color': var(--tertiary-base),
+                    'background-color': var(--btn-primary--lgt-bg--hover),
+                    'color': var(--primary-base),
                 ),
                 'focus-visible': (
-                    'background-color': var(--btn-tertiary--lgt-bg--hover),
-                    'color': var(--tertiary-base),
+                    'background-color': var(--btn-primary--lgt-bg--hover),
+                    'color': var(--primary-base),
                 ),
                 'active': (
                     'background-color': var(--btn-tertiary--lgt-bg--active),
-                    'color': var(--tertiary-base),
+                    'color': var(--primary-base),
                 ),
                 'disabled': (
                     'color': var(--secondary-light-2),
