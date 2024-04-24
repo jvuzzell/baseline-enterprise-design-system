@@ -65,14 +65,18 @@ import { initExpandables } from 'expandables-js';
                 const tmplTopLevelNavItem = props.tmplTopLevelNavItem;
                 const tmplNestedMenu      = props.tmplNestedMenu;
                 const tmplLink            = props.tmplLink;
- 
+                const activeMenuSection   = sidebarNavConfig.dispatch.capitalizeWords(window.location.pathname.split("/")[1]);
+
                 Object.entries(state.sidebarNavData).map(function([sectionTitle, sectionItems]) {
                     let topLevelNavNode = Factory.templateToHTML( tmplTopLevelNavItem );
                     let nestedMenuNode  = Factory.templateToHTML( tmplNestedMenu );
+                    let capitalizedSectionTitle = sidebarNavConfig.dispatch.capitalizeWords(sectionTitle); 
 
-                    nestedMenuNode.querySelector('[data-section-title').innerHTML += sidebarNavConfig.dispatch.capitalizeWords(sectionTitle);
+                    nestedMenuNode.querySelector('[data-section-title').innerHTML += capitalizedSectionTitle;
                     nestedMenuNode.setAttribute('data-expandable-id','uri-' + sectionTitle);
                     nestedMenuNode.querySelector('[data-expandable-target]').setAttribute('data-expandable-target', 'uri-' + sectionTitle);
+
+                    ( ( activeMenuSection === capitalizedSectionTitle ) && nestedMenuNode.setAttribute('data-expandable-container', 'expanded') );
 
                     sectionItems.map((item, index) => {
                         let linkNode = Factory.templateToHTML( tmplLink );
