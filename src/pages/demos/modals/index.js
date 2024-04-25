@@ -1,3 +1,4 @@
+import '../../index';
 import { errorMessage } from '../../../local/en/modals/constants';
 
 // Modal open & close functions
