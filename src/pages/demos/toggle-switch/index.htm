@@ -1,0 +1,89 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Toggle Switch Demo - Baseline EDS</title> 
+
+    {{../../../template-parts/modules/head-includes.htm}}
+    
+</head>
+<body data-overlay="inactive" data-loading-screen class="sidebar-expanded base"> 
+
+    {{../../../template-parts/modules/sidebar.htm}}
+
+    <main id="root-element">
+        <section class="bg--primary-light-1 bg-btm-curv">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Toggle Switch</h1>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section>
+            <div class="container max-width--sm">
+                <div class="row">
+                    <div class="col">
+                        <h2 class="fs--text-center">Toggle Switches</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="fs--link-list">
+                            <li>
+                                <label class="toggle-switch">
+                                    <span class="label-text">Switch On</span>
+                                    <span class="slide-container">
+                                        <input
+                                            type="checkbox"
+                                            checked
+                                        />
+                                        <span class="slider"></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="toggle-switch">
+                                    <span class="label-text">Switch Off</span>
+                                    <span class="slide-container">
+                                        <input type="checkbox" />
+                                        <span class="slider"></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="toggle-switch">
+                                    <span class="label-text">Switch On - Disabled</span>
+                                    <span class="slide-container">
+                                        <input
+                                            type="checkbox"
+                                            disabled
+                                            checked
+                                        />
+                                        <span class="slider"></span>
+                                    </span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="toggle-switch">
+                                    <span class="label-text">Switch Off - Disabled</span>
+                                    <span class="slide-container">
+                                        <input
+                                            type="checkbox"
+                                            disabled
+                                        />
+                                        <span class="slider"></span>
+                                    </span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="toggle-switch/index.html.js"></script>
+</body>
+</html>
