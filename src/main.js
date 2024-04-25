@@ -23,4 +23,5 @@ import './assets/fonts/roboto/roboto-regular-webfont.woff2';
 import './assets/images/logo.svg';
 import './assets/images/logo-sm.svg';
 import './assets/images/card-img.jpg';
-import './assets/images/card-placeholder-img.png';
+import './assets/images/card-placeholder-img.png'; 
+import './assets/images/hero-image.png';
