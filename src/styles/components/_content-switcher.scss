@@ -91,7 +91,7 @@
 .content-switcher {
     [data-content-switcher='input-right']:checked ~ .content-switcher--pill [data-content-switcher='label-left'] span,
     [data-content-switcher='input-left']:checked ~ .content-switcher--pill [data-content-switcher='label-right'] span {
-        color: var(--tertiary-light-2);
+        color: var(--primary-base);
     }
 }
 
