@@ -12,6 +12,10 @@
         "parameters": ["src/pages/demos", "./src/content/data/uri"]
     },
     {
+        "script": "docNavGenerator/scan-subfolder-for-uri.js",
+        "parameters": ["src/pages/templates", "./src/content/data/uri"]
+    },
+    {
         "script": "utilities/merge-json.js",
         "parameters": ["./src/content/data/uri", "./src/content/data/sidebar-navigation.json"]
     },

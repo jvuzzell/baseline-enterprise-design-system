@@ -26,6 +26,18 @@ strong,
 
 /*--- Utilities - Typography, Font Styles ---*/
 
+.display--inline { 
+    display: inline;
+}
+
+.display--inline-block { 
+    display: inline-block;
+}
+
+.display--block { 
+    display: block;
+}
+
 ul.fs--inline li {
     display: inline;
 }
