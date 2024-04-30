@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Navigation Tabs Demo - Baseline EDS</title> 
+
+    {{../../../template-parts/modules/head-includes.htm}}
+    
+</head>
+<body data-overlay="inactive" data-loading-screen class="sidebar-expanded base"> 
+
+    {{../../../template-parts/modules/sidebar.htm}}
+
+    <main id="root-element">
+        <section class="bg--primary-light-1 bg-btm-curv">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <h1>Tabs</h1>
+                    </div>
+                    <div class="col" data-tab-group="my-tab-content" data-tab-controls>
+                        <input type="radio" id="tab1" data-tab="1" name="tab-control" checked>
+                        <input type="radio" id="tab2" data-tab="2" name="tab-control">
+                        <input type="radio" id="tab3" data-tab="3" name="tab-control">
+                        <input type="radio" id="tab4" data-tab="4" name="tab-control">
+                        <ul>
+                            <li><label for="tab1">Tab 1</label></li>
+                            <li><label for="tab2">Tab 2</label></li>
+                            <li><label for="tab3">Tab 3</label></li>
+                            <li><label for="tab4">Tab 4</label></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        <section data-tab-group="my-tab-content" data-tab-content data-active-tab="1">
+            <div class="container" data-content="1">
+                <div class="row">
+                    <div class="col">
+                        <h2>Section 1</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="container" data-content="2">
+                <div class="row">
+                    <div class="col">
+                        <h2>Section 2</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="navigation-tabs/index.html.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple CSS Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        .tabs {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        input {
+            display: none;
+        }
+        
+        .content section {
+            display: none;
+            padding: 20px;
+            background: #f0f0f0;
+            border: 1px solid #ccc;
+        }
+        
+        input:checked ~ .content section[data-tab] {
+            display: block;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            background: #ccc;
+        }
+        
+        li {
+            flex: 1;
+        }
+        
+        label {
+            display: block;
+            padding: 10px;
+            text-align: center;
+            border-right: 1px solid white;
+            cursor: pointer;
+        }
+        
+        label:hover {
+            background: #ddd;
+        }
+        
+        #tab1:checked ~ ul > li:nth-child(1) label,
+        #tab2:checked ~ ul > li:nth-child(2) label,
+        #tab3:checked ~ ul > li:nth-child(3) label {
+            background: white;
+            color: black;
+        }
+        p { 
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div data-tab-group>
+        <input type="radio" id="1" data-tab="1" name="tab-1" checked>
+        <input type="radio" id="2" data-tab="2" name="tab-2">
+        <input type="radio" id="3" data-tab="3" name="tab-3">
+        <ul>
+            <li><label for="tab-1">Tab 1</label></li>
+            <li><label for="tab-2">Tab 2</label></li>
+            <li><label for="tab-3">Tab 3</label></li>
+        </ul>
+        <div data-target-content>
+            <section data-content="1">
+                <h2>Tab 1 Content</h2>
+                <p>This is the content of the first tab.</p>
+            </section>
+            <section data-content="2">
+                <h2>Tab 2 Content</h2>
+                <p>This is the content of the second tab.</p>
+            </section>
+            <section data-content="3">
+                <h2>Tab 3 Content</h2>
+                <p>This is the content of the third tab.</p>
+            </section>
+        </div>
+    </div> 
+<script> 
+    let Tabs = (() => {
+        let store = {};
+
+        let Constructor = function( options ) { 
+            let publicMethods = {}; 
+            let settings;
+
+            publicMethods.init = function( options ) { 
+
+            }
+
+            // Initialize plugin
+            publicMethods.init( options );
+
+            return publicMethods 
+        }
+
+        const registerTabGroup = function( tabGroupNode, index ) {
+
+            let moduleName = 'tabGroup';
+            let moduleId   = ensureUniqueKey( returnRandomKey( moduleName ), Object.keys( store ), moduleName ); 
+
+            const contentContainer = tabGroupNode.querySelector('[data-target-content]');
+            if( contentContainer === null ) { console.warn('Tabs plugin did not detect') }
+
+            this.storeTabGroup(
+                moduleId, 
+                new Tabs.launch({
+                    id               : moduleName,
+                    container        : tabGroupNode,
+                    contentContainer : contentContainer
+                })
+            );
+        
+            store[ moduleId ].render();
+            
+        }
+
+        const ensureUniqueKey = function( newKey, existingKeys, moduleName ) {
+    
+            for( let i = 0; i < existingKeys.length; i++ ) {
+                if( newKey === existingKeys[ i ] ) { 
+                    ensureUniqueKey( newKey, existingKeys, moduleName );
+                }
+            }
+
+            return newKey;
+            
+        }
+
+        const getAllTabGroups = function( name ) {
+            return store; 
+        }
+
+        const storeTabGroup = function( name, obj ) {
+            store[ name ] = obj;
+        }
+
+        const returnRandomKey = function( moduleName ) {
+            return 'module_' + moduleName + '_' + Math.floor( Math.random() * Math.floor( 100000 ) );
+        }
+
+        return {
+            launch : Constructor,
+            getAllTabGroups : getAllTabGroups
+        }
+    })();
+
+    let initTabGroups = function(){
+        let tabGroup = document.querySelectorAll( '[data-tab-group]' );
+        if( tabGroup.length === 0 ) { console.warn( 'Tab plugin not initialized; [data-tab-group] not found' ); return; }; 
+
+        for( let i = 0; i < tabGroup.length; i++ ) {
+            Modals.registerTabGroup( tabGroup[ i ], i );
+        }
+    }
+
+</script>
+</body>
+</html>
