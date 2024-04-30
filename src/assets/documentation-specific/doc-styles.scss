@@ -57,9 +57,12 @@ aside#sidebar {
         }
     }
 
+    [data-expandable-container] [data-expandable-trigger] i { 
+        margin-right: 0;
+    }
+
     [data-expandable-container=expanded] [data-expandable-trigger] i { 
         color: white;
-        margin-right: 0;
     }
 }
 
