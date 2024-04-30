@@ -64,12 +64,15 @@ table {
 
 @include mediaQuery('tablet-below') {
     .table--responsive {
-        width: 100%;
         overflow-x: auto;
-        white-space: nowrap;
         -webkit-overflow-scrolling: touch;
+    
+        table { 
+            width: 100%;
+            text-wrap: nowrap;
+        }
     }
-
+    
     .header-frozen {
         display: block;
     }
