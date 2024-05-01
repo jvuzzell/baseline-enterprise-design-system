@@ -26,40 +26,240 @@
             <div class="container">
                 <div class="row">
                     <div data-tab-group>
-                        <input type="radio" id="tab1" data-tab="1" name="tab-control" checked>
-                        <input type="radio" id="tab2" data-tab="2" name="tab-control">
-                        <input type="radio" id="tab3" data-tab="3" name="tab-control">
-                        <input type="radio" id="tab4" data-tab="4" name="tab-control">
-                        <ul>
-                            <li><label for="tab1">Tab 1</label></li>
+                        <input type="radio" id="tab1" data-tab="1" name="tab-control" data-custom-callback="simpleCallbackExample" checked>
+                        <input type="radio" id="tab2" data-tab="2" name="tab-control" data-custom-callback="simpleCallbackExample">
+                        <input type="radio" id="tab3" data-tab="3" name="tab-control" data-custom-callback="simpleCallbackExample">
+                        <input type="radio" id="tab4" data-tab="4" name="tab-control" data-custom-callback="simpleCallbackExample">
+                        <ul data-tab-list>
+                            <li><label for="tab1">ExtraLongTabWith A Space</label></li>
                             <li><label for="tab2">Tab 2</label></li>
                             <li><label for="tab3">Tab 3</label></li>
                             <li><label for="tab4">Tab 4</label></li>
                         </ul>
                         <div data-tab-content>
-                            <section data-content="1">
+                            <div data-content="1">
                                 <h2>Tab 1 Content</h2>
                                 <p>This is the content of the first tab.</p>
-                            </section>
-                            <section data-content="2">
+                            </div>
+                            <div data-content="2">
                                 <h2>Tab 2 Content</h2>
                                 <p>This is the content of the second tab.</p>
-                            </section>
-                            <section data-content="3">
+                            </div>
+                            <div data-content="3">
                                 <h2>Tab 3 Content</h2>
                                 <p>This is the content of the third tab.</p>
-                            </section>
-                            <section data-content="4">
+                            </div>
+                            <div data-content="4">
                                 <h2>Tab 4 Content</h2>
                                 <p>This is the content of the third tab.</p>
-                            </section>
+                            </div>
+                        </div>
+                        <div class="tab-scrolls">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div data-tab-group>
+                        <input type="radio" id="tab1-example-2" data-tab="1" name="tab-control-2">
+                        <input type="radio" id="tab2-example-2" data-tab="2" name="tab-control-2">
+                        <input type="radio" id="tab3-example-2" data-tab="3" name="tab-control-2" checked>
+                        <input type="radio" id="tab4-example-2" data-tab="4" name="tab-control-2">
+                        <ul data-tab-list>
+                            <li><label for="tab1-example-2"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Step 1</label></li>
+                            <li><label for="tab2-example-2"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Step 2</label></li>
+                            <li><label for="tab3-example-2"><i class="icon-lg fa-regular fa-circle-check clr--primary-light-3"></i>Step 3</label></li>
+                            <li><label for="tab4-example-2"><i class="icon-lg fa-regular fa-circle-check clr--secondary-dark-1"></i>ExtraLongTabWith A Space</label></li>
+                        </ul>
+                        <div data-tab-content>
+                            <div data-content="1">
+                                <h2>Step 1 Content</h2>
+                                <p>This is the content of the first tab.</p>
+                            </div>
+                            <div data-content="2">
+                                <h2>Step 2 Content</h2>
+                                <p>This is the content of the second tab.</p>
+                            </div>
+                            <div data-content="3">
+                                <h2>Step 3 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="4">
+                                <h2>Step 4 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                        </div>
+                        <div class="tab-scrolls">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div data-tab-group class="full-width">
+                        <input type="radio" id="tab1-example-3" data-tab="1" name="tab-control-3" checked>
+                        <input type="radio" id="tab2-example-3" data-tab="2" name="tab-control-3">
+                        <input type="radio" id="tab3-example-3" data-tab="3" name="tab-control-3">
+                        <input type="radio" id="tab4-example-3" data-tab="4" name="tab-control-3">
+                        <input type="radio" id="tab5-example-3" data-tab="5" name="tab-control-3">
+                        <input type="radio" id="tab6-example-3" data-tab="6" name="tab-control-3">
+                        <input type="radio" id="tab7-example-3" data-tab="7" name="tab-control-3">
+                        <input type="radio" id="tab8-example-3" data-tab="8" name="tab-control-3">
+                        <ul data-tab-list>
+                            <li><label for="tab1-example-3">ExtraLongTabWith A Space</label></li>
+                            <li><label for="tab2-example-3">Tab 2</label></li>
+                            <li><label for="tab3-example-3">Tab 3</label></li>
+                            <li><label for="tab4-example-3">ExtraLongTabWith A Space</label></li>
+                            <li><label for="tab5-example-3">Tab 5</label></li>
+                            <li><label for="tab6-example-3">Tab 6</label></li>
+                            <li><label for="tab7-example-3">Tab 7</label></li>
+                            <li><label for="tab8-example-3">ExtraLongTabWith A Space</label></li>
+                        </ul>
+                        <div data-tab-content>
+                            <div data-content="1">
+                                <h2>Tab 1 Content</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas lacus volutpat finibus semper. Proin venenatis urna vel erat sagittis, sit amet porta tortor pharetra. Aliquam tincidunt nunc a orci elementum volutpat. Duis gravida augue quis ullamcorper venenatis. Nullam convallis metus vel odio euismod, nec elementum leo efficitur. Maecenas ultrices felis vel tellus iaculis congue nec non est. Vivamus facilisis lacus vel</p>
+                            </div>
+                            <div data-content="2">
+                                <h2>Tab 2 Content</h2>
+                                <p>This is the content of the second tab.</p>
+                            </div>
+                            <div data-content="3">
+                                <h2>Tab 3 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="4">
+                                <h2>Tab 4 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="5">
+                                <h2>Tab 5 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="6">
+                                <h2>Tab 6 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="7">
+                                <h2>Tab 7 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="8">
+                                <h2>Tab 8 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                        </div>
+                        <div class="tab-scrolls">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div data-tab-group class="full-width vertical-tabs">
+                        <input type="radio" id="tab1-example-4" data-tab="1" name="tab-control-4" checked>
+                        <input type="radio" id="tab2-example-4" data-tab="2" name="tab-control-4">
+                        <input type="radio" id="tab3-example-4" data-tab="3" name="tab-control-4">
+                        <input type="radio" id="tab4-example-4" data-tab="4" name="tab-control-4">
+                        <input type="radio" id="tab5-example-4" data-tab="5" name="tab-control-4">
+                        <ul data-tab-list>
+                            <li><label for="tab1-example-4">Tab 1</label></li>
+                            <li><label for="tab2-example-4">Tab 2</label></li>
+                            <li><label for="tab3-example-4">Tab 3</label></li>
+                            <li><label for="tab4-example-4">Tab 4</label></li>
+                            <li><label for="tab5-example-4">Tab 5</label></li>
+                        </ul>
+                        <div data-tab-content>
+                            <div data-content="1">
+                                <h2>Tab 1 Content</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas lacus volutpat finibus semper. Proin venenatis urna vel erat sagittis, sit amet porta tortor pharetra. Aliquam tincidunt nunc a orci elementum volutpat. Duis gravida augue quis ullamcorper venenatis. Nullam convallis metus vel odio euismod, nec elementum leo efficitur. Maecenas ultrices felis vel tellus iaculis congue nec non est. Vivamus facilisis lacus vel</p>
+                            </div>
+                            <div data-content="2">
+                                <h2>Tab 2 Content</h2>
+                                <p>This is the content of the second tab.</p>
+                            </div>
+                            <div data-content="3">
+                                <h2>Tab 3 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="4">
+                                <h2>Tab 4 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="5">
+                                <h2>Tab 5 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                        </div>
+                        <div class="tab-scrolls">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div data-tab-group class="full-width vertical-tabs">
+                        <input type="radio" id="tab1-example-5" data-tab="1" name="tab-control-5" checked>
+                        <input type="radio" id="tab2-example-5" data-tab="2" name="tab-control-5">
+                        <input type="radio" id="tab3-example-5" data-tab="3" name="tab-control-5">
+                        <input type="radio" id="tab4-example-5" data-tab="4" name="tab-control-5">
+                        <input type="radio" id="tab5-example-5" data-tab="5" name="tab-control-5">
+                        <ul data-tab-list>
+                            <li><label for="tab1-example-5"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>ExtraLongTabWith A Space</label></li>
+                            <li><label for="tab2-example-5"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Tab 2</label></li>
+                            <li><label for="tab3-example-5"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Tab 3</label></li>
+                            <li><label for="tab4-example-5"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Tab 4</label></li>
+                            <li><label for="tab5-example-5"><i class="icon-lg fa-regular fa-circle-check clr--success-element"></i>Tab 5</label></li>
+                        </ul>
+                        <div data-tab-content>
+                            <div data-content="1">
+                                <h2>Tab 1 Content</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas lacus volutpat finibus semper. Proin venenatis urna vel erat sagittis, sit amet porta tortor pharetra. Aliquam tincidunt nunc a orci elementum volutpat. Duis gravida augue quis ullamcorper venenatis. Nullam convallis metus vel odio euismod, nec elementum leo efficitur. Maecenas ultrices felis vel tellus iaculis congue nec non est. Vivamus facilisis lacus vel</p>
+                            </div>
+                            <div data-content="2">
+                                <h2>Tab 2 Content</h2>
+                                <p>This is the content of the second tab.</p>
+                            </div>
+                            <div data-content="3">
+                                <h2>Tab 3 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="4">
+                                <h2>Tab 4 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                            <div data-content="5">
+                                <h2>Tab 5 Content</h2>
+                                <p>This is the content of the third tab.</p>
+                            </div>
+                        </div>
+                        <div class="tab-scrolls">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <script src="tabs/index.html.js"></script>
+    <script src="navigation-tabs/index.html.js"></script>
 </body>
 
 </html>

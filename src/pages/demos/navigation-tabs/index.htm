@@ -13,24 +13,26 @@
     {{../../../template-parts/modules/sidebar.htm}}
 
     <main id="root-element">
-        <section class="bg--primary-light-1 bg-btm-curv">
+        <section class="bg--primary-light-1 ">
             <div class="container">
                 <div class="row">
-                    <div class="col">
-                        <h1>Tabs</h1>
-                    </div>
-                    <div class="col" data-tab-group="my-tab-content" data-tab-controls>
+                    <nav class="col mg-b--0 pd-b--0" data-tab-group="my-tab-content" data-tab-controls>
+                        <h1 class="mg-b--0">Tabs</h1>
                         <input type="radio" id="tab1" data-tab="1" name="tab-control" checked>
                         <input type="radio" id="tab2" data-tab="2" name="tab-control">
                         <input type="radio" id="tab3" data-tab="3" name="tab-control">
                         <input type="radio" id="tab4" data-tab="4" name="tab-control">
-                        <ul>
+                        <ul data-tab-list >
                             <li><label for="tab1">Tab 1</label></li>
                             <li><label for="tab2">Tab 2</label></li>
                             <li><label for="tab3">Tab 3</label></li>
                             <li><label for="tab4">Tab 4</label></li>
                         </ul>
-                    </div>
+                        <div class="tab-scroll">
+                            <a class="tab-scroll tab-scroll--previous"><i class="icon-md fa-solid fa-chevron-left"></i></a>
+                            <a class="tab-scroll tab-scroll--next"><i class="icon-md fa-solid fa-chevron-right"></i></a>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </section> 

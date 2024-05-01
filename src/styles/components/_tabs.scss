@@ -1,175 +1,105 @@
 @use '../abstracts/mixins/' as *;
 @use '../abstracts' as *;
 
-// .react-tabs {
-//     -webkit-tap-highlight-color: transparent;
-//     position: relative;
-//     overflow: hidden;
-
-//     &__tab-list {
-//         width: 100%;
-//         display: flex;
-//         box-sizing: border-box;
-//         overflow-x: scroll;
-//         overflow-y: hidden;
-//         flex-wrap: nowrap;
-//         justify-content: space-between;
-//         margin: #{$v-spacing--150} 0;
-//         border-bottom: 1px solid var(--black-base);
-//         -webkit-overflow-scrolling: touch;
-//         -ms-overflow-style: -ms-autohiding-scrollbar;
-
-//         &::-webkit-scrollbar {
-//             display: none;
-//         }
-
-//         .indicator {
-//             position: absolute;
-//             z-index: 100;
-//             padding: 2rem 0;
-
-//             &--left {
-//                 left: 0;
-//             }
-
-//             &--right {
-//                 right: 0;
-//             }
-
-//             &.hidden {
-//                 display: none;
-//             }
-//         }
-
-//         @include mediaQuery('desktop-up') {
-//             overflow-x: hidden; //remove the scrollable cards on desktop and higher screens
-//             justify-content: space-around;
-
-//             .indicators {
-//                 display: none;
-//             }
-//         }
-//     }
-
-//     &__tab {
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: center;
-//         align-items: center;
-//         text-align: center;
-//         border-bottom: none;
-//         position: relative;
-//         list-style: none;
-//         padding: #{$v-spacing--100} #{$h-spacing--200};
-//         flex-wrap: nowrap;
-//         cursor: pointer;
-//         text-transform: uppercase;
-//         font-weight: #{$font-weight--bold};
-//         color: var(--black-base);
-
-//         @include mediaQuery('tablet-below') {
-//             flex: 0 0 calc(100% / 3); // showing 3 menu items at a time in tablet screen
-//         }
-
-//         @include mediaQuery('mobile-below') {
-//             flex: 0 0 calc(100% / 2); // showing 2 menu items at a time in mobile screen
-//         }
-
-//         i {
-//             margin-right: 0;
-//             margin-bottom: #{$v-spacing--50};
-//         }
-
-//         &--selected {
-//             border-bottom: 4px solid var(--primary-base);
-//         }
-
-//         &:focus {
-//             outline: none;
-//         }
-//     }
-
-//     &__tab-panel {
-//         display: none;
-
-//         &--selected {
-//             display: block;
-//             padding: #{$v-spacing--150};
-//         }
-//     }
-// }
-
-// .tabs--vertical {
-//     @include mediaQuery('desktop-up') {
-//         .react-tabs {
-//             display: flex;
-
-//             .tab-list-wrapper {
-//                 flex: 0 0 calc(100% / 4);
-//             }
-
-//             &__tab-list {
-//                 display: flex;
-//                 flex-direction: column;
-//                 border-bottom: none;
-//                 border-left: 1px solid var(--black-base);
-//             }
-
-//             &__tab {
-//                 width: auto;
-//                 min-height: 65px;
-//                 background-size: cover;
-//                 border-bottom: none;
-//                 flex-direction: row;
-//                 justify-content: flex-start;
-
-//                 i {
-//                     margin-right: var(--icon--margin--md);
-//                     margin-bottom: none;
-//                 }
-
-//                 &--selected {
-//                     border-left: 4px solid var(--primary-base);
-//                 }
-//             }
-
-//             &__tab-panel {
-//                 padding: #{$v-spacing--150};
-
-//                 &--selected {
-//                     display: block;
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// .tabs--block {
-//     .text-block {
-//         display: flex;
-//         padding: #{$v-spacing--150};
-//         flex-direction: column;
-//         background-color: var(--tertiary-light-1);
-
-//         h3 {
-//             color: var(--tertiary-base);
-//         }
-//     }
-// }
-
 [data-tab-group] {
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow: hidden;
+    
+    &.full-width {
+        width: 100%;
+    }
 
     input {
         display: none;
     }
     
-    // [data-tab-content] [data-content] {
-    //     display: none;
-    //     padding: 20px;
-    //     background: #f0f0f0;
-    //     border: 1px solid #ccc;
-    // }
-    
+    ul {
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin: #{$v-spacing--150} 0;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        li {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: none;
+            position: relative;
+            list-style: none;
+            padding: #{$v-spacing--100} #{$h-spacing--200};
+            flex-wrap: nowrap;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: #{$font-weight--bold};
+
+            @include mediaQuery('tablet-below') {
+                flex: 0 0 calc(100% / 3); // showing 3 menu items at a time in tablet screen
+            }
+
+            @include mediaQuery('mobile-below') {
+                flex: 0 0 calc(100% / 2); // showing 2 menu items at a time in mobile screen
+            }
+
+            i {
+                display: block;
+                margin-right: 0;
+                margin-bottom: #{$v-spacing--50};
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+     
+    &:has(li label > i){ 
+        .tab-scroll { 
+            top: 45px;
+        }
+    }
+
+    .tab-scroll {
+        position: absolute;
+        z-index: 100;
+        padding: 2rem 0;
+        top: 20px;
+        background-color: var(--white-base);
+         
+        &--previous {
+            left: 0;
+        }
+
+        &--next {
+            right: 0;
+        }
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    @include mediaQuery('desktop-up') {
+        overflow-x: hidden; //remove the scrollable cards on desktop and higher screens
+        justify-content: space-around;
+
+        .tab-scroll {
+            display: none;
+        }
+    }
+
     input[data-tab="1"]:checked ~ [data-tab-content] [data-content="1"],
     input[data-tab="2"]:checked ~ [data-tab-content] [data-content="2"],
     input[data-tab="3"]:checked ~ [data-tab-content] [data-content="3"],
@@ -184,53 +114,81 @@
         display: block;
     }
     
-    // ul {
-    //     list-style: none;
-    //     padding: 0;
-    //     display: flex;
-    // }
-    
-    // li {
-    //     flex: 1;
-    // }
-    
-    // label {
-    //     display: block;
-    //     padding: 10px;
-    //     text-align: center;
-    //     cursor: pointer;
-    // }
-    
-    // ul {
-    //     background: #ccc;
-    // }
-
-    // label {
-    //     border-right: 1px solid white;
-    // }
-
-    // label:hover {
-    //     background: #ddd;
-    // }
-    
-    input[data-tab="1"]:checked ~ ul > li:nth-child(1) label,
-    input[data-tab="2"]:checked ~ ul > li:nth-child(2) label,
-    input[data-tab="3"]:checked ~ ul > li:nth-child(3) label,
-    input[data-tab="4"]:checked ~ ul > li:nth-child(4) label,
-    input[data-tab="5"]:checked ~ ul > li:nth-child(5) label,
-    input[data-tab="6"]:checked ~ ul > li:nth-child(6) label,
-    input[data-tab="7"]:checked ~ ul > li:nth-child(7) label,
-    input[data-tab="8"]:checked ~ ul > li:nth-child(8) label,
-    input[data-tab="9"]:checked ~ ul > li:nth-child(9) label,
-    input[data-tab="10"]:checked ~ ul > li:nth-child(10) label 
+    input[data-tab="1"]:checked ~ ul > li:nth-child(1),
+    input[data-tab="2"]:checked ~ ul > li:nth-child(2),
+    input[data-tab="3"]:checked ~ ul > li:nth-child(3),
+    input[data-tab="4"]:checked ~ ul > li:nth-child(4),
+    input[data-tab="5"]:checked ~ ul > li:nth-child(5),
+    input[data-tab="6"]:checked ~ ul > li:nth-child(6),
+    input[data-tab="7"]:checked ~ ul > li:nth-child(7),
+    input[data-tab="8"]:checked ~ ul > li:nth-child(8),
+    input[data-tab="9"]:checked ~ ul > li:nth-child(9),
+    input[data-tab="10"]:checked ~ ul > li:nth-child(10) 
     {
-        background: white;
-        color: black;
+        border-bottom: 4px solid var(--primary-base);
+        padding-bottom: calc(#{$v-spacing--100} - 4px);
     }
 
-    // p { 
-    //     color: black;
-    // }
+    &.vertical-tabs {
+        @include mediaQuery('desktop-up') {
+            
+            display: flex;
+            justify-content: flex-start;
+            ul {
+                display: flex;
+                flex-direction: column;
+                border-bottom: none;
+                flex: 0 0 calc(100% / 5);
+                padding: #{$v-spacing--150} 0;
+            }
+
+            li {
+                width: auto;
+                min-height: 65px;
+                background-size: cover;
+                border-bottom: none;
+                flex-direction: row;
+                justify-content: flex-start;
+                
+                label { 
+                    display: flex;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                    text-align: left;
+                                    
+                    i {
+                        margin-right: var(--icon--margin--md);
+                        margin-bottom: none;
+                        display: inline;
+                        vertical-align: middle;
+                    }
+                }
+
+
+            }
+            
+            input[data-tab="1"]:checked ~ ul > li:nth-child(1),
+            input[data-tab="2"]:checked ~ ul > li:nth-child(2),
+            input[data-tab="3"]:checked ~ ul > li:nth-child(3),
+            input[data-tab="4"]:checked ~ ul > li:nth-child(4),
+            input[data-tab="5"]:checked ~ ul > li:nth-child(5),
+            input[data-tab="6"]:checked ~ ul > li:nth-child(6),
+            input[data-tab="7"]:checked ~ ul > li:nth-child(7),
+            input[data-tab="8"]:checked ~ ul > li:nth-child(8),
+            input[data-tab="9"]:checked ~ ul > li:nth-child(9),
+            input[data-tab="10"]:checked ~ ul > li:nth-child(10) 
+            {
+                border-bottom: none;
+                border-left: 4px solid var(--primary-base);
+                padding-left: calc(#{$v-spacing--200} - 4px);
+                padding-bottom: #{$v-spacing--100};
+            } 
+
+            [data-tab-content] { 
+                padding-left: #{$v-spacing--200};
+            }
+        }
+    }
 
 }
 
@@ -252,6 +210,49 @@
     &[data-active-tab="10"] [data-content="10"]
     {
         display: block;
+    }
+
+} 
+
+section:has([data-tab-group]):first-of-type {
+    padding-bottom: 0; 
+
+    nav { 
+        height: unset;
+        padding: 0;
+    }
+
+    [data-tab-group] > ul { 
+        margin-bottom: 0;
+    }
+}
+
+/* Colors */
+[data-tab-group] { 
+    
+    ul { 
+        border-bottom: 1px solid var(--secondary-light-3);
+
+        li { 
+            color: var(--black-base);
+        }
+    }
+
+}
+
+[data-tab-group].vertical-tabs { 
+    
+    ul { 
+        border-bottom: none;
+        border-left: 1px solid var(--secondary-light-3);
+    }
+
+}
+
+section:has([data-tab-group]):first-of-type {
+ 
+    ul { 
+        border-bottom: none;
     }
 
 }
